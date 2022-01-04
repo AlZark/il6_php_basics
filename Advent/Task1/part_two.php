@@ -2003,20 +2003,51 @@ $array = array(
     8710);
 
 $count = 0;
-$start = 0;
+//$start = 0;
+//$ii = 0;
+//$yy = 1;
+
+//$hiArray = [0];
+//
+//print_r($hiArray);
+//echo '<br>';
+//for($x = 0; $x < 1; $x++) {
+//        foreach ($array as $arr) {
+//            $array_new[$ii] = $arr;
+//            print_r($array_new);
+//            echo '<br>';
+//            $ii++;
+//            if ($ii >= 3) {
+//                break;
+//            }
+//        }
+//
+//    if(array_sum($array_new) > array_sum($hiArray)){
+//        echo "A more";
+//        $hiArray = $array_new;
+//        $count++;
+//    } else {
+//        echo "B more";
+//    }
+//}
+//echo '<br>';
+//echo $count;
+//echo '<br>';
+//print_r($hiArray);
 
 
+for($x = 0; $x < sizeof($array); $x++) {
 
-for ($i = 0; $i < 3; $i++){
-    foreach ($array as $arr) {
-        $array_a[] = $arr;
-        if (count($array_a) > 3) {
-            break;
-        }
-        echo "test";
-        print_r($array_a);
-        echo '<br>';
+    for($i = 0; $i < 3; $i++){
+        $sumA = $array[$x] + $array[$x + 1] + $array[$x + 2];
+        $sumB = $array[$x + 1] + $array[$x + 2] + $array[$x + 3];
+
+    }
+    if($sumB > $sumA){
+        $count++;
     }
 
 }
+echo $count;
+
 
