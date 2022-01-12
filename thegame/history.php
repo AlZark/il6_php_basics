@@ -4,8 +4,20 @@ $games = readFromCsv('play_history.csv');
 
 <div class="grid">
 
+
+
+
+
     <label><strong>Game history: </strong></label>
-    <?php foreach ($games as $game) : ?>
+    <?php foreach ($games as $game) :
+
+
+
+
+
+    ?>
+
+
 
         <div class="product-wrap">
 

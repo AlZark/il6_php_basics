@@ -2,3 +2,13 @@
 2,"Player wins!",paper,rock
 3,Draw,paper,paper
 4,Draw,paper,paper
+5,"PC wins!",paper,scissors
+6,"PC wins!",paper,scissors
+7,"PC wins!",rock,paper
+8,"PC wins!",rock,paper
+9,Draw,rock,rock
+10,"PC wins!",rock,paper
+11,"Player wins!",rock,scissors
+12,Draw,rock,rock
+13,"Player wins!",rock,scissors
+14,"PC wins!",rock,paper

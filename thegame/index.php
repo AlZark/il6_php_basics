@@ -1,5 +1,7 @@
 <?php
 include 'core.php';
+echo '<br>';
+echo '<br>';
 echo 'The Game';
 echo '<br>';
 
@@ -21,5 +23,6 @@ echo '<input type="submit" value="Play!!!" name="play">';
 echo '</form>';
 
 echo '<br>';
+returnStats();
 
 include 'history.php';

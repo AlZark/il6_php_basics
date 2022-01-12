@@ -3,6 +3,7 @@
 const TOOL_ROCK = 'rock';
 const TOOL_PAPER = 'paper';
 const TOOL_SCISSORS = 'scissors';
+const GAME_OUTCOME = 1;
 
 $toolsArray = [
     0 => TOOL_ROCK,
@@ -42,6 +43,7 @@ if(isset($_POST['play'])){
     writeToCsv($data, 'play_history.csv');
 }
 
+
 function writeToCsv($data, $fileName)
 {
     $file = fopen($fileName, 'a');
@@ -71,3 +73,33 @@ function getNextGameId(){
     return $count + 1;
 }
 
+function getLastTenGames(){
+    $lastTenGames = [];
+    $games = readFromCsv('play_history.csv');
+    $count = sizeof($games);
+    for($i = 1; $i <= 11; $i++){
+        array_push($lastTenGames, $games[$count - $i][GAME_OUTCOME]);
+    }
+
+    return $lastTenGames;
+}
+
+function returnStats(){
+    $lastTenGames = getLastTenGames();
+    $pc = 0;
+    $player = 0;
+    foreach ($lastTenGames as $game){
+        if ($game == "Player wins!" ){
+            $player++;
+        } elseif ($game == "PC wins!" ){
+            $pc++;
+        }
+    }
+    if ($player > $pc){
+        echo "Player won last ". $player . " out of 10 rounds";
+    } elseif ($player < $pc){
+        echo "PC won last ". $pc . " out of 10 rounds";
+    } else {
+        echo "PC and player won equal amount of games in the last 10 rounds";
+    }
+}
