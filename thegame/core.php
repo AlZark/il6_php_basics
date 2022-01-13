@@ -11,26 +11,26 @@ $toolsArray = [
     2 => TOOL_SCISSORS
 ];
 
-if(isset($_POST['play'])){
+if (isset($_POST['play'])) {
     $playerChoice = $_POST['tool'];
     $pcChoice = rand(0, 2);
     $pcChoice = $toolsArray[$pcChoice];
 
     echo '<table>';
-    echo '<tr><td><img src="img/'.$playerChoice.'.jpg" width="200"></td><td>VS</td><td><img src="img/'.$pcChoice.'.jpg" width="200"></td></tr>';
+    echo '<tr><td><img src="img/' . $playerChoice . '.jpg" width="200"></td><td>VS</td><td><img src="img/' . $pcChoice . '.jpg" width="200"></td></tr>';
     echo '</table>';
 
-    if($playerChoice == $pcChoice){
+    if ($playerChoice == $pcChoice) {
         $result = 'Draw';
         echo $result;
-    }elseif ($playerChoice == TOOL_ROCK && $pcChoice == TOOL_SCISSORS){
-        $result =  'Player wins!';
+    } elseif ($playerChoice == TOOL_ROCK && $pcChoice == TOOL_SCISSORS) {
+        $result = 'Player wins!';
         echo $result;
-    }elseif ($playerChoice == TOOL_PAPER && $pcChoice == TOOL_ROCK){
-        $result =  'Player wins!';
+    } elseif ($playerChoice == TOOL_PAPER && $pcChoice == TOOL_ROCK) {
+        $result = 'Player wins!';
         echo $result;
-    }elseif ($playerChoice == TOOL_SCISSORS && $pcChoice == TOOL_PAPER){
-        $result =  'Player wins!';
+    } elseif ($playerChoice == TOOL_SCISSORS && $pcChoice == TOOL_PAPER) {
+        $result = 'Player wins!';
         echo $result;
     } else {
         $result = 'PC wins!';
@@ -67,39 +67,9 @@ function readFromCsv($fileName)
     return $data;
 }
 
-function getNextGameId(){
+function getNextGameId()
+{
     $games = readFromCsv('play_history.csv');
     $count = sizeof($games);
     return $count + 1;
-}
-
-function getLastTenGames(){
-    $lastTenGames = [];
-    $games = readFromCsv('play_history.csv');
-    $count = sizeof($games);
-    for($i = 1; $i <= 11; $i++){
-        array_push($lastTenGames, $games[$count - $i][GAME_OUTCOME]);
-    }
-
-    return $lastTenGames;
-}
-
-function returnStats(){
-    $lastTenGames = getLastTenGames();
-    $pc = 0;
-    $player = 0;
-    foreach ($lastTenGames as $game){
-        if ($game == "Player wins!" ){
-            $player++;
-        } elseif ($game == "PC wins!" ){
-            $pc++;
-        }
-    }
-    if ($player > $pc){
-        echo "Player won last ". $player . " out of 10 rounds";
-    } elseif ($player < $pc){
-        echo "PC won last ". $pc . " out of 10 rounds";
-    } else {
-        echo "PC and player won equal amount of games in the last 10 rounds";
-    }
 }

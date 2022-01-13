@@ -1,9 +1,6 @@
 <?php
 include 'core.php';
-echo '<br>';
-echo '<br>';
-echo 'The Game';
-echo '<br>';
+echo '<h2>' . 'The Game' . '<h2>';
 
 $tools = [
     TOOL_ROCK => 'Akmuo',
@@ -21,8 +18,5 @@ echo '<br>';
 
 echo '<input type="submit" value="Play!!!" name="play">';
 echo '</form>';
-
-echo '<br>';
-returnStats();
 
 include 'history.php';
