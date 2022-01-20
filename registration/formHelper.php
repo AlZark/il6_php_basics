@@ -11,7 +11,8 @@ function generateInput($data)
     return $input;
 }
 
-function generateTextarea($data){
+function generateTextarea($data)
+{
     $text = '';
     $text .= '<textarea ';
     foreach ($data as $key => $value) {
