@@ -1,0 +1,17 @@
+{
+    "name": "algirdas/boat_manager",
+    "description": "boat_manegment_tool",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": "app/code"
+        }
+    },
+    "authors": [
+        {
+            "name": "Algirdas",
+            "email": "alzarkaitis22@gmail.com"
+        }
+    ],
+    "require": {}
+}
