@@ -42,13 +42,6 @@ class User
             'placeholder' => 'Email'
         ]);
 
-//        $cities = City::getCities();
-//        $cityList = [];
-//        foreach ($cities as $value) {
-//            $cityList[$value["id"]] = $value["name"];
-//        }
-//        $form->select($cityList, 'cities');
-
         $cities = City::getCities();
         $options = [];
         foreach ($cities as $city) {

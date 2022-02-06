@@ -51,7 +51,6 @@ class Catalog
             'value' => 'Create'
         ]);
 
-
         echo $form->getForm();
     }
 
@@ -82,6 +81,5 @@ class Catalog
         $catalog->setTypeId(1);
         $catalog->setUserId($_SESSION['user_id']);
         $catalog->save();
-
     }
 }

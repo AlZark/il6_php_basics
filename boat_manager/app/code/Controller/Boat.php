@@ -40,6 +40,9 @@ class Boat
             'placeholder' => 'Depth',
         ]);
 
+        $models = BoatModel::getModels();
+
+
         $users = User::getUsers();
         $userList = [];
         foreach ($users as $user){

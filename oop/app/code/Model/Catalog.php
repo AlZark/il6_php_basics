@@ -187,4 +187,19 @@ class Catalog
         $db->insert('ads', $data)->exec();
     }
 
+    public function load($id)
+    {
+        $db = new DBHelper();
+        $data = $db->select()->from('ads')->where('id', $id)->getOne();
+        $this->id = $data['id'];
+        $this->title = $data['title'];
+        $this->description = $data['description'];
+        $this->manufacturer_id = $data['manufacturer_id'];
+        $this->model_id = $data['model_id'];
+        $this->price = $data['price'];
+        $this->type_id = $data['type_id'];
+        $this->user_id = $data['user_id'];
+        return $this;
+    }
+
 }
