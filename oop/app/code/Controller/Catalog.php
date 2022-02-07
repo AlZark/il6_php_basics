@@ -7,8 +7,9 @@ use Helper\FormHelper;
 use Helper\Validator;
 use Helper\Url;
 use Model\Catalog as CatalogModel;
+use Core\AbstractController;
 
-class Catalog
+class Catalog extends AbstractController
 {
 
     public function add()
@@ -51,7 +52,64 @@ class Catalog
             'value' => 'Create'
         ]);
 
-        echo $form->getForm();
+        $this->data['form'] = $form->getForm();
+        $this->render('catalog/add');
+
+    }
+
+    public function edit($id)
+    {
+        $catalog = new CatalogModel();
+        $catalog->load($id);
+
+        if (!isset($_SESSION['user_id'])) {
+            Url::redirect('user/login');
+        }
+
+        $form = new FormHelper('catalog/update', 'POST');
+
+        $form->input([
+            'name' => 'title',
+            'type' => 'text',
+            'placeholder' => 'Title',
+            'value' => $this->getTitle()
+        ]);
+
+        $form->input([
+
+        ]);
+
+        $form->textArea([
+            'name' => 'description',
+            'placeholder' => 'Description',
+            'value' => $this->getDescritpion()
+        ]);
+        $form->input([
+            'name' => 'price',
+            'type' => 'number',
+            'placeholder' => '20.00EUR',
+            'step' => 'any',
+            'value' => $this->getPrice()
+        ]);
+
+        $years = [];
+        for ($i = 1970; $i <= date('Y'); $i++) {
+            $years[$i] = $i;
+        }
+        $form->select([
+            'name' => 'year',
+            'options' => $years
+        ]);
+
+        $form->input([
+            'name' => 'create',
+            'type' => 'submit',
+            'value' => 'Update'
+        ]);
+
+        $this->data['form'] = $form->getForm();
+        $this->render('catalog/edit');
+
     }
 
     public function show($id = null)
@@ -63,10 +121,7 @@ class Catalog
 
     public function all($id)
     {
-        for ($i = 0; $i < 10; $i++) {
-            echo '<a href="http://localhost:8000/oop/index.php/catalog/show/' . $i . '">Read more';
-            echo '<br>';
-        }
+        $this->render('catalog/list');
     }
 
     public function create()
@@ -80,6 +135,22 @@ class Catalog
         $catalog->setYear($_POST['year']);
         $catalog->setTypeId(1);
         $catalog->setUserId($_SESSION['user_id']);
+        $catalog->save();
+    }
+
+    public function update()
+    {
+        $catalogId = $_POST['id'];
+
+        $catalog = new CatalogModel();
+        $catalog->load($catalogId);
+        $catalog->setTitle($_POST['title']);
+        $catalog->setDescription($_POST['description']);
+        $catalog->setManufacturerId(1);
+        $catalog->setModelId(1);
+        $catalog->setPrice($_POST['price']);
+        $catalog->setYear($_POST['year']);
+        $catalog->setTypeId(1);
         $catalog->save();
     }
 }

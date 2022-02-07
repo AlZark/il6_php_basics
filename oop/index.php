@@ -6,9 +6,8 @@ session_start();
 
 if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
     $path = trim($_SERVER['PATH_INFO'],'/');
-    echo '<pre>';
     $path = explode('/',$path);
-    print_r($path);
+    //print_r($path);
     $class = ucfirst($path[0]);
     $method = $path[1];
     $param = $path[2];
@@ -30,6 +29,6 @@ if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
         echo '404';
     }
 }else{
-    echo '<h1>Home Page</h1>';
-    print_r($_SESSION);
+    $obj = new \Controller\Home();
+    $obj->index();
 }

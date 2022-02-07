@@ -34,7 +34,7 @@ class City
         $data = $db->select()->from('cities')->get();
         $cities = [];
         foreach ($data as $element){
-            $city = new City();
+            $city = new City(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
             $city->load($element['id']);
             $cities[] = $city;
         }

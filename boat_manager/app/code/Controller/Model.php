@@ -21,7 +21,7 @@ class Model
 
         $types = BoatType::getTypes();
         $options = [];
-        foreach ($types as $value){
+        foreach ($types as $value) {
             $id = $value->getId();
             $options[$id] = $value->getName();
         }

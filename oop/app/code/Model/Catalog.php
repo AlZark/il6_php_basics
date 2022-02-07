@@ -187,19 +187,56 @@ class Catalog
         $db->insert('ads', $data)->exec();
     }
 
+    private function update()
+    {
+        $data = [
+            'title' => $this->title,
+            'description' => $this->description,
+            'manufacturer_id' => $this->manufacturer_id,
+            'model_id' => $this->model_id,
+            'price' => $this->price,
+            'year' => $this->year,
+            'type_id' => $this->type_id,
+            'user_id' => $this->user_id,
+        ];
+
+        $db = new DBHelper();
+        $db->update('ads', $data)->where('id', $this->id)->exec();
+    }
+
     public function load($id)
     {
         $db = new DBHelper();
         $data = $db->select()->from('ads')->where('id', $id)->getOne();
-        $this->id = $data['id'];
-        $this->title = $data['title'];
-        $this->description = $data['description'];
-        $this->manufacturer_id = $data['manufacturer_id'];
-        $this->model_id = $data['model_id'];
-        $this->price = $data['price'];
-        $this->type_id = $data['type_id'];
-        $this->user_id = $data['user_id'];
+        if(!empty($data)) {
+            $this->id = $data['id'];
+            $this->title = $data['title'];
+            $this->description = $data['description'];
+            $this->manufacturer_id = $data['manufacturer_id'];
+            $this->model_id = $data['model_id'];
+            $this->price = $data['price'];
+            $this->type_id = $data['type_id'];
+            $this->user_id = $data['user_id'];
+        }
         return $this;
+    }
+
+    public function getAd($user_id)
+    {
+        $db = new DBHelper();
+        $data = $db->select()->from('ads')->where('id', $user_id)->get();
+        $ads = [];
+        foreach ($data as $element){
+            $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
+    }
+
+    public function getAllAds()
+    {
+
     }
 
 }

@@ -180,6 +180,17 @@ class User
         //return isset($rez['id']) ? $rez['id'] : false;
     }
 
-
+    public static function getAllUsers()
+    {
+        $db = new DBHelper();
+        $data = $db->select()->from('user')->get();
+        $users = [];
+        foreach ($data as $element){
+            $user = new User();
+            $user->load($element['id']);
+            $users[] = $user;
+        }
+        return $users;
+    }
 
 }
