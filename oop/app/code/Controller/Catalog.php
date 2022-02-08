@@ -66,30 +66,32 @@ class Catalog extends AbstractController
             Url::redirect('user/login');
         }
 
+        if ($_SESSION['user_id'] != $catalog->getUserId()){
+            Url::redirect('');
+        }
+
         $form = new FormHelper('catalog/update', 'POST');
 
         $form->input([
             'name' => 'title',
             'type' => 'text',
             'placeholder' => 'Title',
-            'value' => $this->getTitle()
+            'value' => $catalog->getTitle()
         ]);
 
         $form->input([
-
+            'name' => 'id',
+            'type' => 'hidden',
+            'value' => $catalog->getId()
         ]);
 
-        $form->textArea([
-            'name' => 'description',
-            'placeholder' => 'Description',
-            'value' => $this->getDescritpion()
-        ]);
+        $form->textArea('description', $catalog->getDescription());
         $form->input([
             'name' => 'price',
             'type' => 'number',
             'placeholder' => '20.00EUR',
             'step' => 'any',
-            'value' => $this->getPrice()
+            'value' => $catalog->getPrice()
         ]);
 
         $years = [];
@@ -98,7 +100,8 @@ class Catalog extends AbstractController
         }
         $form->select([
             'name' => 'year',
-            'options' => $years
+            'options' => $years,
+            'selected' => $catalog->getYear()
         ]);
 
         $form->input([
@@ -112,15 +115,16 @@ class Catalog extends AbstractController
 
     }
 
-    public function show($id = null)
+    public function show($id)
     {
         if ($id !== null) {
             echo 'Catalog controller ID' . $id;
         }
     }
 
-    public function all($id)
+    public function all()
     {
+        $this->data['catalog'] = CatalogModel::getAllAds();
         $this->render('catalog/list');
     }
 
@@ -141,8 +145,8 @@ class Catalog extends AbstractController
     public function update()
     {
         $catalogId = $_POST['id'];
-
         $catalog = new CatalogModel();
+        $catalog->load($catalogId);
         $catalog->load($catalogId);
         $catalog->setTitle($_POST['title']);
         $catalog->setDescription($_POST['description']);

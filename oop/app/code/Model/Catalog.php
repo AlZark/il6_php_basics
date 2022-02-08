@@ -215,6 +215,7 @@ class Catalog
             $this->manufacturer_id = $data['manufacturer_id'];
             $this->model_id = $data['model_id'];
             $this->price = $data['price'];
+            $this->year = $data['year'];
             $this->type_id = $data['type_id'];
             $this->user_id = $data['user_id'];
         }
@@ -234,9 +235,17 @@ class Catalog
         return $ads;
     }
 
-    public function getAllAds()
+    public static function getAllAds()
     {
-
+        $db = new DBHelper();
+        $data = $db->select('id')->from('ads')->get();
+        $ads = [];
+        foreach ($data as $element){
+            $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
     }
 
 }

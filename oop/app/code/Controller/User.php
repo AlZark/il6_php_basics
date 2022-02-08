@@ -235,6 +235,7 @@ class User extends AbstractController
     public function logout()
     {
         session_destroy();
+        Url::redirect('user/login');
     }
 
     public function all()
@@ -242,6 +243,4 @@ class User extends AbstractController
         $this->data['users'] = UserModel::getAllUsers();
         $this->render('user/list');
     }
-
-
 }
