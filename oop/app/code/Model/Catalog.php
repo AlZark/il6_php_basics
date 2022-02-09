@@ -2,12 +2,12 @@
 
 namespace Model;
 
+use Controller\Model;
+use Core\AbstractModel;
 use Helper\DBHelper;
-use Helper\FormHelper;
 
-class Catalog
+class Catalog extends AbstractModel
 {
-    private $id;
 
     private $title;
 
@@ -24,6 +24,10 @@ class Catalog
     private $type_id;
 
     private $user_id;
+
+    private $img;
+
+    private $is_active;
 
     /**
      * @return mixed
@@ -161,6 +165,38 @@ class Catalog
         $this->user_id = $user_id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param mixed $img
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * @param mixed $is_active
+     */
+    public function setIsActive($is_active)
+    {
+        $this->is_active = $is_active;
+    }
+
     public function save()
     {
         if (!isset($this->id)) {
@@ -181,6 +217,7 @@ class Catalog
             'year' => $this->year,
             'type_id' => $this->type_id,
             'user_id' => $this->user_id,
+            'is_active' => $this->is_active
         ];
 
         $db = new DBHelper();
@@ -217,15 +254,17 @@ class Catalog
             $this->price = $data['price'];
             $this->year = $data['year'];
             $this->type_id = $data['type_id'];
+            $this->is_active = $data['is_active'];
             $this->user_id = $data['user_id'];
+            $this->img = $data['img'];
         }
         return $this;
     }
 
-    public function getAd($user_id)
+    public function getAd($id)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->where('id', $user_id)->get();
+        $data = $db->select()->from('ads')->where('id', $id)->get();
         $ads = [];
         foreach ($data as $element){
             $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
@@ -235,14 +274,15 @@ class Catalog
         return $ads;
     }
 
-    public static function getAllAds()
+    public static function getAllActiveAds()
     {
-        $db = new DBHelper();
-        $data = $db->select('id')->from('ads')->get();
+        $data = new Catalog();
+        $ids = $data->isActive('ads');
         $ads = [];
-        foreach ($data as $element){
-            $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
-            $ad->load($element['id']);
+
+        foreach ($ids as $id){
+            $ad = new Catalog();
+            $ad->load($id['id']);
             $ads[] = $ad;
         }
         return $ads;

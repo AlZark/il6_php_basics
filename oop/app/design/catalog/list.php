@@ -1,13 +1,18 @@
 <div class="list-wrapper">
     <h1>Daily car ads</h1>
     <ul>
-        <?php foreach ($this->data['catalog'] as $catalog): ?>
+        <?php
+        foreach ($this->data['catalog'] as $catalog): ?>
             <li>
                 <h4><a href="<?php echo BASE_URL . 'catalog/show/' . $catalog->getId() ?>">
-                    <?php echo $catalog->getTitle()?>
-                </a></h4>
-                <?php echo $catalog->getPrice() . ' Eur'?><br>
-                <?php echo 'Year: ' . $catalog->getYear();?><br>
+                        <?php echo $catalog->getTitle()?>
+                    </a></h4>
+
+                <?php $img = $catalog->getImg();
+                if ($img != NULL) { ?>
+                    <img src="<?php echo $catalog->getImg(); ?>" width="200"> <br> <?php } ?>
+                <?php echo $catalog->getPrice() . ' Eur' ?><br>
+                <?php echo 'Year: ' . $catalog->getYear(); ?><br>
 
             </li>
         <?php endforeach; ?>

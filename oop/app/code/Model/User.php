@@ -2,13 +2,11 @@
 
 namespace Model;
 
+use Core\AbstractModel;
 use Helper\DBHelper;
-use Helper\FormHelper;
-use Model\City;
 
-class User
+class User extends AbstractModel
 {
-    private $id;
 
     private $name;
 
@@ -23,6 +21,10 @@ class User
     private $cityId;
 
     private $city;
+
+    private $login_fails;
+
+    private $is_active;
 
     public function getId()
     {
@@ -94,6 +96,39 @@ class User
         return $this->city;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getLoginFails()
+    {
+        return $this->login_fails;
+    }
+
+    /**
+     * @param mixed $login_fails
+     */
+    public function setLoginFails($login_fails)
+    {
+        $this->login_fails = $login_fails;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * @param mixed $is_active
+     */
+    public function setIsActive($is_active)
+    {
+        $this->is_active = $is_active;
+    }
+
+
     public function save()
     {
         if (!isset($this->id)) {
@@ -111,7 +146,8 @@ class User
             'email' => $this->email,
             'password' => $this->password,
             'phone' => $this->phone,
-            'city_id' => $this->cityId
+            'city_id' => $this->cityId,
+            'is_active' => $this->is_active,
         ];
 
         $db = new DBHelper();
@@ -144,6 +180,7 @@ class User
         $this->email = $data['email'];
         $this->password = $data['password'];
         $this->cityId = $data['city_id'];
+        $this->is_active = $data['is_active'];
         $city = new City();
         $this->city = $city->load($this->cityId);
         return $this;
@@ -178,6 +215,32 @@ class User
             return false;
         }
         //return isset($rez['id']) ? $rez['id'] : false;
+    }
+
+    public static function logLoginFail($email)
+    {
+        $db = new DBHelper();
+        $rez = $db
+            ->select('login_fails')
+            ->from('user')
+            ->where('email', $email)
+            ->getOne();
+
+        $total_failed = $rez['login_fails'];
+
+        if($total_failed >= 4){
+            $data = [
+                'login_fails' => 5,
+                'is_active' => 0
+                ];
+        } else {
+            $total_failed++;
+            $data = [
+                'login_fails' => $total_failed
+            ];
+        }
+        $db = new DBHelper();
+        $db->update('user', $data)->where('email', $email)->exec();
     }
 
     public static function getAllUsers()

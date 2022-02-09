@@ -20,9 +20,9 @@ class FormHelper
         $this->form .= '><br>';
     }
 
-    public function textArea($name, $placeholder = '')
+    public function textArea($name, $value = "")
     {
-        $this->form .= '<textarea name="' . $name . '">' . $placeholder . '</textarea><br>';
+        $this->form .= '<textarea name="' . $name . '">'. $value .'</textarea><br>';
     }
 
     //try redoing id key === selected the write selected

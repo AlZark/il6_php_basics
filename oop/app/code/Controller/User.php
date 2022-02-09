@@ -2,7 +2,6 @@
 
 namespace Controller;
 
-use Helper\DBHelper;
 use Helper\FormHelper;
 use Helper\Validator;
 use Helper\Url;
@@ -70,8 +69,8 @@ class User extends AbstractController
             'value' => 'Register'
         ]);
 
-        $this->data['form'] = $form->getForm(); //tiesiog naujas array i kuri sukeliam Formos $form info kuria apsiraseme virsuj
-        $this->render('user/register');
+        $this->data['form'] = $form->getForm(); //naujas array i kuri sukeliam Formos $form info kuria apsiraseme virsuje. Data originaliai sukurta AbstractController klaseje
+        $this->render('user/register'); //dabar ta array paduodam render mothode kuris aprasytas AbstractController klaseje
     }
 
     public function login()
@@ -182,6 +181,7 @@ class User extends AbstractController
             $user->setPassword(md5($_POST['password']));
             $user->setEmail($_POST['email']);
             $user->setCityId($_POST['city_id']);
+            $user->setIsActive(1);
             $user->save();
             Url::redirect('user/login');
         } else {
@@ -218,16 +218,22 @@ class User extends AbstractController
         $email = $_POST['email'];
         $password = md5($_POST['password']);
         $userId = UserModel::checkLoginCredentials($email, $password);
-        var_dump($userId);
+
         if ($userId) {
             $user = new UserModel();
             $user->load($userId);
-            $_SESSION['logged'] = true;
-            $_SESSION['user_id'] = $userId;
-            $_SESSION['user'] = $user;
-            //$user->getCity()->getName();
-            Url::redirect('');
+            $active = $user->getIsActive();
+            if ($active == 1) {
+                $_SESSION['logged'] = true;
+                $_SESSION['user_id'] = $userId;
+                $_SESSION['user'] = $user;
+                //$user->getCity()->getName();
+                Url::redirect('');
+            } else {
+                Url::redirect('user/login');
+            }
         } else {
+            UserModel::logLoginFail($email);
             Url::redirect('user/login');
         }
     }
