@@ -222,16 +222,11 @@ class User extends AbstractController
         if ($userId) {
             $user = new UserModel();
             $user->load($userId);
-            $active = $user->getIsActive();
-            if ($active == 1) {
-                $_SESSION['logged'] = true;
-                $_SESSION['user_id'] = $userId;
-                $_SESSION['user'] = $user;
-                //$user->getCity()->getName();
-                Url::redirect('');
-            } else {
-                Url::redirect('user/login');
-            }
+            $_SESSION['logged'] = true;
+            $_SESSION['user_id'] = $userId;
+            $_SESSION['user'] = $user;
+            //$user->getCity()->getName();
+            Url::redirect('');
         } else {
             UserModel::logLoginFail($email);
             Url::redirect('user/login');

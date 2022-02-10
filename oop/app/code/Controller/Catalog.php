@@ -40,6 +40,11 @@ class Catalog extends AbstractController
             'name' => 'year',
             'options' => $years
         ]);
+        $form->input([
+            'name' => 'image',
+            'type' => 'text',
+            'placeholder' => 'Image'
+        ]);
 
         $form->input([
             'name' => 'create',
@@ -79,6 +84,13 @@ class Catalog extends AbstractController
             'type' => 'text',
             'placeholder' => 'Title',
             'value' => $catalog->getTitle()
+        ]);
+
+        $form->input([
+            'name' => 'image',
+            'type' => 'text',
+            'placeholder' => 'Image',
+            'value' => $catalog->getImg()
         ]);
 
         $form->textArea('description', $catalog->getDescription());
@@ -124,7 +136,7 @@ class Catalog extends AbstractController
     public function all()
     {
         $this->data['catalog'] = CatalogModel::getAllActiveAds();
-        $this->render('catalog/list');
+        $this->render('catalog/all');
     }
 
     public function create()
@@ -138,6 +150,7 @@ class Catalog extends AbstractController
         $catalog->setYear($_POST['year']);
         $catalog->setTypeId(1);
         $catalog->setUserId($_SESSION['user_id']);
+        $catalog->setImg($_SESSION['image']);
         $catalog->setIsActive(1);
         $catalog->save();
     }
@@ -153,6 +166,7 @@ class Catalog extends AbstractController
         $catalog->setModelId(1);
         $catalog->setPrice($_POST['price']);
         $catalog->setYear($_POST['year']);
+        $catalog->setImg($_SESSION['image']);
         $catalog->setTypeId(1);
         $catalog->save();
     }

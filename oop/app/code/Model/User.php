@@ -7,7 +7,6 @@ use Helper\DBHelper;
 
 class User extends AbstractModel
 {
-
     private $name;
 
     private $lastName;
@@ -26,9 +25,21 @@ class User extends AbstractModel
 
     private $is_active;
 
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $this->table = 'user';
+    }
+
+    protected function assignData()
+    {
+        $this->data = [
+            'name' => $this->name,
+            'last_name' => $this->lastName,
+            'email' => $this->email,
+            'password' => $this->password,
+            'phone' => $this->phone,
+            'city_id' => $this->cityId
+        ];
     }
 
     public function getName()
@@ -138,36 +149,6 @@ class User extends AbstractModel
         }
     }
 
-    private function create()
-    {
-        $data = [
-            'name' => $this->name,
-            'last_name' => $this->lastName,
-            'email' => $this->email,
-            'password' => $this->password,
-            'phone' => $this->phone,
-            'city_id' => $this->cityId,
-            'is_active' => $this->is_active,
-        ];
-
-        $db = new DBHelper();
-        $db->insert('user', $data)->exec();
-    }
-
-    private function update()
-    {
-        $data = [
-            'name' => $this->name,
-            'last_name' => $this->lastName,
-            'email' => $this->email,
-            'password' => $this->password,
-            'phone' => $this->phone,
-            'city_id' => $this->cityId
-        ];
-
-        $db = new DBHelper();
-        $db->update('user', $data)->where('id', $this->id)->exec();
-    }
 
     public function load($id)
     {
@@ -186,12 +167,6 @@ class User extends AbstractModel
         return $this;
     }
 
-    public function delete()
-    {
-        $db = new DBHelper();
-        $db->delete()->from('user')->where('id', $this->id)->exec();
-    }
-
     public static function emailUnic($email)
     {
         $db = new DBHelper();
@@ -207,6 +182,7 @@ class User extends AbstractModel
             ->from('user')
             ->where('email', $email)
             ->andWhere('password', $pass)
+            ->andWhere('active', 1)
             ->getOne();
 
         if (isset($rez['id'])) {
@@ -228,11 +204,11 @@ class User extends AbstractModel
 
         $total_failed = $rez['login_fails'];
 
-        if($total_failed >= 4){
+        if ($total_failed >= 4) {
             $data = [
                 'login_fails' => 5,
                 'is_active' => 0
-                ];
+            ];
         } else {
             $total_failed++;
             $data = [
@@ -248,7 +224,7 @@ class User extends AbstractModel
         $db = new DBHelper();
         $data = $db->select()->from('user')->get();
         $users = [];
-        foreach ($data as $element){
+        foreach ($data as $element) {
             $user = new User();
             $user->load($element['id']);
             $users[] = $user;

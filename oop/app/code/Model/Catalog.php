@@ -8,7 +8,6 @@ use Helper\DBHelper;
 
 class Catalog extends AbstractModel
 {
-
     private $title;
 
     private $description;
@@ -29,12 +28,23 @@ class Catalog extends AbstractModel
 
     private $is_active;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $this->table = 'ads';
+    }
+
+    protected function assignData()
+    {
+        $this->data = [
+            'title' => $this->title,
+            'description' => $this->description,
+            'manufacturer_id' => $this->manufacturer_id,
+            'model_id' => $this->model_id,
+            'price' => $this->price,
+            'year' => $this->year,
+            'type_id' => $this->type_id,
+            'user_id' => $this->user_id,
+        ];
     }
 
     /**
@@ -197,55 +207,11 @@ class Catalog extends AbstractModel
         $this->is_active = $is_active;
     }
 
-    public function save()
-    {
-        if (!isset($this->id)) {
-            $this->create();
-        } else {
-            $this->update();
-        }
-    }
-
-    private function create()
-    {
-        $data = [
-            'title' => $this->title,
-            'description' => $this->description,
-            'manufacturer_id' => $this->manufacturer_id,
-            'model_id' => $this->model_id,
-            'price' => $this->price,
-            'year' => $this->year,
-            'type_id' => $this->type_id,
-            'user_id' => $this->user_id,
-            'is_active' => $this->is_active
-        ];
-
-        $db = new DBHelper();
-        $db->insert('ads', $data)->exec();
-    }
-
-    private function update()
-    {
-        $data = [
-            'title' => $this->title,
-            'description' => $this->description,
-            'manufacturer_id' => $this->manufacturer_id,
-            'model_id' => $this->model_id,
-            'price' => $this->price,
-            'year' => $this->year,
-            'type_id' => $this->type_id,
-            'user_id' => $this->user_id,
-        ];
-
-        $db = new DBHelper();
-        $db->update('ads', $data)->where('id', $this->id)->exec();
-    }
-
     public function load($id)
     {
         $db = new DBHelper();
         $data = $db->select()->from('ads')->where('id', $id)->getOne();
-        if(!empty($data)) {
+        if (!empty($data)) {
             $this->id = $data['id'];
             $this->title = $data['title'];
             $this->description = $data['description'];
@@ -266,8 +232,22 @@ class Catalog extends AbstractModel
         $db = new DBHelper();
         $data = $db->select()->from('ads')->where('id', $id)->get();
         $ads = [];
-        foreach ($data as $element){
+        foreach ($data as $element) {
             $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
+    }
+
+    public static function getAllAds()
+    {
+        $db = new DBHelper();
+        $data = $db->select()->from('ads')->get();
+        $ads = [];
+
+        foreach ($data as $element) {
+            $ad = new Catalog();
             $ad->load($element['id']);
             $ads[] = $ad;
         }
@@ -276,11 +256,11 @@ class Catalog extends AbstractModel
 
     public static function getAllActiveAds()
     {
-        $data = new Catalog();
-        $ids = $data->isActive('ads');
+        $db = new DBHelper();
+        $data = $db->select('id')->from('ads')->where('is_active', 1)->get();
         $ads = [];
 
-        foreach ($ids as $id){
+        foreach ($data as $id) {
             $ad = new Catalog();
             $ad->load($id['id']);
             $ads[] = $ad;

@@ -1,17 +1,53 @@
 <?php
 
 namespace Core;
+
 use Helper\DBHelper;
 
 class AbstractModel
 {
-    private $id;
+    protected $data;
 
-    public function isActive($table)
+    protected $table;
+
+    protected $id;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function save()
+    {
+        $this->assignData();
+        if (!isset($this->id)) {
+            $this->create();
+        } else {
+            $this->update();
+        }
+    }
+
+    protected function create()
     {
         $db = new DBHelper();
-        $data = $db->select('id')->from($table)->where('is_active', 1)->get();
-        return $data;
+        $db->insert($this->table, $this->data)->exec();
+    }
+
+    protected function update()
+    {
+        $db = new DBHelper();
+        $db->update($this->table, $this->data)->where('id', $this->id)->exec();
+    }
+
+    protected function assignData()
+    {
+        $this->data = [];
+    }
+
+    public function delete()
+    {
+        $db = new DBHelper();
+        $db->delete()->from($this->table)->where('id', $this->id)->exec();
     }
 
 }
