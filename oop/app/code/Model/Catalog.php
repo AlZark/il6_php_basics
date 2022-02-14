@@ -30,7 +30,7 @@ class Catalog extends AbstractModel
 
     public function __construct()
     {
-        $this->table = 'ads';
+        $this->table = 'ads'; //database table name
     }
 
     protected function assignData()

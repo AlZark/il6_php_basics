@@ -1,5 +1,3 @@
-</div>
-
 <div class="list-wrapper">
     <h1><?= $this->data['catalog']->getTitle(); ?></h1>
 

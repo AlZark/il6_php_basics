@@ -2,11 +2,13 @@
 
 namespace Controller;
 
+use Core\AbstractController;
 use Helper\FormHelper;
 use Helper\Validator;
 use Model\User as UserModel;
+use Helper\Url;
 
-class User
+class User extends AbstractController
 {
 
     public function register()
@@ -49,7 +51,31 @@ class User
             'value' => 'Create',
         ]);
 
-        echo $form->getForm();
+        $this->data['form'] = $form->getForm();
+        $this->render('user/register');
+    }
+
+    public function login()
+    {
+        $form = new FormHelper('user/check', 'POST');
+        $form->input([
+            'name' => 'email',
+            'type' => 'email',
+            'placeholder' => 'Email'
+        ]);
+        $form->input([
+            'name' => 'password',
+            'type' => 'password',
+            'placeholder' => '********'
+        ]);
+        $form->input([
+            'name' => 'login',
+            'type' => 'submit',
+            'value' => 'Login'
+        ]);
+
+        $this->data['form'] = $form->getForm();
+        $this->render('user/login');
     }
 
     public function create()
@@ -72,5 +98,27 @@ class User
         }
     }
 
+    public function check()
+    {
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
+        $userId = UserModel::checkLoginCredentials($email, $password);
+        echo $userId;
 
+        if ($userId) {
+            $user = new UserModel();
+            $user->load($userId);
+            $_SESSION['logged'] = true;
+            $_SESSION['user_id'] = $userId;
+            $_SESSION['user'] = $user;
+            Url::redirect('');
+        }
+    }
+
+
+    public function logout()
+    {
+        session_destroy();
+        Url::redirect('user/login');
+    }
 }

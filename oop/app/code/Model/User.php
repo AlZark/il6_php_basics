@@ -139,17 +139,6 @@ class User extends AbstractModel
         $this->is_active = $is_active;
     }
 
-
-    public function save()
-    {
-        if (!isset($this->id)) {
-            $this->create();
-        } else {
-            $this->update();
-        }
-    }
-
-
     public function load($id)
     {
         $db = new DBHelper();
@@ -167,13 +156,6 @@ class User extends AbstractModel
         return $this;
     }
 
-    public static function emailUnic($email)
-    {
-        $db = new DBHelper();
-        $rez = $db->select()->from('user')->where('email', $email)->get();
-        return empty($rez);
-    }
-
     public static function checkLoginCredentials($email, $pass)
     {
         $db = new DBHelper();
@@ -182,7 +164,7 @@ class User extends AbstractModel
             ->from('user')
             ->where('email', $email)
             ->andWhere('password', $pass)
-            ->andWhere('active', 1)
+            ->andWhere('is_active', 1)
             ->getOne();
 
         if (isset($rez['id'])) {

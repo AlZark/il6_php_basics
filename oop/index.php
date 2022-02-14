@@ -1,5 +1,4 @@
 <?php
-
 include 'vendor/autoload.php';
 include 'config.php';
 session_start();
@@ -11,7 +10,6 @@ if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
     $class = ucfirst($path[0]);
     $method = $path[1];
     $param = $path[2];
-    //echo 'app/code/Controller/'.$class.'.php';
 
     $class = '\Controller\\'.$class;
     if(class_exists($class)) {

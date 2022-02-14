@@ -31,15 +31,14 @@ class DBHelper
         return $this;
     }
 
-    public function update($table)
+    public function update($table, $data)
     {
-        $values = "";
         $this->sql .= 'UPDATE ' . $table . ' SET ';
-        foreach ($table as $key => $value) {
-            $values .= $key . ' = ' . $value . ', ';
+        $values = [];
+        foreach ($data as $column => $value) {
+            $values[] = "$column = '$value'";
         }
-        $this->sql .= rtrim(', ', $values);
-
+        $this->sql .= implode(',', $values);
         return $this;
     }
 
@@ -54,6 +53,12 @@ class DBHelper
     public function where($field, $value, $operator = '=')
     {
         $this->sql .= 'WHERE ' . $field . $operator . '"' . $value . '"';
+        return $this;
+    }
+
+    public function andWhere($field, $value, $operator = '=')
+    {
+        $this->sql .= ' AND ' . $field . $operator . '"' . $value . '"';
         return $this;
     }
 
@@ -81,11 +86,3 @@ class DBHelper
         return $data[0];
     }
 }
-
-//3. Showing users boats
-//4. Update user creation with city select
-//5. Show only active customers
-//6. Ability to activate deactivate customers
-//7. Ability to edit boat
-//8. Ability to delete boat
-//9. Build router

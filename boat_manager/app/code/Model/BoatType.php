@@ -2,21 +2,12 @@
 
 namespace Model;
 
+use Core\AbstractModel;
 use Helper\DBHelper;
 
-class BoatType
+class BoatType extends AbstractModel
 {
-    private $id;
-
     private $name;
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return mixed
@@ -34,23 +25,16 @@ class BoatType
         $this->name = $name;
     }
 
-    public function save()
+    public function __construct()
     {
-        if (!isset($this->id)) {
-            $this->create();
-        } else {
-            $this->update();
-        }
+        $this->table = 'type';
     }
 
-    public function create()
+    protected function assignData()
     {
-        $data = [
+        $this->data = [
             'name' => $this->name
         ];
-
-        $sql = new DBHelper();
-        $sql->insert('type', $data)->exec();
     }
 
     public static function getTypes()

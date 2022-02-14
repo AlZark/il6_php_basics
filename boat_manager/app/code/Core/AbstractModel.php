@@ -6,11 +6,12 @@ use Helper\DBHelper;
 
 class AbstractModel
 {
-    protected $data;
+
+    protected $id;
 
     protected $table;
 
-    protected $id;
+    protected $data;
 
     public function getId()
     {
@@ -20,9 +21,9 @@ class AbstractModel
     public function save()
     {
         $this->assignData();
-        if (!isset($this->id)) {
+        if(!isset($this->id)){
             $this->create();
-        } else {
+        }else{
             $this->update();
         }
     }
@@ -33,7 +34,7 @@ class AbstractModel
         $db->insert($this->table, $this->data)->exec();
     }
 
-    protected function update()
+    public function update()
     {
         $db = new DBHelper();
         $db->update($this->table, $this->data)->where('id', $this->id)->exec();
@@ -42,19 +43,6 @@ class AbstractModel
     protected function assignData()
     {
         $this->data = [];
-    }
-
-    public function delete()
-    {
-        $db = new DBHelper();
-        $db->delete()->from($this->table)->where('id', $this->id)->exec();
-    }
-
-    public static function isValueUnique($column, $value, $table)
-    {
-        $db = new DBHelper();
-        $rez = $db->select()->from($table)->where($column, $value)->get();
-        return empty($rez);
     }
 
 }

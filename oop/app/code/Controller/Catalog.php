@@ -70,7 +70,6 @@ class Catalog extends AbstractController
             Url::redirect('');
         }
 
-
         $form = new FormHelper('catalog/update', 'POST');
 
         $form->input([

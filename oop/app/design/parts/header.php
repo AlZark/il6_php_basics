@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Cars Cars Cars, I'm looking for some good time</title>
-        <link rel="stylesheet" href="<?php echo BASE_URL.'css/styles.css'; ?>">
+        <link rel="stylesheet" href="<?php echo $this->Url('css/styles.css'); ?>">
     </head>
 <body>
     <header>

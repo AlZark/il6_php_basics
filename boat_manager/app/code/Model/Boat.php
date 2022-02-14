@@ -2,16 +2,16 @@
 
 namespace Model;
 
+use Core\AbstractModel;
 use Helper\DBHelper;
 use Helper\FormHelper;
 
-class Boat
+class Boat extends AbstractModel
 {
-    private $id;
 
     private $name;
 
-    private $model;
+    private $model_id;
 
     private $length;
 
@@ -36,14 +36,14 @@ class Boat
         $this->name = $name;
     }
 
-    public function getModel()
+    public function getModelId()
     {
-        return $this->model;
+        return $this->model_id;
     }
 
-    public function setModel($model)
+    public function setModelId($model_id)
     {
-        $this->model = $model;
+        $this->model_id = $model_id;
     }
 
     public function getLength()
@@ -86,21 +86,34 @@ class Boat
         $this->user_id = $user_id;
     }
 
-
-    public function addBoat()
+    public function __construct()
     {
-        $data = [
+        $this->table = 'boat';
+    }
+
+    public function assignData()
+    {
+        $this->data=[
+            'id' => $this->id,
             'name' => $this->name,
-            'model' => $this->model,
+            'model_id' => $this->model_id,
             'length' => $this->length,
             'width' => $this->width,
             'depth' => $this->depth,
             'user_id' => $this->user_id
         ];
-
-        $db = new DBHelper();
-        $db->insert('boat', $data)->exec();
     }
 
-
+    public function load($id)
+    {
+        $db = new DBHelper();
+        $data = $db->select()->from('boat')->where('id', $id)->getOne();
+        $this->id = $data['id'];
+        $this->name = $data['name'];
+        $this->model_id = $data['model_id'];
+        $this->length = $data['length'];
+        $this->width = $data['width'];
+        $this->depth = $data['depth'];
+        $this->user_id = $data['user_id'];
+    }
 }

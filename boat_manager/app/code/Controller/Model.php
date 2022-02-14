@@ -2,15 +2,22 @@
 
 namespace Controller;
 
+use Core\AbstractController;
 use Helper\Validator;
 use Model\BoatModel;
 use Helper\FormHelper;
 use Model\BoatType;
+use Helper\Url;
 
-class Model
+class Model extends AbstractController
 {
     public function add()
     {
+
+        if (!$this->isUserLoggedIn()) {
+            Url::redirect('user/login');
+        }
+
         $form = new FormHelper('model/create', 'POST');
 
         $form->input([
@@ -35,7 +42,8 @@ class Model
 
         $form->submit('Create', 'create');
 
-        echo $form->getForm();
+        $this->data['form'] = $form->getForm();
+        $this->render('model/add');
     }
 
     public function create()
