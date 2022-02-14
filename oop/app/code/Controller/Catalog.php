@@ -48,6 +48,7 @@ class Catalog extends AbstractController
         $form->input([
             'name' => 'vin',
             'type' => 'text',
+            'maxlength' => '17',
             'placeholder' => 'VIN Code'
         ]);
 
@@ -70,7 +71,7 @@ class Catalog extends AbstractController
         }
 
         $catalog = new CatalogModel();
-        $catalog->load( $id);
+        $catalog->load($id);
         if ($_SESSION['user_id'] != $catalog->getUserId()) {
             Url::redirect('');
         }
@@ -99,6 +100,7 @@ class Catalog extends AbstractController
         $form->input([
             'name' => 'vin',
             'type' => 'text',
+            'maxlength' => '17',
             'placeholder' => 'VIN Code',
             'value' => $catalog->getVin()
         ]);
@@ -138,9 +140,9 @@ class Catalog extends AbstractController
         $catalog = new CatalogModel();
 
         $this->data['catalog'] = $catalog->loadBySlug($slug);
-        if($this->data['catalog']) {
+        if ($this->data['catalog']) {
             $this->render('catalog/view');
-        }else{
+        } else {
             echo 404;
         }
 
@@ -183,7 +185,7 @@ class Catalog extends AbstractController
     public function all()
     {
         $this->filter();
-        if(!isset($_GET['submit'])) {
+        if (!isset($_GET['submit'])) {
             $this->data['catalog'] = CatalogModel::getAllActiveAds();
         } else {
             $this->data['catalog'] = CatalogModel::getAllActiveAds($_GET['order'], $_GET['search_by']);
@@ -195,7 +197,7 @@ class Catalog extends AbstractController
     {
         $date = Date("Y-m-d H:i:s");
         $slug = Url::generateSlug($_POST['title']);
-        while (!CatalogModel::isValueUnique('slug', $slug, 'ads')){
+        while (!CatalogModel::isValueUnique('slug', $slug, 'ads')) {
             $slug .= rand(0, 99);
         }
         $catalog = new CatalogModel();
