@@ -18,4 +18,9 @@ class Url
         }
         return $link;
     }
+
+    public static function generateSlug($title)
+    {
+        return $slug = str_replace(' ', '-', strtolower($title));
+    }
 }

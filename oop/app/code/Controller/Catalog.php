@@ -65,7 +65,7 @@ class Catalog extends AbstractController
         }
 
         $catalog = new CatalogModel();
-        $catalog->load($id);
+        $catalog->load('id', $id);
         if ($_SESSION['user_id'] != $catalog->getUserId()) {
             Url::redirect('');
         }
@@ -122,10 +122,10 @@ class Catalog extends AbstractController
 
     }
 
-    public function show($id)
+    public function show($slug)
     {
         $catalog = new CatalogModel();
-        $catalog->load($id);
+        $catalog->load('slug', $slug);
 
         $this->data['catalog'] = $catalog;
         $this->render('catalog/view');
@@ -140,6 +140,10 @@ class Catalog extends AbstractController
 
     public function create()
     {
+        $slug = Url::generateSlug($_POST['title']);
+        while (!CatalogModel::isValueUnique('slug', $slug, 'ads')){
+            $slug .= rand(0, 99);
+        }
         $catalog = new CatalogModel();
         $catalog->setTitle($_POST['title']);
         $catalog->setDescription($_POST['description']);
@@ -149,8 +153,9 @@ class Catalog extends AbstractController
         $catalog->setYear($_POST['year']);
         $catalog->setTypeId(1);
         $catalog->setUserId($_SESSION['user_id']);
-        $catalog->setImg($_SESSION['image']);
+        $catalog->setImg($_POST['image']);
         $catalog->setIsActive(1);
+        $catalog->setSlug($slug);
         $catalog->save();
     }
 
@@ -158,7 +163,7 @@ class Catalog extends AbstractController
     {
         $catalogId = $_POST['id'];
         $catalog = new CatalogModel();
-        $catalog->load($catalogId);
+        $catalog->load('id',$catalogId);
         $catalog->setTitle($_POST['title']);
         $catalog->setDescription($_POST['description']);
         $catalog->setManufacturerId(1);

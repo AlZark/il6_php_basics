@@ -28,6 +28,8 @@ class Catalog extends AbstractModel
 
     private $is_active;
 
+    private $slug;
+
     public function __construct()
     {
         $this->table = 'ads'; //database table name
@@ -44,6 +46,9 @@ class Catalog extends AbstractModel
             'year' => $this->year,
             'type_id' => $this->type_id,
             'user_id' => $this->user_id,
+            'is_active' => $this->is_active,
+            'img' => $this->img,
+            'slug' => $this->slug,
         ];
     }
 
@@ -207,10 +212,26 @@ class Catalog extends AbstractModel
         $this->is_active = $is_active;
     }
 
-    public function load($id)
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    public function load($column, $value)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->where('id', $id)->getOne();
+        $data = $db->select()->from('ads')->where($column, $value)->getOne();
         if (!empty($data)) {
             $this->id = $data['id'];
             $this->title = $data['title'];
@@ -223,6 +244,7 @@ class Catalog extends AbstractModel
             $this->is_active = $data['is_active'];
             $this->user_id = $data['user_id'];
             $this->img = $data['img'];
+            $this->slug = $data['slug'];
         }
         return $this;
     }
@@ -234,7 +256,7 @@ class Catalog extends AbstractModel
         $ads = [];
         foreach ($data as $element) {
             $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
-            $ad->load($element['id']);
+            $ad->load('id',$element['id']);
             $ads[] = $ad;
         }
         return $ads;
@@ -248,7 +270,7 @@ class Catalog extends AbstractModel
 
         foreach ($data as $element) {
             $ad = new Catalog();
-            $ad->load($element['id']);
+            $ad->load('id', $element['id']);
             $ads[] = $ad;
         }
         return $ads;
@@ -257,12 +279,12 @@ class Catalog extends AbstractModel
     public static function getAllActiveAds()
     {
         $db = new DBHelper();
-        $data = $db->select('id')->from('ads')->where('is_active', 1)->get();
+        $data = $db->select('slug')->from('ads')->where('is_active', 1)->get();
         $ads = [];
 
-        foreach ($data as $id) {
+        foreach ($data as $slug) {
             $ad = new Catalog();
-            $ad->load($id['id']);
+            $ad->load('slug', $slug['slug']);
             $ads[] = $ad;
         }
         return $ads;

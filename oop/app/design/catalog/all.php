@@ -4,7 +4,7 @@
         <?php
         foreach ($this->data['catalog'] as $catalog): ?>
             <div class="box">
-                <h4><a href="<?php echo $this->Url('catalog/show', $catalog->getId()); ?>">
+                <h4><a href="<?php echo $this->Url('catalog/show', $catalog->getSlug()); ?>">
                         <?php echo $catalog->getTitle() ?></a></h4>
 
                 <?php $img = $catalog->getImg();
