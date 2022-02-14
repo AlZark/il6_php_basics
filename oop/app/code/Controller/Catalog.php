@@ -45,6 +45,11 @@ class Catalog extends AbstractController
             'type' => 'text',
             'placeholder' => 'Image'
         ]);
+        $form->input([
+            'name' => 'vin',
+            'type' => 'text',
+            'placeholder' => 'VIN Code'
+        ]);
 
         $form->input([
             'name' => 'create',
@@ -65,7 +70,7 @@ class Catalog extends AbstractController
         }
 
         $catalog = new CatalogModel();
-        $catalog->load('id', $id);
+        $catalog->load( $id);
         if ($_SESSION['user_id'] != $catalog->getUserId()) {
             Url::redirect('');
         }
@@ -90,6 +95,12 @@ class Catalog extends AbstractController
             'type' => 'text',
             'placeholder' => 'Image',
             'value' => $catalog->getImg()
+        ]);
+        $form->input([
+            'name' => 'vin',
+            'type' => 'text',
+            'placeholder' => 'VIN Code',
+            'value' => $catalog->getVin()
         ]);
 
         $form->textArea('description', $catalog->getDescription());
@@ -125,21 +136,64 @@ class Catalog extends AbstractController
     public function show($slug)
     {
         $catalog = new CatalogModel();
-        $catalog->load('slug', $slug);
 
-        $this->data['catalog'] = $catalog;
-        $this->render('catalog/view');
+        $this->data['catalog'] = $catalog->loadBySlug($slug);
+        if($this->data['catalog']) {
+            $this->render('catalog/view');
+        }else{
+            echo 404;
+        }
 
+    }
+
+    public function filter()
+    {
+        $form = new FormHelper('catalog/all', 'GET');
+
+        $orderBy = [
+            'created_at ASC' => 'Creation date asc',
+            'created_at DESC' => 'Creation date desc',
+            'price ASC' => 'Price asc',
+            'price DESC' => 'Price desc',
+            'title ASC' => 'Name A-Z',
+            'title DESC' => 'Name Z-A',
+        ];
+
+        $form->input([
+            'name' => 'search_by',
+            'type' => 'text',
+            'placeholder' => 'Search',
+            'value' => $_GET['search_by']
+        ]);
+
+        $form->select([
+            'name' => 'order',
+            'options' => $orderBy,
+            'selected' => $_GET['order'],
+        ]);
+        $form->input([
+            'name' => 'submit',
+            'type' => 'submit',
+            'value' => 'Apply'
+        ]);
+
+        $this->data['form'] = $form->getForm();
     }
 
     public function all()
     {
-        $this->data['catalog'] = CatalogModel::getAllActiveAds();
+        $this->filter();
+        if(!isset($_GET['submit'])) {
+            $this->data['catalog'] = CatalogModel::getAllActiveAds();
+        } else {
+            $this->data['catalog'] = CatalogModel::getAllActiveAds($_GET['order'], $_GET['search_by']);
+        }
         $this->render('catalog/all');
     }
 
     public function create()
     {
+        $date = Date("Y-m-d H:i:s");
         $slug = Url::generateSlug($_POST['title']);
         while (!CatalogModel::isValueUnique('slug', $slug, 'ads')){
             $slug .= rand(0, 99);
@@ -156,6 +210,8 @@ class Catalog extends AbstractController
         $catalog->setImg($_POST['image']);
         $catalog->setIsActive(1);
         $catalog->setSlug($slug);
+        $catalog->setCreatedAt($date);
+        $catalog->setVin($_POST['vin']);
         $catalog->save();
     }
 
@@ -163,7 +219,7 @@ class Catalog extends AbstractController
     {
         $catalogId = $_POST['id'];
         $catalog = new CatalogModel();
-        $catalog->load('id',$catalogId);
+        $catalog->load($catalogId);
         $catalog->setTitle($_POST['title']);
         $catalog->setDescription($_POST['description']);
         $catalog->setManufacturerId(1);
@@ -172,6 +228,7 @@ class Catalog extends AbstractController
         $catalog->setYear($_POST['year']);
         $catalog->setImg($_SESSION['image']);
         $catalog->setTypeId(1);
+        $catalog->setVin($_POST['vin']);
         $catalog->save();
     }
 }

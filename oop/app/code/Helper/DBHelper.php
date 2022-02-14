@@ -39,7 +39,7 @@ class DBHelper
 
     public function andWhere($field, $value, $operator = '=')
     {
-        $this->sql .= ' AND ' . $field . $operator . '"' . $value . '"';
+        $this->sql .= ' AND ' . $field . ' ' . $operator . ' "' . $value . '"';
         return $this;
     }
 
@@ -57,19 +57,18 @@ class DBHelper
 
     public function get()
     {
-        $rez = $this->conn->query($this->sql);
+        $rez = $this->exec();
         return $rez->fetchAll();
     }
 
     public function exec()
     {
-        $this->conn->query($this->sql);
+        return $this->conn->query($this->sql);
     }
-
 
     public function getOne()
     {
-        $rez = $this->conn->query($this->sql);
+        $rez = $this->exec();
         $data = $rez->fetchAll();
         if (!empty($data)) {
             return $data[0];
@@ -77,7 +76,6 @@ class DBHelper
             return [];
         }
     }
-
 
     public function insert($table, $data)
     {
@@ -101,6 +99,12 @@ class DBHelper
     public function limit($number)
     {
         $this->sql .= ' LIMIT ' . $number;
+        return $this;
+    }
+
+    public function order($order)
+    {
+        $this->sql .= ' ORDER BY ' . $order;
         return $this;
     }
 
