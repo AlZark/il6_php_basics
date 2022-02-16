@@ -10,8 +10,20 @@ use Core\AbstractController;
 class Catalog extends AbstractController
 {
 
+    public function index()
+    {
+        $this->filter();
+        if (!isset($_GET['submit'])) {
+            $this->data['catalog'] = CatalogModel::getAllActiveAds();
+        } else {
+            $this->data['catalog'] = CatalogModel::getAllActiveAds($_GET['order'], $_GET['search_by']);
+        }
+        $this->render('catalog/all');
+    }
+
     public function add()
     {
+        //TODO add type_id, manudacturer_id, model_id
 
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
@@ -65,7 +77,7 @@ class Catalog extends AbstractController
 
     public function edit($id)
     {
-
+        //TODO add type_id, manudacturer_id, model_id
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
         }
@@ -132,7 +144,6 @@ class Catalog extends AbstractController
 
         $this->data['form'] = $form->getForm();
         $this->render('catalog/edit');
-
     }
 
     public function show($slug)
@@ -141,11 +152,11 @@ class Catalog extends AbstractController
 
         $this->data['catalog'] = $catalog->loadBySlug($slug);
         if ($this->data['catalog']) {
+            $this->data['related'] = $catalog->getRelatedAds($this->data['catalog']->getId(), $this->data['catalog']->getModelId(), $this->data['catalog']->getTitle());
             $this->render('catalog/view');
         } else {
-            echo 404;
+            $this->render('parts/404');
         }
-
     }
 
     public function filter()
@@ -159,7 +170,7 @@ class Catalog extends AbstractController
             'price DESC' => 'Price desc',
             'title ASC' => 'Name A-Z',
             'title DESC' => 'Name Z-A',
-        ];
+        ];//TODO fix this fucking mess
 
         $form->input([
             'name' => 'search_by',
@@ -180,17 +191,6 @@ class Catalog extends AbstractController
         ]);
 
         $this->data['form'] = $form->getForm();
-    }
-
-    public function all()
-    {
-        $this->filter();
-        if (!isset($_GET['submit'])) {
-            $this->data['catalog'] = CatalogModel::getAllActiveAds();
-        } else {
-            $this->data['catalog'] = CatalogModel::getAllActiveAds($_GET['order'], $_GET['search_by']);
-        }
-        $this->render('catalog/all');
     }
 
     public function create()
@@ -233,4 +233,17 @@ class Catalog extends AbstractController
         $catalog->setVin($_POST['vin']);
         $catalog->save();
     }
+
+    public function newestAds()
+    {
+        $this->data['catalog'] = CatalogModel::getFiveAds('created_at');
+        $this->render('parts/home');
+    }
+
+    public function mostViews() //TODO merge with newestAds function
+    {
+        $this->data['catalog'] = CatalogModel::getFiveAds('views');
+        $this->render('parts/home');
+    }
+
 }

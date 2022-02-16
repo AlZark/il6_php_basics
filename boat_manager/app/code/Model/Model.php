@@ -83,6 +83,20 @@ class BoatModel extends AbstractModel
 
     public function load($id)
     {
+        $data = new DBHelper();
+        $data->select()->from('model')->where('id', $id)->getOne();
+        $this->id = $data['id'];
+        $this->id = $data['name'];
+
+    }
+
+    public static function getAllModels()
+    {
+        $data = new DBHelper();
+        $rez = $data->select('id')->from('model')->get();
+        foreach ($rez as $id){
+            $id =
+        }
 
     }
 

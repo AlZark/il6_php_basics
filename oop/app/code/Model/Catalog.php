@@ -34,6 +34,9 @@ class Catalog extends AbstractModel
 
     private $vin;
 
+    private $views;
+
+
     public function __construct()
     {
         $this->table = 'ads'; //database table name
@@ -54,7 +57,8 @@ class Catalog extends AbstractModel
             'img' => $this->img,
             'slug' => $this->slug,
             'created_at' => $this->created_at,
-            'vin' => $this->vin
+            'vin' => $this->vin,
+            'views' => $this->views
         ];
     }
 
@@ -266,6 +270,22 @@ class Catalog extends AbstractModel
         $this->vin = $vin;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getViews()
+    {
+        return $this->views;
+    }
+
+    /**
+     * @param mixed $views
+     */
+    public function setViews($views)
+    {
+        $this->views = $views;
+    }
+
     public function load($id)
     {
         $db = new DBHelper();
@@ -285,6 +305,7 @@ class Catalog extends AbstractModel
             $this->slug = $data['slug'];
             $this->created_at = $data['created_at'];
             $this->vin = $data['vin'];
+            $this->views = $data['views'];
         }
         return $this;
     }
@@ -307,7 +328,6 @@ class Catalog extends AbstractModel
         $db = new DBHelper();
         $data = $db->select()->from('ads')->get();
         $ads = [];
-
         foreach ($data as $element) {
             $ad = new Catalog();
             $ad->load($element['id']);
@@ -319,9 +339,10 @@ class Catalog extends AbstractModel
     public function loadBySlug($slug)
     {
         $db = new DBHelper();
-        $rez = $db->select()->from('ads')->where('slug', $slug)->getOne();
+        $rez = $db->select('id')->from('ads')->where('slug', $slug)->getOne();
         if (!empty($rez)) {
             $this->load($rez['id']);
+            self::logView($rez['id']);
             return $this;
         } else {
             return false;
@@ -349,4 +370,47 @@ class Catalog extends AbstractModel
         return $ads;
     }
 
+    public static function getFiveAds($data)
+    {
+        $type = $data . ' DESC';
+        $db = new DBHelper();
+        $data = $db->select('id, created_at')->from('ads')->order($type)->limit(5)->get();
+        $ads = [];
+        foreach ($data as $element) {
+            $ad = new Catalog();
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
+    }
+
+    public static function getRelatedAds($id, $model, $title)
+    {
+        $db = new DBHelper();
+        $data = $db
+            ->select('id, created_at')
+            ->from('ads')
+            ->where('model_id', $model)
+            ->andWhere('id', $id, ' != ')
+            ->orWhere('title', '%' . $title . '%', ' LIKE ')
+            ->andWhere('id', $id, ' != ')
+            ->limit(5)
+            ->get();
+        $ads = [];
+        foreach ($data as $element) {
+            $ad = new Catalog();
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
+    }
+
+    public static function logView($id)
+    {
+        $catalog = new Catalog();
+        $catalog->load($id);
+        $views = $catalog->getViews();
+        $catalog->setViews($views + 1);
+        $catalog->save();
+    }
 }

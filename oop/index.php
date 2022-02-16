@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Vilnius');
 include 'vendor/autoload.php';
 include 'config.php';
 session_start();
@@ -18,10 +19,10 @@ if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
             if(isset($path[2])) {
                 $obj->$method($path[2]);
             }else{
-                $obj->$method();
+                $obj->index();
             }
         }else{
-            echo '404';
+            $obj->index();
         }
     }else{
         echo '404';
