@@ -5,10 +5,6 @@
         <h3>Filters</h3>
         <?php echo $this->data['form']; ?>
     </div>
-    <div>
-        <h3>Search</h3>
-        <?php echo $this->data['filter']; ?>
-    </div>
 
     <ul>
         <?php

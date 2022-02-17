@@ -1,5 +1,5 @@
 <div class="list-wrapper">
-    <h1><?= $this->data['catalog']->getTitle(); ?></h1>
+    <h1><?= $this->data['catalog']->getTitle(); //TODO Add Maufacturer, Type, Model here ?></h1>
 
     <?php $img = $this->data['catalog']->getImg();
     if ($img != NULL) { ?>
@@ -13,8 +13,7 @@
     <h2>Related ads</h2>
 
     <ul>
-        <?php
-        foreach ($this->data['related'] as $ad): ?>
+        <?php foreach ($this->data['related'] as $ad): ?>
             <div class="box">
                 <h4><a href="<?php echo $this->Url('catalog/show', $ad->getSlug()); ?>">
                         <?php echo $ad->getTitle() ?></a></h4>

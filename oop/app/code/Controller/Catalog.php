@@ -116,7 +116,6 @@ class Catalog extends AbstractController
 
     public function edit($id)
     {
-        //TODO add type_id, manudacturer_id, model_id
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
         }
@@ -325,5 +324,4 @@ class Catalog extends AbstractController
         $this->data['catalog'] = CatalogModel::getFiveAds('views');
         $this->render('parts/home');
     }
-
 }
