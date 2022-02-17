@@ -12,11 +12,7 @@ use Core\AbstractController;
 class User extends AbstractController
 {
 
-    public function index()
-    {
-        $this->data['users'] = UserModel::getAllUsers();
-        $this->render('user/list');
-    }
+
 
     public function show($id)
     {

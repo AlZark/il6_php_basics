@@ -56,7 +56,4 @@ class AbstractModel
         $rez = $db->select()->from($table)->where($column, $value)->get();
         return empty($rez);
     }
-
-
-
 }

@@ -19,7 +19,7 @@ if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
             if(isset($path[2])) {
                 $obj->$method($path[2]);
             }else{
-                $obj->index();
+                $obj->$method();
             }
         }else{
             $obj->index();

@@ -5,6 +5,9 @@ namespace Controller;
 use Helper\FormHelper;
 use Helper\Url;
 use Model\Catalog as CatalogModel;
+use Model\Manufacturer;
+use Model\Model;
+use Model\Type;
 use Core\AbstractController;
 
 class Catalog extends AbstractController
@@ -23,7 +26,6 @@ class Catalog extends AbstractController
 
     public function add()
     {
-        //TODO add type_id, manudacturer_id, model_id
 
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
@@ -52,8 +54,45 @@ class Catalog extends AbstractController
             'name' => 'year',
             'options' => $years
         ]);
+
+        $manufacturers = Manufacturer::getManufacturers();
+        $options = [];
+        foreach ($manufacturers as $manufacturer) {
+            $id = $manufacturer->getId();
+            $options[$id] = $manufacturer->getName();
+        }
+
+        $form->select([
+            'name' => 'manufacturer_id',
+            'options' => $options
+        ]);
+
+        $models = Model::getModels();
+        $options = [];
+        foreach ($models as $model) {
+            $id = $model->getId();
+            $options[$id] = $model->getName();
+        }
+
+        $form->select([
+            'name' => 'model_id',
+            'options' => $options
+        ]);
+
+        $types = Type::getTypes();
+        $options = [];
+        foreach ($types as $type) {
+            $id = $type->getId();
+            $options[$id] = $type->getName();
+        }
+
+        $form->select([
+            'name' => 'type_id',
+            'options' => $options
+        ]);
+
         $form->input([
-            'name' => 'image',
+            'name' => 'img',
             'type' => 'text',
             'placeholder' => 'Image'
         ]);
@@ -103,20 +142,6 @@ class Catalog extends AbstractController
             'value' => $catalog->getTitle()
         ]);
 
-        $form->input([
-            'name' => 'image',
-            'type' => 'text',
-            'placeholder' => 'Image',
-            'value' => $catalog->getImg()
-        ]);
-        $form->input([
-            'name' => 'vin',
-            'type' => 'text',
-            'maxlength' => '17',
-            'placeholder' => 'VIN Code',
-            'value' => $catalog->getVin()
-        ]);
-
         $form->textArea('description', $catalog->getDescription());
         $form->input([
             'name' => 'price',
@@ -134,6 +159,60 @@ class Catalog extends AbstractController
             'name' => 'year',
             'options' => $years,
             'selected' => $catalog->getYear()
+        ]);
+
+        $manufacturers = Manufacturer::getManufacturers();
+        $options = [];
+        foreach ($manufacturers as $manufacturer) {
+            $id = $manufacturer->getId();
+            $options[$id] = $manufacturer->getName();
+        }
+
+        $form->select([
+            'name' => 'manufacturer_id',
+            'options' => $options,
+            'selected' => $catalog->getManufacturerId()
+        ]);
+
+        $models = Model::getModels();
+        $options = [];
+        foreach ($models as $model) {
+            $id = $model->getId();
+            $options[$id] = $model->getName();
+        }
+
+        $form->select([
+            'name' => 'model_id',
+            'options' => $options,
+            'selected' => $catalog->getModelId()
+        ]);
+
+        $types = Type::getTypes();
+        $options = [];
+        foreach ($types as $type) {
+            $id = $type->getId();
+            $options[$id] = $type->getName();
+        }
+
+        $form->select([
+            'name' => 'type_id',
+            'options' => $options,
+            'selected' => $catalog->getTypeId()
+        ]);
+
+        $form->input([
+            'name' => 'img',
+            'type' => 'text',
+            'placeholder' => 'Image',
+            'value' => $catalog->getImg()
+        ]);
+
+        $form->input([
+            'name' => 'vin',
+            'type' => 'text',
+            'maxlength' => '17',
+            'placeholder' => 'VIN Code',
+            'value' => $catalog->getVin()
         ]);
 
         $form->input([
@@ -203,17 +282,18 @@ class Catalog extends AbstractController
         $catalog = new CatalogModel();
         $catalog->setTitle($_POST['title']);
         $catalog->setDescription($_POST['description']);
-        $catalog->setManufacturerId(1);
-        $catalog->setModelId(1);
+        $catalog->setManufacturerId($_POST['manufacturer_id']);
+        $catalog->setModelId($_POST['model_id']);
         $catalog->setPrice($_POST['price']);
         $catalog->setYear($_POST['year']);
-        $catalog->setTypeId(1);
+        $catalog->setTypeId($_POST['type_id']);
         $catalog->setUserId($_SESSION['user_id']);
-        $catalog->setImg($_POST['image']);
+        $catalog->setImg($_POST['img']);
         $catalog->setIsActive(1);
         $catalog->setSlug($slug);
         $catalog->setCreatedAt($date);
         $catalog->setVin($_POST['vin']);
+        $catalog->setViews(0);
         $catalog->save();
     }
 
@@ -224,12 +304,12 @@ class Catalog extends AbstractController
         $catalog->load($catalogId);
         $catalog->setTitle($_POST['title']);
         $catalog->setDescription($_POST['description']);
-        $catalog->setManufacturerId(1);
-        $catalog->setModelId(1);
+        $catalog->setManufacturerId($_POST['manufacturer_id']);
+        $catalog->setModelId($_POST['model_id']);
         $catalog->setPrice($_POST['price']);
         $catalog->setYear($_POST['year']);
-        $catalog->setImg($_SESSION['image']);
-        $catalog->setTypeId(1);
+        $catalog->setImg($_POST['img']);
+        $catalog->setTypeId($_POST['type_id']);
         $catalog->setVin($_POST['vin']);
         $catalog->save();
     }

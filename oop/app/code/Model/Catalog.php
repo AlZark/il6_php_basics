@@ -2,7 +2,6 @@
 
 namespace Model;
 
-use Controller\Model;
 use Core\AbstractModel;
 use Helper\DBHelper;
 
@@ -413,4 +412,5 @@ class Catalog extends AbstractModel
         $catalog->setViews($views + 1);
         $catalog->save();
     }
+
 }
