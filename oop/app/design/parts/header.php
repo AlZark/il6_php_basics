@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>Cars Cars Cars, I'm looking for some good time</title>
+        <title><?= $this->data['title']?></title>
+        <meta name="description" content="<?= $this->data['meta_description']?>">
         <link rel="stylesheet" href="<?php echo $this->Url('css/styles.css'); ?>">
     </head>
 <body>
@@ -8,10 +9,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="<?php echo $this->Url('catalog/newestAds')?>">Home page</a>
+                    <a href="<?php echo $this->Url('')?>">Home page</a>
                 </li>
                 <li>
-                    <a href="<?php echo $this->Url('catalog/all')?>">View all ads</a>
+                    <a href="<?php echo $this->Url('catalog')?>">View all ads</a>
                 </li>
                 <?php if($this->isUserLoggedIn()): ?>
                     <li>

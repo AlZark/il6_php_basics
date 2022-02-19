@@ -21,4 +21,14 @@
             </div>
         <?php endforeach; ?>
     </ul>
+
+    <?php $allPages = $this->data['allPages'] ?>
+
+    <?php for($page = 1; $page <= $allPages; $page++){ ?>
+
+    <a href="<?php echo $this->Url('catalog?page=' . $page); ?>">
+        <?php echo $page ?></a></h4>
+
+    <?php } ?>
+
 </div>

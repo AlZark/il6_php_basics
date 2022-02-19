@@ -11,6 +11,8 @@ class AbstractController
     public function __construct()
     {
         $this->data = [];
+        $this->data['title'] = 'MazasKoteletas.lt';
+        $this->data['meta_description'] = 'MazasKoteletas.lt';
     }
 
     protected function render($template)

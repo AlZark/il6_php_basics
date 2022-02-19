@@ -57,5 +57,4 @@ class AbstractModel
         return empty($rez);
     }
 
-    //TODO put load method here
 }

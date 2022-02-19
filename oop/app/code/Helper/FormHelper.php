@@ -25,7 +25,6 @@ class FormHelper
         $this->form .= '<textarea name="' . $name . '">'. $value .'</textarea><br>';
     }
 
-    //try redoing id key === selected the write selected
     public function select($data)
     {
         $this->form .= '<select name="' . $data['name'] . '">';

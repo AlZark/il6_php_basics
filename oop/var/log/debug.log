@@ -2195,3 +2195,2022 @@ SELECT *  FROM ads  WHERE id="19"
 2022/02/17 18:47:06 SELECT *  FROM cities  WHERE id="2"
 2022/02/17 18:47:06 SELECT *  FROM user  WHERE id="25"
 2022/02/17 18:47:06 SELECT *  FROM cities  WHERE id="4"
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:35:22 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:35:31 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:35:37 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:35:59 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:37:04 SELECT id  FROM ads  WHERE isActive="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:37:19 SELECT id  FROM ads  WHERE isActive="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:37:57 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:37:57 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:37:57 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:39:35 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:39:49 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:41:41 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:42:18 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:42:35 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:42:38 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:42:45 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:43:06 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:43:10 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:43:22 SELECT id  FROM ads  WHERE slug="a"
+2022/02/17 19:43:22 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:43:22 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:43:22 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '42' WHERE id="1"
+2022/02/17 19:43:22 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '41' WHERE id="1"
+2022/02/17 19:43:22 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "1" OR title LIKE "%Karieta%" AND id  !=  "1" LIMIT 5
+2022/02/17 19:43:22 SELECT *  FROM ads  WHERE id="2"
+2022/02/17 19:43:22 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:43:22 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:43:22 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:43:22 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:51:51 SELECT id  FROM ads  WHERE slug="aasda"
+2022/02/17 19:51:51 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,is_active,img,slug,created_at,vin,views)
+             VALUES ("","","","","","","","","","","","","","0")
+2022/02/17 19:51:53 SELECT id  FROM ads  WHERE slug="a"
+2022/02/17 19:51:53 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:51:53 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:51:53 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '42' WHERE id="1"
+2022/02/17 19:51:53 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '41' WHERE id="1"
+2022/02/17 19:51:53 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "1" OR title LIKE "%Karieta%" AND id  !=  "1" LIMIT 5
+2022/02/17 19:51:53 SELECT *  FROM ads  WHERE id="2"
+2022/02/17 19:51:53 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:51:53 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:51:53 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:51:53 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:13 SELECT id  FROM ads  WHERE slug="a"
+2022/02/17 19:53:13 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:13 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:13 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '42' WHERE id="1"
+2022/02/17 19:53:13 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '41' WHERE id="1"
+2022/02/17 19:53:13 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "1" OR title LIKE "%Karieta%" AND id  !=  "1" LIMIT 5
+2022/02/17 19:53:13 SELECT *  FROM ads  WHERE id="2"
+2022/02/17 19:53:13 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:53:13 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:53:13 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:53:13 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:17 SELECT id  FROM ads  WHERE slug="ab"
+2022/02/17 19:53:17 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,is_active,img,slug,created_at,vin,views)
+             VALUES ("","","","","","","","","","","","","","0")
+2022/02/17 19:53:39 SELECT id  FROM ads  WHERE slug="a"
+2022/02/17 19:53:39 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:39 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:39 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '42' WHERE id="1"
+2022/02/17 19:53:39 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '41' WHERE id="1"
+2022/02/17 19:53:39 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "1" OR title LIKE "%Karieta%" AND id  !=  "1" LIMIT 5
+2022/02/17 19:53:39 SELECT *  FROM ads  WHERE id="2"
+2022/02/17 19:53:39 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:53:39 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:53:39 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:53:39 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:53:40 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:53:43 SELECT *  FROM manufacturer 
+2022/02/17 19:53:43 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/17 19:53:43 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/17 19:53:43 SELECT *  FROM model 
+2022/02/17 19:53:43 SELECT *  FROM model  WHERE id="1"
+2022/02/17 19:53:43 SELECT *  FROM model  WHERE id="2"
+2022/02/17 19:53:43 SELECT *  FROM model  WHERE id="3"
+2022/02/17 19:53:43 SELECT *  FROM model  WHERE id="4"
+2022/02/17 19:53:43 SELECT *  FROM type 
+2022/02/17 19:53:43 SELECT *  FROM type  WHERE id="1"
+2022/02/17 19:53:43 SELECT *  FROM type  WHERE id="2"
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:53:48 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:53:53 SELECT id  FROM user  WHERE email="algirdas@zarkatis.com" AND password = "05a671c66aefea124cc08b76ea6d30bb" AND is_active = "1"
+2022/02/17 19:53:53 SELECT *  FROM user  WHERE id="14"
+2022/02/17 19:53:53 SELECT *  FROM cities  WHERE id="1"
+2022/02/17 19:53:53 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:53:53 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:53:53 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:53:59 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 19:54:00 SELECT id  FROM ads  WHERE slug="a"
+2022/02/17 19:54:00 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:54:00 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:54:00 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '42' WHERE id="1"
+2022/02/17 19:54:00 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '41' WHERE id="1"
+2022/02/17 19:54:00 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "1" OR title LIKE "%Karieta%" AND id  !=  "1" LIMIT 5
+2022/02/17 19:54:00 SELECT *  FROM ads  WHERE id="2"
+2022/02/17 19:54:00 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:54:00 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:00 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:54:00 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 19:54:38 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:02:08 SELECT COUNT(id)  FROM ads  WHERE is_active="1"
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:02:08 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:06:52 SELECT COUNT(id)  FROM ads  WHERE is_active="1"
+2022/02/17 20:06:52 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2
+2022/02/17 20:06:52 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:06:52 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:11:05 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:11:16 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:11:16 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:11:16 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:11:16 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:11:30 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:11:30 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:11:30 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:11:30 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:11:34 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:11:34 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:11:34 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:11:34 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:11:40 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:11:40 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:11:40 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:11:40 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:11:53 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:11:53 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:11:53 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:11:53 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:12:01 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:12:01 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:12:01 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:12:01 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:12:12 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:12:12 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:12:12 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:12:12 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:12:14 SELECT COUNT(id) AS Total  FROM ads  WHERE is_active="1"
+2022/02/17 20:12:14 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:12:14 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:12:14 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:12:57 SELECT COUNT(id)  FROM ads  WHERE is_active="1"
+2022/02/17 20:12:57 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:12:57 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:12:57 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:13:05 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:13:05 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:13:05 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:13:05 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:13:16 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:13:16 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:13:16 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:13:16 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:13:22 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:13:25 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:13:25 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:13:25 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:13:25 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:13:35 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:13:35 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:13:35 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:13:35 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:13:51 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:13:51 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:13:51 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:13:51 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:13:58 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:13:58 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 1
+2022/02/17 20:13:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:13:58 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:15:48 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:15:48 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 1
+2022/02/17 20:15:48 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:15:48 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:15:48 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:16:16 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:16:16 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 1
+2022/02/17 20:16:16 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:16:16 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:16:16 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:22:01 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:22:01 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 2
+2022/02/17 20:22:01 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:22:01 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:22:01 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:22:20 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:22:20 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 2
+2022/02/17 20:22:20 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:22:20 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:22:20 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:22:22 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:22:22 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 2
+2022/02/17 20:22:22 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:22:22 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:22:22 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:23:00 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:23:00 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 2
+2022/02/17 20:23:00 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:23:00 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:23:00 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:24:11 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:24:11 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:24:11 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:24:11 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:24:11 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:24:15 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:24:15 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:24:15 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:24:15 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:24:15 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:25:04 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:25:04 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:25:04 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:25:04 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:25:04 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:25:17 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:25:17 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:25:17 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:25:17 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:25:17 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:25:55 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:25:55 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:25:55 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:25:55 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:25:55 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:29:49 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:29:49 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:29:49 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:29:49 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:29:49 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:29:52 SELECT id  FROM ads  WHERE slug="1"
+2022/02/17 20:29:52 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,is_active,img,slug,created_at,vin,views)
+             VALUES ("","","","","","","","","","","","","","0")
+2022/02/17 20:29:55 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:29:55 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:29:55 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:29:55 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:29:55 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:30:03 SELECT id  FROM ads  WHERE slug="1"
+2022/02/17 20:30:03 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,is_active,img,slug,created_at,vin,views)
+             VALUES ("","","","","","","","","","","","","","0")
+2022/02/17 20:30:04 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:30:04 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:30:04 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:30:04 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:30:04 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:30:15 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:30:15 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:30:15 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:30:15 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:30:15 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:30:18 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:30:18 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:30:18 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:30:18 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:30:18 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:30:28 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:30:28 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:30:28 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:30:28 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:30:28 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:30:35 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:30:35 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:30:35 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:30:35 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:30:35 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:30:41 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:30:41 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:30:41 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:30:41 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:30:41 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:30:45 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:30:45 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:30:45 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:30:45 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:30:45 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:31:00 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:31:00 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:31:00 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:31:00 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:31:00 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:31:02 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:31:02 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET -3
+2022/02/17 20:31:06 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:31:06 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:31:06 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:31:06 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:31:06 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:32:01 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:32:01 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:32:01 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:32:01 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:32:01 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:32:49 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:32:49 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:32:49 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:32:49 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:32:49 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:32:51 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:32:51 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET -3
+2022/02/17 20:32:52 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:32:52 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:32:52 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:32:52 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:32:52 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:33:11 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:33:11 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:33:11 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:33:11 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:33:11 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:33:12 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:33:12 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET -3
+2022/02/17 20:33:13 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:33:13 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:33:13 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:33:13 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:33:13 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:33:27 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:33:27 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:33:27 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:33:27 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:33:27 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:33:28 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:33:28 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 6
+2022/02/17 20:33:28 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:37:51 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:37:51 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 6
+2022/02/17 20:37:51 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:37:56 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:37:56 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 6
+2022/02/17 20:37:56 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:37:58 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:37:58 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 0
+2022/02/17 20:37:58 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:37:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:37:58 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:38:00 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:38:00 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:38:00 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:38:00 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:38:00 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:38:02 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:38:02 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 6
+2022/02/17 20:38:02 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:38:27 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:38:27 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:38:27 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:38:27 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:38:27 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:38:32 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:38:32 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:38:32 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:38:32 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:38:32 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:38:34 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:38:34 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:38:34 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:38:34 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:38:34 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:39:18 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:39:18 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 3 OFFSET 3
+2022/02/17 20:39:18 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:39:18 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:39:18 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:39:38 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:39:38 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 10 OFFSET 10
+2022/02/17 20:39:43 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 10 OFFSET 0
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:39:43 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:39:49 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 10 OFFSET 0
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:39:49 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:40:20 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 10 OFFSET 0
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:40:20 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:40:48 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 10 OFFSET 0
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:40:48 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:41:11 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:41:11 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:41:11 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:41:11 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:41:13 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:41:13 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 6
+2022/02/17 20:41:13 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:41:15 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:41:15 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 4
+2022/02/17 20:41:15 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:41:15 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:41:16 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:41:16 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 2
+2022/02/17 20:41:16 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:41:16 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:41:18 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:41:18 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:41:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:41:18 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:41:38 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:41:38 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:41:38 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:41:38 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:42:23 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:42:23 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:42:23 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:42:23 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:42:38 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:42:38 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:42:38 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:42:38 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:43:41 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:43:41 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:43:41 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:43:41 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:43:42 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:43:42 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:43:42 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:43:42 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:45:01 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:45:01 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:45:01 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:45:01 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:45:17 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:45:17 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:45:17 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:45:17 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:45:41 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:45:41 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY  LIMIT 2 OFFSET 0
+2022/02/17 20:48:04 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:48:04 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:48:04 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:48:04 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:48:08 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:48:08 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 2
+2022/02/17 20:48:08 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 20:48:08 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 20:48:09 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:48:09 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 4
+2022/02/17 20:48:09 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 20:48:09 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 20:48:11 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:48:11 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 6
+2022/02/17 20:48:11 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 20:48:12 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:48:12 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:48:12 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:48:12 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:49:08 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:49:08 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:49:08 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:49:08 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 20:49:10 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 20:49:10 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 20:49:10 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 20:49:10 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:34:12 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/17 21:34:12 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:34:12 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:34:12 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/17 21:34:12 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/17 21:34:12 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/17 21:34:12 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:34:12 SELECT *  FROM ads  WHERE id="2"
+2022/02/17 21:34:12 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 21:34:12 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:34:12 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 21:34:14 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:34:14 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:34:14 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:34:14 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:35:23 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:35:23 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" LIMIT 2 OFFSET 0 ORDER BY created_at ASC
+2022/02/17 21:36:07 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:36:07 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" LIMIT 2 OFFSET 0 ORDER BY created_at ASC
+2022/02/17 21:36:15 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:36:15 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" LIMIT 2 OFFSET 0 ORDER BY created_at ASC
+2022/02/17 21:38:51 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:38:51 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:38:51 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:38:51 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:41:09 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:41:09 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:41:09 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:41:09 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:41:22 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:41:22 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:41:22 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:41:22 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:41:28 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:41:28 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:41:28 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:41:28 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:41:39 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:41:39 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:41:39 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:41:39 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:42:26 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:42:26 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:42:26 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:42:26 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:42:30 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:42:30 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:42:30 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:42:30 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:43:44 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:43:44 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:43:44 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:43:44 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:09 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:09 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:44:09 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:09 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:10 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:10 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:44:10 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:10 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:11 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/17 21:44:11 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:11 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:11 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/17 21:44:11 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/17 21:44:11 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/17 21:44:11 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:11 SELECT *  FROM ads  WHERE id="2"
+2022/02/17 21:44:11 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 21:44:11 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:44:11 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 21:44:13 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:13 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:44:13 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:13 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:16 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 21:44:16 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 21:44:16 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 21:44:35 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:35 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:44:35 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:35 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:44 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:44 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:44:44 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:44 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:46 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:46 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/17 21:44:46 SELECT *  FROM ads  WHERE id="1"
+2022/02/17 21:44:46 SELECT *  FROM ads  WHERE id="19"
+2022/02/17 21:44:54 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:54 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%" ORDER BY created_at DESC LIMIT 2 OFFSET 0
+2022/02/17 21:44:54 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 21:44:54 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 21:44:57 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:57 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 4
+2022/02/17 21:44:57 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 21:44:57 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 21:44:59 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:44:59 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 6
+2022/02/17 21:44:59 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 21:45:02 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1"
+2022/02/17 21:45:02 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 2
+2022/02/17 21:45:02 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 21:45:02 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 22:13:00 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/17 22:13:00 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 2
+2022/02/17 22:13:00 SELECT *  FROM ads  WHERE id="3"
+2022/02/17 22:13:00 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 22:13:03 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/17 22:13:03 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at DESC LIMIT 2 OFFSET 0
+2022/02/17 22:13:03 SELECT *  FROM ads  WHERE id="22"
+2022/02/17 22:13:03 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 22:13:07 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%"
+2022/02/17 22:13:07 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%" ORDER BY created_at DESC LIMIT 2 OFFSET 0
+2022/02/17 22:13:07 SELECT *  FROM ads  WHERE id="18"
+2022/02/17 22:13:07 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 22:13:11 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%"
+2022/02/17 22:13:11 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%" ORDER BY price ASC LIMIT 2 OFFSET 0
+2022/02/17 22:13:11 SELECT *  FROM ads  WHERE id="16"
+2022/02/17 22:13:11 SELECT *  FROM ads  WHERE id="17"
+2022/02/17 22:13:18 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%Karieta%" OR is_active="1" AND description LIKE "%Karieta%"
+2022/02/17 22:13:18 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%Karieta%" OR is_active="1" AND description LIKE "%Karieta%" ORDER BY price DESC LIMIT 2 OFFSET 0
+2022/02/17 22:13:18 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:26:03 SELECT *  FROM cities 
+2022/02/19 11:26:03 SELECT *  FROM cities  WHERE id="1"
+2022/02/19 11:26:03 SELECT *  FROM cities  WHERE id="2"
+2022/02/19 11:26:03 SELECT *  FROM cities  WHERE id="4"
+2022/02/19 11:26:10 SELECT id  FROM user  WHERE email="algirdas@zarkatis.com" AND password = "05a671c66aefea124cc08b76ea6d30bb" AND is_active = "1"
+2022/02/19 11:26:10 SELECT *  FROM user  WHERE id="14"
+2022/02/19 11:26:10 SELECT *  FROM cities  WHERE id="1"
+2022/02/19 11:26:10 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:26:10 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:26:10 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:27:35 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:27:35 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:27:35 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:27:36 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:27:36 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:27:44 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:27:44 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:27:44 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:29:47 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:29:47 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:29:47 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:31:06 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:31:06 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:31:06 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:32:12 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:32:12 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:32:12 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:32:24 SELECT id  FROM ads  WHERE slug="a"
+2022/02/19 11:32:24 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:32:24 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:32:24 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '42' WHERE id="1"
+2022/02/19 11:32:24 UPDATE ads SET title = 'Karieta',description = 'Ratai mediniai! 1 arklio galia. Botaga ir zieminius ratus primesiu uz papildoma 100 eurasiku',manufacturer_id = '1',model_id = '1',price = '190',year = '1994',type_id = '1',user_id = '14',is_active = '1',img = 'https://image.shutterstock.com/image-photo/warsaw-poland-31-august-2019-260nw-1493693846.jpg',slug = 'a',created_at = '1996-01-24 00:00:00',vin = 'G1OHYJSLTNE9BBRYL',views = '41' WHERE id="1"
+2022/02/19 11:32:24 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "1" OR title LIKE "%Karieta%" AND id  !=  "1" LIMIT 5
+2022/02/19 11:32:24 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 11:32:24 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:32:24 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 11:32:24 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:32:24 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:32:25 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:32:25 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:32:25 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:32:56 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:32:56 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:32:56 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:33:00 SELECT id  FROM ads  WHERE slug="toyota-yaris-2006"
+2022/02/19 11:33:00 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:33:00 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:33:00 UPDATE ads SET title = 'Toyota Yaris 2007',description = 'Uzsiveda',manufacturer_id = '2',model_id = '2',price = '4300',year = '2007',type_id = '2',user_id = '14',is_active = '1',img = 'https://prod.pictures.autoscout24.net/listing-images/06f856c1-9684-44ce-91ad-686f498f8d5d_a82d1ddf-c140-43ae-aa01-f1164ce9a9a2.jpg/420x315.jpg',slug = 'toyota-yaris-2006',created_at = '2022-02-17 18:26:21',vin = 'BANANAS1234567898',views = '3' WHERE id="22"
+2022/02/19 11:33:00 UPDATE ads SET title = 'Toyota Yaris 2007',description = 'Uzsiveda',manufacturer_id = '2',model_id = '2',price = '4300',year = '2007',type_id = '2',user_id = '14',is_active = '1',img = 'https://prod.pictures.autoscout24.net/listing-images/06f856c1-9684-44ce-91ad-686f498f8d5d_a82d1ddf-c140-43ae-aa01-f1164ce9a9a2.jpg/420x315.jpg',slug = 'toyota-yaris-2006',created_at = '2022-02-17 18:26:21',vin = 'BANANAS1234567898',views = '2' WHERE id="22"
+2022/02/19 11:33:00 SELECT id, created_at  FROM ads  WHERE model_id="2" AND id  !=  "22" OR title LIKE "%Toyota Yaris 2007%" AND id  !=  "22" LIMIT 5
+2022/02/19 11:33:01 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC  LIMIT 5
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:33:01 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC  LIMIT 5
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 11:33:01 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:10:36 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:10:36 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:10:36 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:10:36 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:10:39 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:10:39 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 2
+2022/02/19 12:10:39 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:10:39 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:10:44 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%"
+2022/02/19 12:10:44 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%k%" OR is_active="1" AND description LIKE "%k%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:10:44 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:10:44 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:11:44 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:11:44 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:11:44 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:11:44 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:11:46 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:11:46 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:11:46 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:11:46 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:11:58 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:11:58 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:11:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:11:58 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:04 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:13:04 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:13:04 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:13:04 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:04 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:13:04 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:13:04 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:13:04 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:06 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:13:06 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:13:06 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:13:06 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:07 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:13:07 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:13:07 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:13:07 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:08 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:13:08 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:13:08 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:13:08 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:29 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC LIMIT 5
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:13:29 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC LIMIT 5
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:13:29 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:13:38 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC LIMIT 5
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:13:38 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC LIMIT 5
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:13:38 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:13:39 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:39 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC LIMIT 5
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:13:39 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC LIMIT 5
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:13:39 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:14:23 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC LIMIT 5
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:14:23 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC LIMIT 5
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:14:23 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:22:20 SELECT id  FROM user  WHERE email="algirdas@zarkatis.com" AND password = "05a671c66aefea124cc08b76ea6d30bb" AND is_active = "1"
+2022/02/19 12:22:20 SELECT *  FROM user  WHERE id="14"
+2022/02/19 12:22:20 SELECT *  FROM cities  WHERE id="1"
+2022/02/19 12:22:21 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC LIMIT 5
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:22:21 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC LIMIT 5
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:22:21 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:22:27 SELECT *  FROM manufacturer 
+2022/02/19 12:22:27 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:22:27 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:22:27 SELECT *  FROM model 
+2022/02/19 12:22:27 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:22:27 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:22:27 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:22:27 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:22:27 SELECT *  FROM type 
+2022/02/19 12:22:27 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:22:27 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:23:19 SELECT *  FROM manufacturer 
+2022/02/19 12:23:19 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:23:19 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:23:19 SELECT *  FROM model 
+2022/02/19 12:23:19 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:23:19 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:23:19 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:23:19 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:23:19 SELECT *  FROM type 
+2022/02/19 12:23:19 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:23:19 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:24:04 SELECT *  FROM manufacturer 
+2022/02/19 12:24:04 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:24:04 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:24:04 SELECT *  FROM model 
+2022/02/19 12:24:04 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:24:04 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:24:04 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:24:04 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:24:04 SELECT *  FROM type 
+2022/02/19 12:24:04 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:24:04 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:25:38 SELECT *  FROM manufacturer 
+2022/02/19 12:25:38 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:25:38 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:25:38 SELECT *  FROM model 
+2022/02/19 12:25:38 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:25:38 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:25:38 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:25:38 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:25:38 SELECT *  FROM type 
+2022/02/19 12:25:38 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:25:38 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:26:44 SELECT *  FROM manufacturer 
+2022/02/19 12:26:44 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:26:44 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:26:44 SELECT *  FROM model 
+2022/02/19 12:26:44 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:26:44 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:26:44 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:26:44 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:26:44 SELECT *  FROM type 
+2022/02/19 12:26:44 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:26:44 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:27:03 SELECT *  FROM manufacturer 
+2022/02/19 12:27:03 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:27:03 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:27:03 SELECT *  FROM model 
+2022/02/19 12:27:03 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:27:03 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:27:03 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:27:03 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:27:03 SELECT *  FROM type 
+2022/02/19 12:27:03 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:27:03 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:27:31 SELECT *  FROM manufacturer 
+2022/02/19 12:27:31 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:27:31 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:27:31 SELECT *  FROM model 
+2022/02/19 12:27:31 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:27:31 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:27:31 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:27:31 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:27:31 SELECT *  FROM type 
+2022/02/19 12:27:31 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:27:31 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:28:04 SELECT *  FROM manufacturer 
+2022/02/19 12:28:04 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:28:04 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:28:04 SELECT *  FROM model 
+2022/02/19 12:28:04 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:28:04 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:28:04 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:28:04 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:28:04 SELECT *  FROM type 
+2022/02/19 12:28:04 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:28:04 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:28:47 SELECT *  FROM manufacturer 
+2022/02/19 12:28:47 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:28:47 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:28:47 SELECT *  FROM model 
+2022/02/19 12:28:47 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:28:47 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:28:47 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:28:47 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:28:47 SELECT *  FROM type 
+2022/02/19 12:28:47 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:28:47 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:28:55 SELECT *  FROM manufacturer 
+2022/02/19 12:28:55 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:28:55 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:28:55 SELECT *  FROM model 
+2022/02/19 12:28:55 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:28:55 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:28:55 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:28:55 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:28:55 SELECT *  FROM type 
+2022/02/19 12:28:55 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:28:55 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:29:46 SELECT *  FROM manufacturer 
+2022/02/19 12:29:46 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:29:46 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:29:46 SELECT *  FROM model 
+2022/02/19 12:29:46 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:29:46 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:29:46 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:29:46 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:29:46 SELECT *  FROM type 
+2022/02/19 12:29:46 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:29:46 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:30:36 SELECT *  FROM manufacturer 
+2022/02/19 12:30:36 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:30:36 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:30:36 SELECT *  FROM model 
+2022/02/19 12:30:36 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:30:36 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:30:36 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:30:36 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:30:36 SELECT *  FROM type 
+2022/02/19 12:30:36 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:30:36 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:31:02 SELECT *  FROM manufacturer 
+2022/02/19 12:31:02 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:31:02 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:31:02 SELECT *  FROM model 
+2022/02/19 12:31:02 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:31:02 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:31:02 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:31:02 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:31:02 SELECT *  FROM type 
+2022/02/19 12:31:02 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:31:02 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:31:12 SELECT *  FROM manufacturer 
+2022/02/19 12:31:12 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:31:12 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:31:12 SELECT *  FROM model 
+2022/02/19 12:31:12 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:31:12 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:31:12 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:31:12 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:31:12 SELECT *  FROM type 
+2022/02/19 12:31:12 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:31:12 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:31:37 SELECT *  FROM manufacturer 
+2022/02/19 12:31:37 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:31:37 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:31:37 SELECT *  FROM model 
+2022/02/19 12:31:37 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:31:37 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:31:37 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:31:37 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:31:37 SELECT *  FROM type 
+2022/02/19 12:31:37 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:31:37 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:31:58 SELECT *  FROM manufacturer 
+2022/02/19 12:31:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:31:58 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:31:58 SELECT *  FROM model 
+2022/02/19 12:31:58 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:31:58 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:31:58 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:31:58 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:31:58 SELECT *  FROM type 
+2022/02/19 12:31:58 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:31:58 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:32:10 SELECT *  FROM manufacturer 
+2022/02/19 12:32:10 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:32:10 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:32:10 SELECT *  FROM model 
+2022/02/19 12:32:10 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:32:10 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:32:10 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:32:10 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:32:10 SELECT *  FROM type 
+2022/02/19 12:32:10 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:32:10 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:33:26 SELECT *  FROM manufacturer 
+2022/02/19 12:33:26 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:33:26 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:33:26 SELECT *  FROM model 
+2022/02/19 12:33:26 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:33:26 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:33:26 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:33:26 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:33:26 SELECT *  FROM type 
+2022/02/19 12:33:26 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:33:26 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:33:32 SELECT *  FROM manufacturer 
+2022/02/19 12:33:32 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:33:32 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:33:32 SELECT *  FROM model 
+2022/02/19 12:33:32 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:33:32 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:33:32 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:33:32 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:33:32 SELECT *  FROM type 
+2022/02/19 12:33:32 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:33:32 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:33:43 SELECT *  FROM manufacturer 
+2022/02/19 12:33:43 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:33:43 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:33:43 SELECT *  FROM model 
+2022/02/19 12:33:43 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:33:43 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:33:43 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:33:43 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:33:43 SELECT *  FROM type 
+2022/02/19 12:33:43 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:33:43 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:34:05 SELECT *  FROM manufacturer 
+2022/02/19 12:34:05 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:34:05 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:34:05 SELECT *  FROM model 
+2022/02/19 12:34:05 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:34:05 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:34:05 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:34:05 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:34:05 SELECT *  FROM type 
+2022/02/19 12:34:05 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:34:05 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:34:11 SELECT *  FROM manufacturer 
+2022/02/19 12:34:11 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:34:11 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:34:11 SELECT *  FROM model 
+2022/02/19 12:34:11 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:34:11 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:34:11 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:34:11 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:34:11 SELECT *  FROM type 
+2022/02/19 12:34:11 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:34:11 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:34:24 SELECT *  FROM manufacturer 
+2022/02/19 12:34:24 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:34:24 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:34:24 SELECT *  FROM model 
+2022/02/19 12:34:24 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:34:24 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:34:24 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:34:24 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:34:24 SELECT *  FROM type 
+2022/02/19 12:34:24 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:34:24 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:36:21 SELECT *  FROM manufacturer 
+2022/02/19 12:36:21 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:36:21 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:36:21 SELECT *  FROM model 
+2022/02/19 12:36:21 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:36:21 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:36:21 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:36:21 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:36:21 SELECT *  FROM type 
+2022/02/19 12:36:21 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:36:21 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:36:36 SELECT *  FROM manufacturer 
+2022/02/19 12:36:36 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:36:36 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:36:36 SELECT *  FROM model 
+2022/02/19 12:36:36 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:36:36 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:36:36 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:36:36 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:36:36 SELECT *  FROM type 
+2022/02/19 12:36:36 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:36:36 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:36:59 SELECT *  FROM manufacturer 
+2022/02/19 12:36:59 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:36:59 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:36:59 SELECT *  FROM model 
+2022/02/19 12:36:59 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:36:59 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:36:59 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:36:59 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:36:59 SELECT *  FROM type 
+2022/02/19 12:36:59 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:36:59 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:37:30 SELECT *  FROM manufacturer 
+2022/02/19 12:37:30 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:37:30 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:37:30 SELECT *  FROM model 
+2022/02/19 12:37:30 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:37:30 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:37:30 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:37:30 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:37:30 SELECT *  FROM type 
+2022/02/19 12:37:30 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:37:30 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:37:31 SELECT *  FROM manufacturer 
+2022/02/19 12:37:31 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:37:31 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:37:31 SELECT *  FROM model 
+2022/02/19 12:37:31 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:37:31 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:37:31 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:37:31 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:37:31 SELECT *  FROM type 
+2022/02/19 12:37:31 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:37:31 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:37:37 SELECT *  FROM manufacturer 
+2022/02/19 12:37:37 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:37:37 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:37:37 SELECT *  FROM model 
+2022/02/19 12:37:37 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:37:37 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:37:37 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:37:37 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:37:37 SELECT *  FROM type 
+2022/02/19 12:37:37 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:37:37 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:37:55 SELECT *  FROM manufacturer 
+2022/02/19 12:37:55 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:37:55 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:37:55 SELECT *  FROM model 
+2022/02/19 12:37:55 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:37:55 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:37:55 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:37:55 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:37:55 SELECT *  FROM type 
+2022/02/19 12:37:55 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:37:55 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:38:11 SELECT *  FROM manufacturer 
+2022/02/19 12:38:11 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:38:11 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:38:11 SELECT *  FROM model 
+2022/02/19 12:38:11 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:38:11 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:38:11 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:38:11 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:38:11 SELECT *  FROM type 
+2022/02/19 12:38:11 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:38:11 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:38:25 SELECT *  FROM manufacturer 
+2022/02/19 12:38:25 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:38:25 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:38:25 SELECT *  FROM model 
+2022/02/19 12:38:25 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:38:25 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:38:25 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:38:25 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:38:25 SELECT *  FROM type 
+2022/02/19 12:38:25 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:38:25 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:38:36 SELECT *  FROM manufacturer 
+2022/02/19 12:38:36 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:38:36 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:38:36 SELECT *  FROM model 
+2022/02/19 12:38:36 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:38:36 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:38:36 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:38:36 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:38:36 SELECT *  FROM type 
+2022/02/19 12:38:36 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:38:36 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:39:30 SELECT *  FROM manufacturer 
+2022/02/19 12:39:30 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:39:30 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:39:30 SELECT *  FROM model 
+2022/02/19 12:39:30 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:39:30 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:39:30 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:39:30 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:39:30 SELECT *  FROM type 
+2022/02/19 12:39:30 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:39:30 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:39:39 SELECT *  FROM manufacturer 
+2022/02/19 12:39:39 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:39:39 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:39:39 SELECT *  FROM model 
+2022/02/19 12:39:39 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:39:39 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:39:39 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:39:39 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:39:39 SELECT *  FROM type 
+2022/02/19 12:39:39 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:39:39 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:39:44 SELECT *  FROM manufacturer 
+2022/02/19 12:39:44 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:39:44 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:39:44 SELECT *  FROM model 
+2022/02/19 12:39:44 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:39:44 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:39:44 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:39:44 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:39:44 SELECT *  FROM type 
+2022/02/19 12:39:44 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:39:44 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:40:04 SELECT *  FROM manufacturer 
+2022/02/19 12:40:04 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:40:04 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:40:04 SELECT *  FROM model 
+2022/02/19 12:40:04 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:40:04 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:40:04 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:40:04 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:40:04 SELECT *  FROM type 
+2022/02/19 12:40:04 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:40:04 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:41:07 SELECT *  FROM manufacturer 
+2022/02/19 12:41:07 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:41:07 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:41:07 SELECT *  FROM model 
+2022/02/19 12:41:07 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:41:07 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:41:07 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:41:07 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:41:07 SELECT *  FROM type 
+2022/02/19 12:41:07 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:41:07 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:41:26 SELECT *  FROM manufacturer 
+2022/02/19 12:41:26 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:41:26 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:41:26 SELECT *  FROM model 
+2022/02/19 12:41:26 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:41:26 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:41:26 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:41:26 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:41:26 SELECT *  FROM type 
+2022/02/19 12:41:26 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:41:26 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:41:35 SELECT *  FROM manufacturer 
+2022/02/19 12:41:35 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:41:35 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:41:35 SELECT *  FROM model 
+2022/02/19 12:41:35 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:41:35 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:41:35 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:41:35 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:41:35 SELECT *  FROM type 
+2022/02/19 12:41:35 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:41:35 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:42:04 SELECT *  FROM manufacturer 
+2022/02/19 12:42:04 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:42:04 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:42:04 SELECT *  FROM model 
+2022/02/19 12:42:04 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:42:04 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:42:04 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:42:04 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:42:04 SELECT *  FROM type 
+2022/02/19 12:42:04 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:42:04 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:42:11 SELECT *  FROM manufacturer 
+2022/02/19 12:42:11 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:42:11 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:42:11 SELECT *  FROM model 
+2022/02/19 12:42:11 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:42:11 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:42:11 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:42:11 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:42:11 SELECT *  FROM type 
+2022/02/19 12:42:11 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:42:11 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:42:24 SELECT *  FROM manufacturer 
+2022/02/19 12:42:24 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:42:24 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:42:24 SELECT *  FROM model 
+2022/02/19 12:42:24 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:42:24 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:42:24 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:42:24 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:42:24 SELECT *  FROM type 
+2022/02/19 12:42:24 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:42:24 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:42:32 SELECT *  FROM manufacturer 
+2022/02/19 12:42:32 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:42:32 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:42:32 SELECT *  FROM model 
+2022/02/19 12:42:32 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:42:32 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:42:32 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:42:32 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:42:33 SELECT *  FROM type 
+2022/02/19 12:42:33 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:42:33 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:42:45 SELECT *  FROM manufacturer 
+2022/02/19 12:42:45 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:42:45 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:42:45 SELECT *  FROM model 
+2022/02/19 12:42:45 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:42:45 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:42:45 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:42:45 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:42:45 SELECT *  FROM type 
+2022/02/19 12:42:45 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:42:46 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC LIMIT 5
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:42:46 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC LIMIT 5
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:42:46 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:42:58 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:42:58 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:42:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:42:58 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:42:59 SELECT *  FROM manufacturer 
+2022/02/19 12:42:59 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:42:59 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:42:59 SELECT *  FROM model 
+2022/02/19 12:42:59 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:42:59 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:42:59 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:42:59 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:42:59 SELECT *  FROM type 
+2022/02/19 12:42:59 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:42:59 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:43:33 SELECT *  FROM manufacturer 
+2022/02/19 12:43:33 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:43:33 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:43:33 SELECT *  FROM model 
+2022/02/19 12:43:33 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:43:33 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:43:33 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:43:33 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:43:33 SELECT *  FROM type 
+2022/02/19 12:43:33 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:43:33 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:43:51 SELECT *  FROM manufacturer 
+2022/02/19 12:43:51 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:43:51 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:43:51 SELECT *  FROM model 
+2022/02/19 12:43:51 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:43:51 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:43:51 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:43:51 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:43:51 SELECT *  FROM type 
+2022/02/19 12:43:51 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:43:51 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:44:17 SELECT *  FROM manufacturer 
+2022/02/19 12:44:17 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:44:17 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:44:17 SELECT *  FROM model 
+2022/02/19 12:44:17 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:44:17 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:44:17 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:44:17 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:44:17 SELECT *  FROM type 
+2022/02/19 12:44:17 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:44:17 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:44:41 SELECT *  FROM manufacturer 
+2022/02/19 12:44:41 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:44:41 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:44:41 SELECT *  FROM model 
+2022/02/19 12:44:41 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:44:41 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:44:41 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:44:41 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:44:41 SELECT *  FROM type 
+2022/02/19 12:44:41 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:44:41 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:45:23 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:45:23 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:45:23 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:45:23 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:45:25 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:45:25 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:45:25 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:45:25 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:45:25 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:45:25 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:45:25 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:45:25 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:45:25 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:45:25 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:45:25 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:47:18 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:47:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:47:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:47:18 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:47:18 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:47:18 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:47:18 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:47:18 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:47:18 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:47:18 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:47:18 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:50:21 SELECT id  FROM ads  WHERE is_active="1" ORDER BY views DESC LIMIT 5
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:50:21 SELECT id  FROM ads  WHERE is_active="1" ORDER BY created_at DESC LIMIT 5
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="22"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="18"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="17"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:50:21 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:50:21 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:50:23 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:50:23 SELECT *  FROM manufacturer 
+2022/02/19 12:50:23 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:50:23 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:50:23 SELECT *  FROM model 
+2022/02/19 12:50:23 SELECT *  FROM model  WHERE id="1"
+2022/02/19 12:50:23 SELECT *  FROM model  WHERE id="2"
+2022/02/19 12:50:23 SELECT *  FROM model  WHERE id="3"
+2022/02/19 12:50:23 SELECT *  FROM model  WHERE id="4"
+2022/02/19 12:50:23 SELECT *  FROM type 
+2022/02/19 12:50:23 SELECT *  FROM type  WHERE id="1"
+2022/02/19 12:50:23 SELECT *  FROM type  WHERE id="2"
+2022/02/19 12:51:23 SELECT COUNT(id) AS total  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%"
+2022/02/19 12:51:23 SELECT *  FROM ads  WHERE is_active="1" AND title LIKE "%%" OR is_active="1" AND description LIKE "%%" ORDER BY created_at ASC LIMIT 2 OFFSET 0
+2022/02/19 12:51:23 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:51:23 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:51:25 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:51:25 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:51:25 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:51:25 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:51:25 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:51:25 SELECT *  FROM manufacturer 
+2022/02/19 12:51:25 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:51:25 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:51:25 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:51:25 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:51:25 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:51:25 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:51:25 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:51:25 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:51:49 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:51:49 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:51:49 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:51:49 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:51:49 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:51:49 SELECT *  FROM manufacturer 
+2022/02/19 12:51:49 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:51:49 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:51:49 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:51:49 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:51:49 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:51:49 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:51:49 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:51:49 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:52:28 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:52:28 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:52:28 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:52:28 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:52:28 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:52:28 SELECT *  FROM manufacturer 
+2022/02/19 12:52:28 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:52:28 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:52:28 SELECT *  FROM manufacturer 
+2022/02/19 12:52:28 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:52:28 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:52:28 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:52:28 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:52:28 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:52:28 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:52:28 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:52:28 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:57:46 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:57:47 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:57:47 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:57:47 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:57:47 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:57:47 SELECT *  FROM manufacturer 
+2022/02/19 12:57:47 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:57:47 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:57:47 SELECT *  FROM manufacturer 
+2022/02/19 12:57:47 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:57:47 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:57:47 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:57:47 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:57:47 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:57:47 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:57:47 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:57:47 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:57:47 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:58:12 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:58:12 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:58:12 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:58:12 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:58:12 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:58:12 SELECT *  FROM manufacturer 
+2022/02/19 12:58:12 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:58:12 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:58:12 SELECT *  FROM manufacturer 
+2022/02/19 12:58:12 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:58:12 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:58:12 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:58:12 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:58:12 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:58:12 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:58:12 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:58:12 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:58:12 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:58:32 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:58:32 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:58:32 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:58:32 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:58:32 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:58:32 SELECT *  FROM manufacturer 
+2022/02/19 12:58:32 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:58:32 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:58:32 SELECT *  FROM manufacturer 
+2022/02/19 12:58:32 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:58:32 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:58:32 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:58:32 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:58:32 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:58:32 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:58:32 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:58:32 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:58:32 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:18 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:59:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:59:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:59:18 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:59:18 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:59:18 SELECT *  FROM manufacturer 
+2022/02/19 12:59:18 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:18 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:59:18 SELECT *  FROM manufacturer 
+2022/02/19 12:59:18 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:18 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:59:18 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:59:18 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:59:18 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:59:18 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:59:19 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:59:19 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:59:19 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:36 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:59:36 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:59:36 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:59:36 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:59:36 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:59:36 SELECT *  FROM manufacturer 
+2022/02/19 12:59:36 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:36 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:59:36 SELECT *  FROM manufacturer 
+2022/02/19 12:59:36 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:36 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:59:36 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:59:36 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:59:36 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:59:36 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:59:36 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:59:36 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:59:36 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:45 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 12:59:45 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:59:45 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 12:59:45 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 12:59:45 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 12:59:45 SELECT *  FROM manufacturer 
+2022/02/19 12:59:45 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:45 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:59:45 SELECT *  FROM manufacturer 
+2022/02/19 12:59:45 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 12:59:45 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 12:59:45 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 12:59:45 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 12:59:45 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 12:59:45 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 12:59:45 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 12:59:45 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 12:59:45 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:01:27 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:01:27 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:01:27 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:01:27 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:01:27 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:01:27 SELECT *  FROM manufacturer 
+2022/02/19 13:01:27 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:01:27 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:01:27 SELECT *  FROM manufacturer 
+2022/02/19 13:01:27 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:01:27 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:01:27 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:01:27 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:01:27 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:01:27 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:01:27 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:01:27 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:01:27 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:02:03 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:02:03 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:02:03 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:02:03 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:02:03 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:02:03 SELECT *  FROM manufacturer 
+2022/02/19 13:02:03 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:02:03 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:02:03 SELECT *  FROM manufacturer 
+2022/02/19 13:02:03 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:02:03 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:02:03 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:02:03 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:02:03 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:02:03 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:02:03 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:02:03 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:02:03 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:17 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:03:17 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:17 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:17 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:03:17 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:03:17 SELECT *  FROM manufacturer 
+2022/02/19 13:03:17 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:17 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:17 SELECT *  FROM manufacturer 
+2022/02/19 13:03:17 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:17 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:17 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:03:18 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:03:18 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:03:18 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:03:18 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:03:18 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:03:18 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:55 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:03:55 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:55 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:55 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:03:55 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:03:55 SELECT *  FROM manufacturer 
+2022/02/19 13:03:55 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:55 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:55 SELECT *  FROM manufacturer 
+2022/02/19 13:03:55 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:55 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:55 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:03:55 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:03:55 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:03:55 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:03:55 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:03:55 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:03:55 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:56 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:03:56 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:56 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:56 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:03:56 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:03:56 SELECT *  FROM manufacturer 
+2022/02/19 13:03:56 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:56 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:56 SELECT *  FROM manufacturer 
+2022/02/19 13:03:56 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:56 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:56 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:03:56 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:03:56 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:03:56 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:03:56 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:03:56 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:03:56 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:58 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:03:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:03:58 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:03:58 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:03:58 SELECT *  FROM manufacturer 
+2022/02/19 13:03:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:58 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:58 SELECT *  FROM manufacturer 
+2022/02/19 13:03:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:03:58 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:03:58 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:03:58 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:03:58 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:03:58 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:03:58 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:03:58 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:03:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:31 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:04:31 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:04:31 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:04:31 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:04:31 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:04:31 SELECT *  FROM manufacturer 
+2022/02/19 13:04:31 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:31 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:04:31 SELECT *  FROM manufacturer 
+2022/02/19 13:04:31 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:31 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:04:31 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:04:31 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:04:31 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:04:31 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:04:31 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:04:31 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:04:31 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:33 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:04:33 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:04:33 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:04:33 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:04:33 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:04:33 SELECT *  FROM manufacturer 
+2022/02/19 13:04:33 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:33 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:04:33 SELECT *  FROM manufacturer 
+2022/02/19 13:04:33 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:33 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:04:33 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:04:33 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:04:33 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:04:33 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:04:33 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:04:33 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:04:33 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:40 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:04:40 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:04:40 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:04:40 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:04:40 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:04:40 SELECT *  FROM manufacturer 
+2022/02/19 13:04:40 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:40 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:04:40 SELECT *  FROM manufacturer 
+2022/02/19 13:04:40 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:04:40 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:04:40 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:04:40 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:04:41 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:04:41 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:04:41 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:04:41 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:04:41 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:05:58 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:05:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:05:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:05:58 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:05:58 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:05:58 SELECT *  FROM manufacturer 
+2022/02/19 13:05:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:05:58 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:05:58 SELECT *  FROM manufacturer 
+2022/02/19 13:05:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:05:58 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:05:58 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:05:58 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:05:58 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:05:58 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:05:58 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:05:58 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:07:38 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:07:38 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:07:38 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:07:38 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:07:38 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:07:38 SELECT *  FROM manufacturer 
+2022/02/19 13:07:38 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:07:38 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:07:38 SELECT *  FROM manufacturer 
+2022/02/19 13:07:38 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:07:38 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:07:38 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:07:38 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:07:38 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:07:38 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:07:38 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:07:38 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:07:38 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:07:38 SELECT *  FROM model  WHERE id="1"
+2022/02/19 13:09:58 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:09:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:09:58 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:09:58 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:09:58 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:09:58 SELECT *  FROM manufacturer 
+2022/02/19 13:09:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:09:58 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:09:58 SELECT *  FROM manufacturer 
+2022/02/19 13:09:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:09:58 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:09:58 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:09:58 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:09:58 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:09:58 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:09:58 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:09:58 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:09:58 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:09:58 SELECT *  FROM model  WHERE id="1"
+2022/02/19 13:09:58 SELECT *  FROM type  WHERE id="1"
+2022/02/19 13:10:18 SELECT id  FROM ads  WHERE slug="kiaules-valgo-siena"
+2022/02/19 13:10:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:10:18 SELECT *  FROM ads  WHERE id="19"
+2022/02/19 13:10:18 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '1' WHERE id="19"
+2022/02/19 13:10:18 UPDATE ads SET title = 'Kiaules valgo siena',description = 'Is lazdyno riesutu statau name pm',manufacturer_id = '1',model_id = '1',price = '1806.45',year = '2005',type_id = '1',user_id = '14',is_active = '1',img = 'https://preview.redd.it/d8tt3avq53171.jpg?auto=webp&s=edce9a434964695e45d02edc67d36a9fefe4bcb9',slug = 'kiaules-valgo-siena',created_at = '1996-01-24 00:00:00',vin = '0MIM1X89M79XS0GFZ',views = '0' WHERE id="19"
+2022/02/19 13:10:18 SELECT *  FROM manufacturer 
+2022/02/19 13:10:18 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:10:18 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:10:18 SELECT *  FROM manufacturer 
+2022/02/19 13:10:18 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:10:18 SELECT *  FROM manufacturer  WHERE id="2"
+2022/02/19 13:10:18 SELECT id, created_at  FROM ads  WHERE model_id="1" AND id  !=  "19" OR title LIKE "%Kiaules valgo siena%" AND id  !=  "19" LIMIT 5
+2022/02/19 13:10:18 SELECT *  FROM ads  WHERE id="1"
+2022/02/19 13:10:18 SELECT *  FROM ads  WHERE id="2"
+2022/02/19 13:10:18 SELECT *  FROM ads  WHERE id="3"
+2022/02/19 13:10:18 SELECT *  FROM ads  WHERE id="5"
+2022/02/19 13:10:18 SELECT *  FROM ads  WHERE id="16"
+2022/02/19 13:10:18 SELECT *  FROM manufacturer  WHERE id="1"
+2022/02/19 13:10:18 SELECT *  FROM model  WHERE id="1"
+2022/02/19 13:10:18 SELECT *  FROM type  WHERE id="1"

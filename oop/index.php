@@ -9,8 +9,11 @@ if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
     $path = explode('/',$path);
     //print_r($path);
     $class = ucfirst($path[0]);
-    $method = $path[1];
-    $param = $path[2];
+    if(isset($path[1])){
+        $method = $path[1];
+    } else {
+        $method = 'index';
+    }
 
     $class = '\Controller\\'.$class;
     if(class_exists($class)) {
@@ -22,10 +25,12 @@ if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
                 $obj->$method();
             }
         }else{
-            $obj->index();
+            $error = new \Controller\Error();
+            $error->error404();
         }
     }else{
-        echo '404';
+        $error = new \Controller\Error();
+        $error->error404();
     }
 }else{
     $obj = new \Controller\Home();

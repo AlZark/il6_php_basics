@@ -348,8 +348,11 @@ class Catalog extends AbstractModel
         }
     }
 
-    public static function getAllActiveAds($order = 'created_at ASC', $search = '')
+    public static function getAllActiveAds($limit, $offset, $order = 'created_at ASC', $search = '')
     {
+        //sorting out ordering
+        list($orderBy, $direction) = explode(' ', $order);
+
         $db = new DBHelper();
         $data = $db
             ->select()
@@ -358,7 +361,10 @@ class Catalog extends AbstractModel
             ->andWhere('title', '%' . $search . '%', 'LIKE')
             ->Orwhere('is_active', 1)
             ->andWhere('description', '%' . $search . '%', 'LIKE')
-            ->order($order)->get();
+            ->order($orderBy, $direction)
+            ->limit($limit)
+            ->offset($offset)
+            ->get();
         $ads = [];
 
         foreach ($data as $element) {
@@ -369,11 +375,33 @@ class Catalog extends AbstractModel
         return $ads;
     }
 
-    public static function getFiveAds($data)
+    public static function getPopularAds($limit)
     {
-        $type = $data . ' DESC';
         $db = new DBHelper();
-        $data = $db->select('id, created_at')->from('ads')->order($type)->limit(5)->get();
+        $data = $db->select('id')
+            ->from('ads')
+            ->where('is_active', 1)
+            ->order('views', 'DESC')
+            ->limit($limit)
+            ->get();
+        $ads = [];
+        foreach ($data as $element) {
+            $ad = new Catalog();
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
+    }
+
+    public static function getLatestAds($limit)
+    {
+        $db = new DBHelper();
+        $data = $db->select('id')
+            ->from('ads')
+            ->where('is_active', 1)
+            ->order('created_at', 'DESC')
+            ->limit($limit)
+            ->get();
         $ads = [];
         foreach ($data as $element) {
             $ad = new Catalog();
@@ -411,6 +439,20 @@ class Catalog extends AbstractModel
         $views = $catalog->getViews();
         $catalog->setViews($views + 1);
         $catalog->save();
+    }
+
+    public function totalAds($search)
+    {
+        $total = new DBHelper();
+        $rez = $total
+            ->select('COUNT(id) AS total')
+            ->from('ads')
+            ->where('is_active', 1)
+            ->andWhere('title', '%' . $search . '%', 'LIKE')
+            ->Orwhere('is_active', 1)
+            ->andWhere('description', '%' . $search . '%', 'LIKE')->get();
+
+        return $rez;
     }
 
 }

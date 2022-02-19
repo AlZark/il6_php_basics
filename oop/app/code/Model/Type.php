@@ -43,6 +43,18 @@ class Type extends AbstractModel
         $this->name = $name;
     }
 
+    public function __construct()
+    {
+        $this->table = 'type'; //database table name
+    }
+
+    protected function assignData()
+    {
+        $this->data = [
+            'title' => $this->name,
+        ];
+    }
+
     public function load($id)
     {
         $db = new DBHelper();

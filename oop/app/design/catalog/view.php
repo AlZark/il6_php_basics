@@ -1,10 +1,40 @@
+<?php
+
+use Model\Manufacturer;
+use Model\Model;
+use Model\Type;
+
+?>
 <div class="list-wrapper">
-    <h1><?= $this->data['catalog']->getTitle(); //TODO Add Maufacturer, Type, Model here ?></h1>
+    <h1><?= $this->data['catalog']->getTitle();?></h1>
 
     <?php $img = $this->data['catalog']->getImg();
     if ($img != NULL) { ?>
-        <img src="<?= $this->data['catalog']->getImg(); ?>" width="800"> <br> <?php } ?>
+        <img src="<?= $img ?>" width="800"> <br> <?php } ?>
     <p>About: <?= $this->data['catalog']->getDescription(); ?> </p>
+
+    <?php
+        $db = new Manufacturer();
+        $manufacturer = $db->load($this->data['catalog']->getManufacturerId());
+        $name = $manufacturer->getName();
+    ?>
+    <p>Manufacturer: <?php echo $name ?></p>
+
+
+    <?php
+        $db = new Model();
+        $model = $db->load($this->data['catalog']->getModelId());
+        $name = $model->getName();
+    ?>
+    <p>Model: <?= $name ?> </p>
+
+    <?php
+        $db = new Type();
+        $type = $db->load($this->data['catalog']->getTypeId());
+        $name = $type->getName();
+    ?>
+    <p>Type: <?= $name ?> </p>
+
     <p> <?= $this->data['catalog']->getPrice(); ?> Eur</p>
     <p>Year: <?= $this->data['catalog']->getYear(); ?></p>
 </div>

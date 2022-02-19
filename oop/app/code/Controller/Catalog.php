@@ -15,11 +15,27 @@ class Catalog extends AbstractController
 
     public function index()
     {
+        $db = new CatalogModel();
+        $adsCount = $db->totalAds($_GET['search_by']);
+
+        $limit = 2;
+        if (!isset ($_GET['page'])) {
+            $page = 1;
+        } else {
+            $page = $_GET['page'];
+        }
+        $offset = ($page - 1) * $limit;
+        $totalAds = $adsCount[0][0];
+        $totalPages = ceil($totalAds / $limit);
+
+        $this->data['page'] = $page;
+        $this->data['allPages'] = $totalPages;
+
         $this->filter();
         if (!isset($_GET['submit'])) {
-            $this->data['catalog'] = CatalogModel::getAllActiveAds();
+            $this->data['catalog'] = CatalogModel::getAllActiveAds($limit, $offset);
         } else {
-            $this->data['catalog'] = CatalogModel::getAllActiveAds($_GET['order'], $_GET['search_by']);
+            $this->data['catalog'] = CatalogModel::getAllActiveAds($limit, $offset, $_GET['order'], $_GET['search_by']);
         }
         $this->render('catalog/all');
     }
@@ -227,19 +243,42 @@ class Catalog extends AbstractController
     public function show($slug)
     {
         $catalog = new CatalogModel();
+        $catalog->loadBySlug($slug);
+        $newViews = (int)$catalog->getViews();
+        $catalog->setViews($newViews);
+        $catalog->save();
+        $this->data['catalog'] = $catalog;
+        $this->data['title'] = $catalog->getTitle();
+        $this->data['meta_description'] = $catalog->getDescription();
 
-        $this->data['catalog'] = $catalog->loadBySlug($slug);
+
+
+
+
+        $manufacturers = Manufacturer::getManufacturers();
+        $options = [];
+        foreach ($manufacturers as $manufacturer) {
+            $id = $manufacturer->getId();
+            $options[$id] = $manufacturer->getName();
+        }
+        $this->data['manufacturer'] = Manufacturer::getManufacturers();
+
+
+
+
+
+
         if ($this->data['catalog']) {
             $this->data['related'] = $catalog->getRelatedAds($this->data['catalog']->getId(), $this->data['catalog']->getModelId(), $this->data['catalog']->getTitle());
             $this->render('catalog/view');
         } else {
-            $this->render('parts/404');
+            $this->render('parts/errors/error404');
         }
     }
 
     public function filter()
     {
-        $form = new FormHelper('catalog/all', 'GET');
+        $form = new FormHelper('catalog/index', 'GET');
 
         $orderBy = [
             'created_at ASC' => 'Creation date asc',
@@ -248,7 +287,7 @@ class Catalog extends AbstractController
             'price DESC' => 'Price desc',
             'title ASC' => 'Name A-Z',
             'title DESC' => 'Name Z-A',
-        ];//TODO fix this fucking mess
+        ];
 
         $form->input([
             'name' => 'search_by',
@@ -313,15 +352,4 @@ class Catalog extends AbstractController
         $catalog->save();
     }
 
-    public function newestAds()
-    {
-        $this->data['catalog'] = CatalogModel::getFiveAds('created_at');
-        $this->render('parts/home');
-    }
-
-    public function mostViews() //TODO merge with newestAds function
-    {
-        $this->data['catalog'] = CatalogModel::getFiveAds('views');
-        $this->render('parts/home');
-    }
 }
