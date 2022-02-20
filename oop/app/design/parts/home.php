@@ -1,24 +1,51 @@
-<h1>Cars Cars Cars!!!</h1>
-<h2> Popular ads</h2>
-<div class="pop-catalog-wrap">
-<?php
-foreach ($this->data['populars'] as $popAd): ?>
-    <div class="box">
-        <h3><a href="<?php echo $this->Url('catalog/show', $popAd->getSlug()); ?>">
-                <?php echo $popAd->getTitle() ?></a></h3>
-        <img src="<?= $popAd->getImg(); ?>"  width="200" >
-    </div>
-<?php endforeach; ?>
-</div>
+<div class="container">
+    <h1>Cars Cars Cars!!!</h1>
+    <h2>Popular car ads</h2>
 
-<h2> Latest</h2>
-<div class="pop-catalog-wrap">
-<?php
-foreach ($this->data['latest'] as $latestAd): ?>
-    <div class="box">
-        <h3><a href="<?php echo $this->Url('catalog/show', $latestAd->getSlug()); ?>">
-                <?php echo $latestAd->getTitle() ?></a></h3>
-        <img src="<?= $latestAd->getImg();?>" width="200" >
+    <?php foreach ($this->data['populars'] as $popAd): ?>
+    <hr>
+    <div class="list-item">
+        <div class="right">
+            <div class="image">
+                <?php $img = $popAd->getImg();
+                    if ($img != NULL) { ?>
+                        <img class="list-img" src="<?php echo $popAd->getImg(); ?>"> <?php } ?>
+            </div>
+            <div class="description">
+                <div class="item-title">
+                    <h2><a href="<?php echo $this->Url('catalog/show', $popAd->getSlug()); ?>">
+                            <?php echo $popAd->getTitle() ?></a></h2>
+                </div>
+                <h4><?php echo 'Year: ' . $popAd->getYear(); ?></h4>
+                <h4><?php echo 'Mileage: ' . $popAd->getMileage() . ' km.'; ?></h4>
+                <h3><?php echo 'Price: ' . $popAd->getPrice() . ' Eur.'; ?></h3>
+            </div>
+        </div>
     </div>
-<?php endforeach; ?>
+    <?php endforeach; ?>
+
+    <br>
+
+    <h2>Latest car ads</h2>
+    <?php foreach ($this->data['latest'] as $latestAd): ?>
+    <hr>
+    <div class="list-item">
+        <div class="right">
+            <div class="image">
+                <?php $img = $latestAd->getImg();
+                if ($img != NULL) { ?>
+                    <img class="list-img" src="<?php echo $latestAd->getImg(); ?>"> <?php } ?>
+            </div>
+            <div class="description">
+                <div class="item-title">
+                    <h2><a href="<?php echo $this->Url('catalog/show', $latestAd->getSlug()); ?>">
+                            <?php echo $latestAd->getTitle() ?></a></h2>
+                </div>
+                <h4><?php echo 'Year: ' . $latestAd->getYear(); ?></h4>
+                <h4><?php echo 'Mileage: ' . $latestAd->getMileage() . ' km.'; ?></h4>
+                <h3><?php echo 'Price: ' . $latestAd->getPrice() . ' Eur.'; ?></h3>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
 </div>

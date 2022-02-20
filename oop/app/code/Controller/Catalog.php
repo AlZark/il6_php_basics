@@ -18,7 +18,7 @@ class Catalog extends AbstractController
         $db = new CatalogModel();
         $adsCount = $db->totalAds($_GET['search_by']);
 
-        $limit = 2;
+        $limit = 5;
         if (!isset ($_GET['page'])) {
             $page = 1;
         } else {
@@ -42,7 +42,6 @@ class Catalog extends AbstractController
 
     public function add()
     {
-
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
         }
@@ -112,6 +111,20 @@ class Catalog extends AbstractController
             'type' => 'text',
             'placeholder' => 'Image'
         ]);
+
+        $form->input([
+            'name' => 'mileage',
+            'type' => 'number',
+            'placeholder' => 'Mileage '
+        ]);
+
+        $form->input([
+            'name' => 'color',
+            'type' => 'text',
+            'maxlength' => '14',
+            'placeholder' => 'Color'
+        ]);
+
         $form->input([
             'name' => 'vin',
             'type' => 'text',
@@ -120,6 +133,7 @@ class Catalog extends AbstractController
         ]);
 
         $form->input([
+            'class' => 'submit',
             'name' => 'create',
             'type' => 'submit',
             'value' => 'Create'
@@ -223,6 +237,21 @@ class Catalog extends AbstractController
         ]);
 
         $form->input([
+            'name' => 'mileage',
+            'type' => 'number',
+            'placeholder' => 'Mileage',
+            'value' => $catalog->getMileage()
+        ]);
+
+        $form->input([
+            'name' => 'color',
+            'type' => 'text',
+            'maxlength' => '14',
+            'placeholder' => 'Color',
+            'value' => $catalog->getColor()
+        ]);
+
+        $form->input([
             'name' => 'vin',
             'type' => 'text',
             'maxlength' => '17',
@@ -231,6 +260,7 @@ class Catalog extends AbstractController
         ]);
 
         $form->input([
+            'class' => 'submit',
             'name' => 'create',
             'type' => 'submit',
             'value' => 'Update'
@@ -245,28 +275,11 @@ class Catalog extends AbstractController
         $catalog = new CatalogModel();
         $catalog->loadBySlug($slug);
         $newViews = (int)$catalog->getViews();
-        $catalog->setViews($newViews);
+        $catalog->setViews($newViews + 1);
         $catalog->save();
         $this->data['catalog'] = $catalog;
         $this->data['title'] = $catalog->getTitle();
         $this->data['meta_description'] = $catalog->getDescription();
-
-
-
-
-
-        $manufacturers = Manufacturer::getManufacturers();
-        $options = [];
-        foreach ($manufacturers as $manufacturer) {
-            $id = $manufacturer->getId();
-            $options[$id] = $manufacturer->getName();
-        }
-        $this->data['manufacturer'] = Manufacturer::getManufacturers();
-
-
-
-
-
 
         if ($this->data['catalog']) {
             $this->data['related'] = $catalog->getRelatedAds($this->data['catalog']->getId(), $this->data['catalog']->getModelId(), $this->data['catalog']->getTitle());
@@ -281,10 +294,10 @@ class Catalog extends AbstractController
         $form = new FormHelper('catalog/index', 'GET');
 
         $orderBy = [
-            'created_at ASC' => 'Creation date asc',
-            'created_at DESC' => 'Creation date desc',
-            'price ASC' => 'Price asc',
-            'price DESC' => 'Price desc',
+            'created_at DESC' => 'Newest to oldest',
+            'created_at ASC' => 'Oldest to newest',
+            'price ASC' => 'Lowest price',
+            'price DESC' => 'Highest price',
             'title ASC' => 'Name A-Z',
             'title DESC' => 'Name Z-A',
         ];
@@ -302,6 +315,7 @@ class Catalog extends AbstractController
             'selected' => $_GET['order'],
         ]);
         $form->input([
+            'class' => 'submit',
             'name' => 'submit',
             'type' => 'submit',
             'value' => 'Apply'
@@ -331,8 +345,12 @@ class Catalog extends AbstractController
         $catalog->setSlug($slug);
         $catalog->setCreatedAt($date);
         $catalog->setVin($_POST['vin']);
+        $catalog->setColor($_POST['color']);
+        $catalog->setMileage($_POST['mileage']);
         $catalog->setViews(0);
         $catalog->save();
+
+        Url::redirect('catalog');
     }
 
     public function update()
@@ -349,7 +367,11 @@ class Catalog extends AbstractController
         $catalog->setImg($_POST['img']);
         $catalog->setTypeId($_POST['type_id']);
         $catalog->setVin($_POST['vin']);
+        $catalog->setColor($_POST['color']);
+        $catalog->setMileage($_POST['mileage']);
         $catalog->save();
+
+        Url::redirect('catalog');
     }
 
 }

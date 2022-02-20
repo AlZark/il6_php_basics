@@ -1,7 +1,6 @@
 <div>
-    <h1>New user registration form</h1>
-    <div class="form-wrapper">
+    <div class="container">
+        <h1>Join the world of cars!</h1>
         <?php echo $this->data['form']; ?>
     </div>
-
 </div>

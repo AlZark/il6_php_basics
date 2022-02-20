@@ -3,31 +3,34 @@
         <title><?= $this->data['title']?></title>
         <meta name="description" content="<?= $this->data['meta_description']?>">
         <link rel="stylesheet" href="<?php echo $this->Url('css/styles.css'); ?>">
+        <script src="https://kit.fontawesome.com/8e3f90e04f.js" crossorigin="anonymous"></script>
     </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="<?php echo $this->Url('')?>">Home page</a>
+                    <a href="<?php echo $this->Url('')?>">
+                        <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/389/6851750389_56f29e86-7e83-47f7-ae62-5f379660b182.png", height="25">
+                    </a>
                 </li>
                 <li>
-                    <a href="<?php echo $this->Url('catalog')?>">View all ads</a>
+                    <a class="menu" href="<?php echo $this->Url('catalog')?>">View all ads</a>
                 </li>
                 <?php if($this->isUserLoggedIn()): ?>
                     <li>
-                        <a href="<?php echo $this->Url('catalog/add')?>">Add new ad</a>
+                        <a class="menu" href="<?php echo $this->Url('catalog/add')?>">Add new ad</a>
                     </li>
                     <li>
-                        <a href="<?php echo $this->Url('user/logout')?>">Logout</a>
+                        <a class="menu" href="<?php echo $this->Url('user/logout')?>">Logout</a>
                     </li>
 
                 <?php else: ?>
                 <li>
-                    <a href="<?php echo $this->Url('user/login')?>">Login</a>
+                    <a class="menu" href="<?php echo $this->Url('user/login')?>">Login</a>
                 </li>
                 <li>
-                    <a href="<?php echo $this->Url('user/register')?>">Sign Up</a>
+                    <a class="menu" href="<?php echo $this->Url('user/register')?>">Sign Up</a>
                 </li>
                 <?php endif; ?>
             </ul>

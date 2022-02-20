@@ -1,4 +1,4 @@
-<div class="list-wrapper">
+<div class="container">
     <h1>Daily car ads</h1>
 
     <div>
@@ -6,29 +6,42 @@
         <?php echo $this->data['form']; ?>
     </div>
 
-    <ul>
-        <?php
-        foreach ($this->data['catalog'] as $catalog): ?>
-            <div class="box">
-                <h4><a href="<?php echo $this->Url('catalog/show', $catalog->getSlug()); ?>">
-                        <?php echo $catalog->getTitle() ?></a></h4>
-                <a href="<?php echo $this->Url('catalog/edit', $catalog->getId()); ?>">Edit</a><br>
-                <?php $img = $catalog->getImg();
+    <?php foreach ($this->data['catalog'] as $catalog): ?>
+
+        <hr>
+        <div class="list-item">
+            <div class="right">
+            <div class="image">
+            <?php $img = $catalog->getImg();
                 if ($img != NULL) { ?>
-                    <img src="<?php echo $catalog->getImg(); ?>" width="200"> <br> <?php } ?>
-                <?php echo $catalog->getPrice() . ' Eur' ?><br>
-                <?php echo 'Year: ' . $catalog->getYear(); ?><br>
+                    <img class="list-img" src="<?php echo $catalog->getImg(); ?>"> <br> <?php } ?>
             </div>
+            <div class="description">
+
+                <div class="item-title">
+                <h2><a href="<?php echo $this->Url('catalog/show', $catalog->getSlug()); ?>">
+                        <?php echo $catalog->getTitle() ?></a></h2>
+                </div>
+
+                <h4><?php echo 'Year: ' . $catalog->getYear(); ?></h4>
+                <h4><?php echo 'Mileage: ' . $catalog->getMileage() . ' km.'; ?></h4>
+                <h3><?php echo 'Price: ' . $catalog->getPrice() . ' Eur.'; ?></h3>
+
+                <a href="<?php echo $this->Url('catalog/edit', $catalog->getId()); ?>">
+                    <i class="fa-solid fa-pen-to-square fa-lg"></i></a>
+            </div>
+            </div>
+        </div>
         <?php endforeach; ?>
-    </ul>
 
-    <?php $allPages = $this->data['allPages'] ?>
+    <div class="pagination">
 
-    <?php for($page = 1; $page <= $allPages; $page++){ ?>
+        <?php $allPages = $this->data['allPages'] ?>
 
-    <a href="<?php echo $this->Url('catalog?page=' . $page); ?>">
-        <?php echo $page ?></a></h4>
+        <?php for($page = 1; $page <= $allPages; $page++){ ?>
 
-    <?php } ?>
+        <a href="<?php echo $this->Url('catalog?page=' . $page); ?>">
+            <div class="page"><?php echo $page ?></div> </a> <?php } ?>
 
+    </div>
 </div>

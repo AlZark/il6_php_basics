@@ -5,7 +5,7 @@ use Model\Model;
 use Model\Type;
 
 ?>
-<div class="list-wrapper">
+<div class="container">
     <h1><?= $this->data['catalog']->getTitle();?></h1>
 
     <?php $img = $this->data['catalog']->getImg();
@@ -18,8 +18,7 @@ use Model\Type;
         $manufacturer = $db->load($this->data['catalog']->getManufacturerId());
         $name = $manufacturer->getName();
     ?>
-    <p>Manufacturer: <?php echo $name ?></p>
-
+    <p>Manufacturer: <?= $name ?></p>
 
     <?php
         $db = new Model();
@@ -35,11 +34,15 @@ use Model\Type;
     ?>
     <p>Type: <?= $name ?> </p>
 
+    <p>Mileage: <?= $this->data['catalog']->getMileage(); ?> km.</p>
+
+    <p>Color: <?= $this->data['catalog']->getColor(); ?> </p>
+
     <p> <?= $this->data['catalog']->getPrice(); ?> Eur</p>
     <p>Year: <?= $this->data['catalog']->getYear(); ?></p>
 </div>
 
-<div class="list-wrapper">
+<div class="container">
     <h2>Related ads</h2>
 
     <ul>

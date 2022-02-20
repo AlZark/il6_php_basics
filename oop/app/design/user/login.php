@@ -1,6 +1,6 @@
 <div>
-    <h1>Join wast world of CARS!!!</h1>
-    <div class="form-wrapper">
+    <div class="container">
+        <h1>Join wast world of CARS!!!</h1>
         <?php echo $this->data['form']; ?>
     </div>
 

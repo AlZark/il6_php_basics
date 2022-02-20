@@ -35,6 +35,10 @@ class Catalog extends AbstractModel
 
     private $views;
 
+    private $mileage;
+
+    private $color;
+
 
     public function __construct()
     {
@@ -57,7 +61,9 @@ class Catalog extends AbstractModel
             'slug' => $this->slug,
             'created_at' => $this->created_at,
             'vin' => $this->vin,
-            'views' => $this->views
+            'views' => $this->views,
+            'mileage' => $this->mileage,
+            'color' => $this->color,
         ];
     }
 
@@ -285,6 +291,38 @@ class Catalog extends AbstractModel
         $this->views = $views;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getMileage()
+    {
+        return $this->mileage;
+    }
+
+    /**
+     * @param mixed $mileage
+     */
+    public function setMileage($mileage)
+    {
+        $this->mileage = $mileage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+
     public function load($id)
     {
         $db = new DBHelper();
@@ -304,6 +342,8 @@ class Catalog extends AbstractModel
             $this->slug = $data['slug'];
             $this->created_at = $data['created_at'];
             $this->vin = $data['vin'];
+            $this->color = $data['color'];
+            $this->mileage = $data['mileage'];
             $this->views = $data['views'];
         }
         return $this;
@@ -341,14 +381,13 @@ class Catalog extends AbstractModel
         $rez = $db->select('id')->from('ads')->where('slug', $slug)->getOne();
         if (!empty($rez)) {
             $this->load($rez['id']);
-            self::logView($rez['id']);
             return $this;
         } else {
             return false;
         }
     }
 
-    public static function getAllActiveAds($limit, $offset, $order = 'created_at ASC', $search = '')
+    public static function getAllActiveAds($limit, $offset, $order = 'created_at DESC', $search = '')
     {
         //sorting out ordering
         list($orderBy, $direction) = explode(' ', $order);
@@ -430,15 +469,6 @@ class Catalog extends AbstractModel
             $ads[] = $ad;
         }
         return $ads;
-    }
-
-    public static function logView($id)
-    {
-        $catalog = new Catalog();
-        $catalog->load($id);
-        $views = $catalog->getViews();
-        $catalog->setViews($views + 1);
-        $catalog->save();
     }
 
     public function totalAds($search)

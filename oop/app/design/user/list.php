@@ -1,5 +1,5 @@
 <?php use Helper\Url; ?>
-<div class="list-wrapper">
+<div class="container">
     <ol>
         <?php foreach ($this->data['users'] as $user): ?>
             <li>

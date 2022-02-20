@@ -71,6 +71,7 @@ class User extends AbstractController
             'placeholder' => '*********'
         ]);
         $form->input([
+            'class' => 'submit',
             'name' => 'create',
             'type' => 'submit',
             'value' => 'Register'
@@ -94,6 +95,7 @@ class User extends AbstractController
             'placeholder' => '********'
         ]);
         $form->input([
+            'class' => 'submit',
             'name' => 'login',
             'type' => 'submit',
             'value' => 'Login'
@@ -165,6 +167,7 @@ class User extends AbstractController
         ]);
 
         $form->input([
+            'class' => 'submit',
             'name' => 'update',
             'type' => 'submit',
             'value' => 'Update'
