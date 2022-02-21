@@ -6,8 +6,17 @@
         <?php echo $this->data['form']; ?>
     </div>
 
-    <?php foreach ($this->data['catalog'] as $catalog): ?>
+    <div class="pagination">
 
+        <?php for($page = 1; $page <= $this->data['allPages']; $page++){ ?>
+
+            <a href="<?php echo $this->Url('catalog?p=' . $page); ?>">
+                <div class="page"><?php echo $page ?></div> </a> <?php } ?>
+
+    </div>
+
+    <?php foreach ($this->data['catalog'] as $catalog): ?>
+        <br>
         <hr>
         <div class="list-item">
             <div class="right">
@@ -36,11 +45,9 @@
 
     <div class="pagination">
 
-        <?php $allPages = $this->data['allPages'] ?>
+        <?php for($page = 1; $page <= $this->data['allPages']; $page++){ ?>
 
-        <?php for($page = 1; $page <= $allPages; $page++){ ?>
-
-        <a href="<?php echo $this->Url('catalog?page=' . $page); ?>">
+        <a href="<?php echo $this->Url('catalog?p=' . $page); ?>">
             <div class="page"><?php echo $page ?></div> </a> <?php } ?>
 
     </div>

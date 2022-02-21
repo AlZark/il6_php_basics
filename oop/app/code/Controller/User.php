@@ -175,7 +175,6 @@ class User extends AbstractController
 
         $this->data['form'] = $form->getForm();
         $this->render('user/edit');
-
     }
 
     public function create()
@@ -192,6 +191,7 @@ class User extends AbstractController
             $user->setEmail($_POST['email']);
             $user->setCityId($_POST['city_id']);
             $user->setIsActive(1);
+            $user->setRoleId(0);
             $user->save();
             Url::redirect('user/login');
         } else {
@@ -215,7 +215,7 @@ class User extends AbstractController
 
         if ($user->getEmail() != $_POST['email']) {
             if (Validator::checkEmail($_POST['email']) && UserModel::isValueUnique('email', $_POST['email'], 'user')) {
-                $user->setPassword(md5($_POST['email']));
+                $user->setEmail(md5($_POST['email']));
             }
         }
 

@@ -39,7 +39,6 @@ class Catalog extends AbstractModel
 
     private $color;
 
-
     public function __construct()
     {
         $this->table = 'ads'; //database table name
@@ -387,6 +386,7 @@ class Catalog extends AbstractModel
         }
     }
 
+    //add ability to null out limit and offset
     public static function getAllActiveAds($limit, $offset, $order = 'created_at DESC', $search = '')
     {
         //sorting out ordering
@@ -482,7 +482,7 @@ class Catalog extends AbstractModel
             ->Orwhere('is_active', 1)
             ->andWhere('description', '%' . $search . '%', 'LIKE')->get();
 
-        return $rez;
+        return $rez[0][0];
     }
 
 }

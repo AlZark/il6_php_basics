@@ -33,6 +33,11 @@
                     <a class="menu" href="<?php echo $this->Url('user/register')?>">Sign Up</a>
                 </li>
                 <?php endif; ?>
+                <?php if($this->isUserAdmin()): ?>
+                    <li>
+                        <a class="menu" href="<?php echo $this->Url('admin/index')?>">ADMIN</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

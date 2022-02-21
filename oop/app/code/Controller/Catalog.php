@@ -19,16 +19,15 @@ class Catalog extends AbstractController
         $adsCount = $db->totalAds($_GET['search_by']);
 
         $limit = 5;
-        if (!isset ($_GET['page'])) {
+        if (!isset ($_GET['p'])) {
             $page = 1;
         } else {
-            $page = $_GET['page'];
+            $page = (int)$_GET['p'];
         }
         $offset = ($page - 1) * $limit;
-        $totalAds = $adsCount[0][0];
-        $totalPages = ceil($totalAds / $limit);
+        $totalPages = ceil($adsCount / $limit);
 
-        $this->data['page'] = $page;
+        $this->data['p'] = $page;
         $this->data['allPages'] = $totalPages;
 
         $this->filter();

@@ -20,6 +20,7 @@ class AbstractModel
     public function save()
     {
         $this->assignData();
+
         if (!isset($this->id)) {
             $this->create();
         } else {
@@ -56,5 +57,15 @@ class AbstractModel
         $rez = $db->select()->from($table)->where($column, $value)->get();
         return empty($rez);
     }
+
+    //Use pagination below, but rewrite it so that filters work as well
+//    public function count()
+//    {
+//            $db = new DBHelper();
+//            $rez = $db->select('COUNT(id)')->from($this->table)->where('active', 1)->get();
+//            $data = $rez->fetchAll();
+//            print_r($data);
+//            return $rez;
+//    }
 
 }
