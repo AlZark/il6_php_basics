@@ -485,4 +485,20 @@ class Catalog extends AbstractModel
         return $rez[0][0];
     }
 
+    public function disable($id)
+    {
+        $data = ['is_active' => 0];
+
+        $disable = new DBHelper();
+        $disable->update('ads', $data)->where('id', $id)->exec();
+    }
+
+    public function enable($id)
+    {
+        $data = ['is_active' => 1];
+
+        $disable = new DBHelper();
+        $disable->update('ads', $data)->where('id', $id)->exec();
+    }
+
 }

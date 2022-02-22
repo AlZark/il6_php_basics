@@ -262,6 +262,12 @@ class Admin extends AbstractController
             'value' => $catalog->getVin()
         ]);
 
+        $form->select([
+            'name' => 'is_active',
+            'options' => [0 => 'Not active', 1 => 'Active'],
+            'selected' => $catalog->getIsActive()
+        ]);
+
         $form->input([
             'class' => 'submit',
             'name' => 'create',
@@ -289,9 +295,30 @@ class Admin extends AbstractController
         $catalog->setVin($_POST['vin']);
         $catalog->setColor($_POST['color']);
         $catalog->setMileage($_POST['mileage']);
+        $catalog->setIsActive($_POST['is_active']);
         $catalog->save();
 
         Url::redirect('admin/catalogs');
     }
 
+    public function changeStatus(){
+
+        if($_POST["disable"] == "Disable"){
+            foreach ($_POST as $key => $element){
+                if($element != "Disable"){
+                    $catalog = new CatalogModel();
+                    $catalog->disable($key);
+                }
+            }
+        }
+        if($_POST["enable"] == "Enable"){
+            foreach ($_POST as $key => $element){
+                if($element != "Enable"){
+                    $catalog = new CatalogModel();
+                    $catalog->enable($key);
+                }
+            }
+        }
+        Url::redirect('admin/catalogs');
+    }
 }
