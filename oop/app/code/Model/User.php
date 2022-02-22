@@ -43,7 +43,6 @@ class User extends AbstractModel
             'city_id' => $this->cityId,
             'role_id' => $this->role_id,
             'is_active' => $this->is_active,
-            'login_fails' => $this->login_fails
         ];
     }
 

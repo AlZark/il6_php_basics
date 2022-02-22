@@ -96,25 +96,16 @@ class Admin extends AbstractController
             'selected' => $user->getCityId()
         ]);
 
-        $form->input([
+        $form->select([
             'name' => 'is_active',
-            'type' => 'number',
-            'placeholder' => '1 or 0',
-            'value' => $user->getIsActive(),
+            'options' => [0 => 'Not active', 1 => 'Active'],
+            'selected' => $user->getIsActive()
         ]);
 
-        $form->input([
+        $form->select([
             'name' => 'role_id',
-            'type' => 'number',
-            'placeholder' => '1 or 0',
-            'value' => $user->getRoleId(),
-        ]);
-
-        $form->input([
-            'name' => 'login_fails',
-            'type' => 'number',
-            'placeholder' => '1 or 0',
-            'value' => $user->getLoginFails(),
+            'options' => [0 => 'User', 1 => 'Admin'],
+            'selected' => $user->getRoleId()
         ]);
 
         $form->input([
@@ -158,10 +149,9 @@ class Admin extends AbstractController
         }
         $user->setRoleId($_POST['role_id']);
         $user->setIsActive($_POST['is_active']);
-        $user->setLoginFails($_POST['login_fails']);
 
         $user->save();
-        Url::redirect('admin/users/list');
+        Url::redirect('admin/users');
     }
 
     public function catalogEdit($id)
@@ -301,7 +291,7 @@ class Admin extends AbstractController
         $catalog->setMileage($_POST['mileage']);
         $catalog->save();
 
-        Url::redirect('admin/catalogs/list');
+        Url::redirect('admin/catalogs');
     }
 
 }
