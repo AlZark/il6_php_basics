@@ -21,6 +21,8 @@ class User extends AbstractModel
 
     private $city;
 
+    private $catalogs;
+
     private $login_fails;
 
     private $is_active;
@@ -146,6 +148,13 @@ class User extends AbstractModel
         $this->role_id = $role_id;
     }
 
+    public function getCatalogs($id)
+    {
+        $db = new DBHelper();
+        $data = $db->select('id')->from('ads')->where('user_id', $id)->get();
+        return $data;
+    }
+
     public function load($id)
     {
         $db = new DBHelper();
@@ -162,6 +171,7 @@ class User extends AbstractModel
 
         $city = new City();
         $this->city = $city->load($this->cityId);
+
         return $this;
     }
 

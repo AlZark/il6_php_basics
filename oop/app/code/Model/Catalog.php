@@ -23,6 +23,16 @@ class Catalog extends AbstractModel
 
     private $user_id;
 
+    private $user;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
     private $img;
 
     private $is_active;
@@ -345,6 +355,9 @@ class Catalog extends AbstractModel
             $this->mileage = $data['mileage'];
             $this->views = $data['views'];
         }
+
+        $user = new User();
+        $this->user = $user->load($this->user_id);
         return $this;
     }
 

@@ -19,7 +19,7 @@ class Admin extends AbstractController
     public function __construct()
     {
         parent::__construct();
-        if(!$this->isUserAdmin()) {
+        if (!$this->isUserAdmin()) {
             Url::redirect('');
         }
     }
@@ -43,7 +43,7 @@ class Admin extends AbstractController
 
     public function userEdit($id)
     {
-        if(!$this->isUserAdmin()) {
+        if (!$this->isUserAdmin()) {
             Url::redirect('');
         }
 
@@ -301,24 +301,25 @@ class Admin extends AbstractController
         Url::redirect('admin/catalogs');
     }
 
-    public function changeStatus(){
-
-        if($_POST["disable"] == "Disable"){
-            foreach ($_POST as $key => $element){
-                if($element != "Disable"){
+    public function catalogAction()
+    {
+        if ($_POST["action"] == "Disable") {
+            foreach ($_POST as $key => $element) {
+                if ($key != "action" && $key != "submit") {
                     $catalog = new CatalogModel();
                     $catalog->disable($key);
                 }
             }
-        }
-        if($_POST["enable"] == "Enable"){
-            foreach ($_POST as $key => $element){
-                if($element != "Enable"){
+        } else {
+            foreach ($_POST as $key => $element) {
+                if ($key != "action" && $key != "submit") {
                     $catalog = new CatalogModel();
                     $catalog->enable($key);
                 }
             }
         }
         Url::redirect('admin/catalogs');
+
     }
+
 }

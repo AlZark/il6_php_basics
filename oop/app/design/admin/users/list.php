@@ -29,6 +29,7 @@
     <td>
         <a href="<?= $this->url('admin/userEdit', $user->getId())?>">
             <i class="fa-solid fa-pen-to-square fa-lg"></i></a>
+        <a href="<?= $this->url('admin/userView', $user->getId())?>">View</a>
     </td>
 </tr>
 

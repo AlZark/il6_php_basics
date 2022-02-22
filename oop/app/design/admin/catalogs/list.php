@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @var \Model\Catalog $catalog;
+ * @var \Model\Catalog $catalog ;
  */
 
 ?>
@@ -19,9 +19,9 @@
         <th>Action</th>
     </tr>
 
-    <form action="<?= $this->url('admin/changeStatus')?>" method="POST">
-    <?php foreach ($this->data['catalogs'] as $catalog): ?>
-        <tr>
+    <form action="<?= $this->url('admin/catalogAction') ?>" method="POST">
+        <?php foreach ($this->data['catalogs'] as $catalog): ?>
+            <tr>
                 <td><input type="checkbox" name='<?= $catalog->getId() ?>'></td>
                 <td><?= $catalog->getId(); ?></td>
                 <td><?= $catalog->getTitle(); ?></td>
@@ -30,15 +30,17 @@
                 <td><?= $catalog->getVin(); ?></td>
                 <td><?= $catalog->getIsActive(); ?></td>
                 <td>
-                    <a href="<?= $this->url('admin/catalogEdit', $catalog->getId())?>">
+                    <a href="<?= $this->url('admin/catalogEdit', $catalog->getId()) ?>">
                         <i class="fa-solid fa-pen-to-square fa-lg"></i></a>
                 </td>
-        </tr>
+            </tr>
 
-    <?php endforeach; ?>
-
-        <input type="submit" name="disable" value="Disable"> <br>
-        <input type="submit" name="enable" value="Enable">
+        <?php endforeach; ?>
+        <select name="action">
+            <option value="Disable">Disable</option>
+            <option value="Enable">Enable</option>
+        </select>
+        <input type="submit" name="submit" value="Update">
 
     </form>
 </table>
