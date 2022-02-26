@@ -5,7 +5,7 @@ namespace Model;
 use Core\AbstractModel;
 use Helper\DBHelper;
 
-class BoatModel extends AbstractModel
+class Model extends AbstractModel
 {
 
     private $name;
@@ -83,21 +83,26 @@ class BoatModel extends AbstractModel
 
     public function load($id)
     {
-        $data = new DBHelper();
-        $data->select()->from('model')->where('id', $id)->getOne();
+        $db = new DBHelper();
+        $data = $db->select()->from('model')->where('id', $id)->getOne();
         $this->id = $data['id'];
-        $this->id = $data['name'];
-
+        $this->name = $data['name'];
+        $this->type_id = $data['type_id'];
+        $this->year = $data['year'];
+        return $this;
     }
 
     public static function getAllModels()
     {
         $data = new DBHelper();
         $rez = $data->select('id')->from('model')->get();
-        foreach ($rez as $id){
-            $id =
+        $models = [];
+        foreach ($rez as $element){
+            $model = new Model();
+            $model->load($element['id']);
+            $models[] = $model;
         }
-
+        return $models;
     }
 
     //Create update

@@ -11,6 +11,15 @@ class Manufacturer extends AbstractModel
 
     protected $name;
 
+    protected const TABLE = 'manufacturer';
+
+    public function __construct($id = null)
+    {
+        if($id !== null){
+            $this->load($id);
+        }
+    }
+
     /**
      * @return mixed
      */
@@ -46,7 +55,7 @@ class Manufacturer extends AbstractModel
     public function load($id)
     {
         $db = new DBHelper();
-        $manufacturer = $db->select()->from('manufacturer')->where('id', $id)->getOne();
+        $manufacturer = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         $this->id = $manufacturer['id'];
         $this->name = $manufacturer['name'];
         return $this;
@@ -55,7 +64,7 @@ class Manufacturer extends AbstractModel
     public static function getManufacturers()
     {
         $db = new DBHelper();
-        $data = $db->select()->from('manufacturer')->get();
+        $data = $db->select()->from(self::TABLE)->get();
         $manufacturers = [];
         foreach ($data as $element){
             $manufacturer = new Manufacturer();

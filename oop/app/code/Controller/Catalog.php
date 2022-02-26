@@ -9,6 +9,7 @@ use Model\Manufacturer;
 use Model\Model;
 use Model\Type;
 use Core\AbstractController;
+use Model\Comments;
 
 class Catalog extends AbstractController
 {
@@ -31,12 +32,12 @@ class Catalog extends AbstractController
         $this->data['allPages'] = $totalPages;
 
         $this->filter();
-        if (!isset($_GET['submit'])) {
-            $this->data['catalog'] = CatalogModel::getAllActiveAds($limit, $offset);
+        if (!isset($_GET['order'])) {
+            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $offset);
         } else {
-            $this->data['catalog'] = CatalogModel::getAllActiveAds($limit, $offset, $_GET['order'], $_GET['search_by']);
+            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $offset, $_GET['order'], $_GET['search_by']);
         }
-        $this->render('catalog/all');
+        $this->render('ads/all');
     }
 
     public function add()
@@ -139,7 +140,7 @@ class Catalog extends AbstractController
         ]);
 
         $this->data['form'] = $form->getForm();
-        $this->render('catalog/add');
+        $this->render('ads/add');
 
     }
 
@@ -266,23 +267,23 @@ class Catalog extends AbstractController
         ]);
 
         $this->data['form'] = $form->getForm();
-        $this->render('catalog/edit');
+        $this->render('ads/edit');
     }
 
     public function show($slug)
     {
-        $catalog = new CatalogModel();
-        $catalog->loadBySlug($slug);
-        $newViews = (int)$catalog->getViews();
-        $catalog->setViews($newViews + 1);
-        $catalog->save();
-        $this->data['catalog'] = $catalog;
-        $this->data['title'] = $catalog->getTitle();
-        $this->data['meta_description'] = $catalog->getDescription();
+        $ad = new CatalogModel();
+        $ad->loadBySlug($slug);
+        $newViews = (int)$ad->getViews();
+        $ad->setViews($newViews + 1);
+        $ad->save();
+        $this->data['ads'] = $ad;
+        $this->data['title'] = $ad->getTitle();
+        $this->data['meta_description'] = $ad->getDescription();
 
-        if ($this->data['catalog']) {
-            $this->data['related'] = $catalog->getRelatedAds($this->data['catalog']->getId(), $this->data['catalog']->getModelId(), $this->data['catalog']->getTitle());
-            $this->render('catalog/view');
+        if ($this->data['ads']) {
+            $this->data['related'] = $ad->getRelatedAds($this->data['ads']->getId());
+            $this->render('ads/view');
         } else {
             $this->render('parts/errors/error404');
         }
@@ -327,7 +328,7 @@ class Catalog extends AbstractController
     {
         $date = Date("Y-m-d H:i:s");
         $slug = Url::generateSlug($_POST['title']);
-        while (!CatalogModel::isValueUnique('slug', $slug, 'ads')) {
+        while (!CatalogModel::isValueUnique('slug', $slug)) {
             $slug .= rand(0, 99);
         }
         $catalog = new CatalogModel();
@@ -340,7 +341,7 @@ class Catalog extends AbstractController
         $catalog->setTypeId($_POST['type_id']);
         $catalog->setUserId($_SESSION['user_id']);
         $catalog->setImg($_POST['img']);
-        $catalog->setIsActive(1);
+        $catalog->setActive(1);
         $catalog->setSlug($slug);
         $catalog->setCreatedAt($date);
         $catalog->setVin($_POST['vin']);
@@ -373,4 +374,24 @@ class Catalog extends AbstractController
         Url::redirect('catalog');
     }
 
+    public function comment()
+    {
+        if($this->isUserLoggedIn()) {
+            if ($_POST['number1'] + $_POST['number2'] == $_POST['answer']) {
+                $date = new CatalogModel();
+                $catalog = $date->load($_POST['catalog_id']);
+                $date = Date("Y-m-d H:i:s");
+                $comment = new Comments();
+                $comment->setContent($_POST['content']);
+                $comment->setUserId($_SESSION['user_id']);
+                $comment->setAdId($_POST['catalog_id']);
+                $comment->setCreatedAt($date);
+                $comment->setIp($_SERVER['REMOTE_ADDR']);
+                $comment->save();
+                Url::redirect('catalog/show/' . $catalog->getSlug());
+            } else {
+                Url::redirect('');
+            }
+        } Url::redirect('user/login');
+    }
 }

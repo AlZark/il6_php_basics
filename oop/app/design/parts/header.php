@@ -19,7 +19,7 @@
                 </li>
                 <?php if($this->isUserLoggedIn()): ?>
                     <li>
-                        <a class="menu" href="<?php echo $this->Url('catalog/add')?>">Add new ad</a>
+                        <a class="menu" href="<?php echo $this->Url('ads/add')?>">Add new ad</a>
                     </li>
                     <li>
                         <a class="menu" href="<?php echo $this->Url('user/logout')?>">Logout</a>

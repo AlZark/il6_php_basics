@@ -29,9 +29,13 @@ class User extends AbstractModel
 
     private $role_id;
 
-    public function __construct()
+    protected const TABLE = 'user';
+
+    public function __construct($id = null)
     {
-        $this->table = 'user';
+        if($id !== null){
+            $this->load($id);
+        }
     }
 
     protected function assignData()
@@ -128,12 +132,12 @@ class User extends AbstractModel
         $this->login_fails = $login_fails;
     }
 
-    public function getIsActive()
+    public function getActive()
     {
         return $this->is_active;
     }
 
-    public function setIsActive($is_active)
+    public function setActive($is_active)
     {
         $this->is_active = $is_active;
     }
@@ -158,7 +162,7 @@ class User extends AbstractModel
     public function load($id)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('user')->where('id', $id)->getOne();
+        $data = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         $this->id = $data['id'];
         $this->name = $data['name'];
         $this->lastName = $data['last_name'];
@@ -180,7 +184,7 @@ class User extends AbstractModel
         $db = new DBHelper();
         $rez = $db
             ->select('id')
-            ->from('user')
+            ->from(self::TABLE)
             ->where('email', $email)
             ->andWhere('password', $pass)
             ->andWhere('is_active', 1)
@@ -199,7 +203,7 @@ class User extends AbstractModel
         $db = new DBHelper();
         $rez = $db
             ->select('login_fails')
-            ->from('user')
+            ->from(self::TABLE)
             ->where('email', $email)
             ->getOne();
 
@@ -217,13 +221,13 @@ class User extends AbstractModel
             ];
         }
         $db = new DBHelper();
-        $db->update('user', $data)->where('email', $email)->exec();
+        $db->update(self::TABLE, $data)->where('email', $email)->exec();
     }
 
     public static function getAllUsers()
     {
         $db = new DBHelper();
-        $data = $db->select()->from('user')->get();
+        $data = $db->select()->from(self::TABLE)->get();
         $users = [];
         foreach ($data as $element) {
             $user = new User();
@@ -231,6 +235,29 @@ class User extends AbstractModel
             $users[] = $user;
         }
         return $users;
+    }
+
+    public function disable($id)
+    {
+        $data = ['is_active' => 0];
+
+        $disable = new DBHelper();
+        $disable->update(self::TABLE, $data)->where('id', $id)->exec();
+    }
+
+    public function enable($id)
+    {
+        $data = ['is_active' => 1];
+
+        $disable = new DBHelper();
+        $disable->update(self::TABLE, $data)->where('id', $id)->exec();
+    }
+
+    public function getFullName()
+    {
+        $db = new DBHelper();
+        $user = $db->select('name, last_name')->from(self::TABLE)->where('id', $this->id)->getOne();
+        return $user['name'] . ' ' . $user['last_name'];
     }
 
 }

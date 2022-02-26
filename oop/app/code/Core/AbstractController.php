@@ -51,4 +51,9 @@ class AbstractController
     {
         return Url::link($path, $param);
     }
+
+    public static function checkIfHuman($number1, $number2, $answer)
+    {
+
+    }
 }

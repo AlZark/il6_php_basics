@@ -4,7 +4,7 @@ namespace Controller;
 
 use Core\AbstractController;
 use Helper\Validator;
-use Model\BoatModel;
+use Model\Model AS BoatModelModel;
 use Helper\FormHelper;
 use Model\BoatType;
 use Helper\Url;
@@ -49,7 +49,7 @@ class Model extends AbstractController
     public function create()
     {
         if (Validator::isFilledOut($_POST['model_name'])) {
-            $boat_model = new BoatModel();
+            $boat_model = new BoatModelModel();
             $boat_model->setName($_POST['model_name']);
             $boat_model->setTypeId($_POST['type']);
             $boat_model->setYear($_POST['year']);

@@ -11,6 +11,15 @@ class Model extends AbstractModel
 
     protected $name;
 
+    protected const TABLE = 'model';
+
+    public function __construct($id = null)
+    {
+        if($id !== null){
+            $this->load($id);
+        }
+    }
+
     /**
      * @return mixed
      */
@@ -46,7 +55,7 @@ class Model extends AbstractModel
     public function load($id)
     {
         $db = new DBHelper();
-        $model = $db->select()->from('model')->where('id', $id)->getOne();
+        $model = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         $this->id = $model['id'];
         $this->name = $model['name'];
         return $this;
@@ -55,7 +64,7 @@ class Model extends AbstractModel
     public static function getModels()
     {
         $db = new DBHelper();
-        $data = $db->select()->from('model')->get();
+        $data = $db->select()->from(self::TABLE)->get();
         $models = [];
         foreach ($data as $element){
             $model = new Model();

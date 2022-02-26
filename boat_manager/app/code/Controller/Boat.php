@@ -5,9 +5,11 @@ namespace Controller;
 use Core\AbstractController;
 use Helper\FormHelper;
 use Helper\Validator;
-use Model\Boat AS BoatModel;
+use Model\Boat as BoatModel;
+use Model\Model;
 use Model\User;
 use Helper\Url;
+
 class Boat extends AbstractController
 {
     public function add()
@@ -23,6 +25,15 @@ class Boat extends AbstractController
             'type' => 'text',
             'placeholder' => 'Boat name',
         ]);
+
+        $models = Model::getAllModels();
+        $modelList = [];
+        foreach ($models as $model) {
+            $id = $model->getId();
+            $modelList[$id] = $model->getName();
+        }
+        $form->select($modelList, 'models');
+
         $form->input([
             'name' => 'model',
             'type' => 'text',
@@ -49,7 +60,7 @@ class Boat extends AbstractController
 
         $users = User::getUsers();
         $userList = [];
-        foreach ($users as $user){
+        foreach ($users as $user) {
             $userList[$user['id']] = $user['name'] . ' ' . $user['last_name'];
         }
         $form->select($userList, 'users');
@@ -133,7 +144,7 @@ class Boat extends AbstractController
         $boatWidth = Validator::isFilledOut($_POST['width']);
         $boatDepth = Validator::isFilledOut($_POST['depth']);
 
-        if($boatName && $boatModel && $boatLength && $boatWidth && $boatDepth){
+        if ($boatName && $boatModel && $boatLength && $boatWidth && $boatDepth) {
             $boat = new BoatModel();
             $boat->setName($_POST['name']);
             $boat->setModelId($_POST['model']);
@@ -156,7 +167,7 @@ class Boat extends AbstractController
         $boatWidth = Validator::isFilledOut($_POST['width']);
         $boatDepth = Validator::isFilledOut($_POST['depth']);
 
-        if($boatName && $boatModel && $boatLength && $boatWidth && $boatDepth){
+        if ($boatName && $boatModel && $boatLength && $boatWidth && $boatDepth) {
             $boatId = $_POST['id'];
             $boat = new BoatModel();
             $boat->load($boatId);
@@ -170,5 +181,14 @@ class Boat extends AbstractController
         } else {
             echo "Not all required fields are filled out";
         }
+    }
+
+    public function all()
+    {
+        $this->data['boats'] = BoatModel::getAllMyBoats($_SESSION['user_id']);
+        $this->render('boat/all');
+
+
+
     }
 }

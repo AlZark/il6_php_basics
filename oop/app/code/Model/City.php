@@ -9,6 +9,8 @@ class City extends AbstractModel
 
     private $name;
 
+    protected const TABLE = 'cities';
+
     public function getId()
     {
         return $this->id;
@@ -19,10 +21,17 @@ class City extends AbstractModel
         return $this->name;
     }
 
+    public function __construct($id = null)
+    {
+        if($id !== null){
+            $this->load($id);
+        }
+    }
+
     public function load($id)
     {
         $db = new DBHelper();
-        $city = $db->select()->from('cities')->where('id', $id)->getOne();
+        $city = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         $this->id = $city['id'];
         $this->name = $city['name'];
         return $this;

@@ -25,14 +25,6 @@ class Catalog extends AbstractModel
 
     private $user;
 
-    /**
-     * @return mixed
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
     private $img;
 
     private $is_active;
@@ -49,9 +41,13 @@ class Catalog extends AbstractModel
 
     private $color;
 
-    public function __construct()
+    protected const TABLE = 'ads';
+
+    public function __construct($id = null)
     {
-        $this->table = 'ads'; //database table name
+        if($id !== null){
+            $this->load($id);
+        }
     }
 
     protected function assignData()
@@ -114,6 +110,14 @@ class Catalog extends AbstractModel
     public function getManufacturerId()
     {
         return $this->manufacturer_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
     /**
@@ -223,7 +227,7 @@ class Catalog extends AbstractModel
     /**
      * @return mixed
      */
-    public function getIsActive()
+    public function getActive()
     {
         return $this->is_active;
     }
@@ -231,7 +235,7 @@ class Catalog extends AbstractModel
     /**
      * @param mixed $is_active
      */
-    public function setIsActive($is_active)
+    public function setActive($is_active)
     {
         $this->is_active = $is_active;
     }
@@ -335,7 +339,7 @@ class Catalog extends AbstractModel
     public function load($id)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->where('id', $id)->getOne();
+        $data = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         if (!empty($data)) {
             $this->id = $data['id'];
             $this->title = $data['title'];
@@ -364,7 +368,7 @@ class Catalog extends AbstractModel
     public function getAd($id)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->where('id', $id)->get();
+        $data = $db->select()->from(self::TABLE)->where('id', $id)->get();
         $ads = [];
         foreach ($data as $element) {
             $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
@@ -377,7 +381,7 @@ class Catalog extends AbstractModel
     public static function getAllAds()
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->get();
+        $data = $db->select()->from(self::TABLE)->get();
         $ads = [];
         foreach ($data as $element) {
             $ad = new Catalog();
@@ -390,7 +394,7 @@ class Catalog extends AbstractModel
     public function loadBySlug($slug)
     {
         $db = new DBHelper();
-        $rez = $db->select('id')->from('ads')->where('slug', $slug)->getOne();
+        $rez = $db->select('id')->from(self::TABLE)->where('slug', $slug)->getOne();
         if (!empty($rez)) {
             $this->load($rez['id']);
             return $this;
@@ -408,7 +412,7 @@ class Catalog extends AbstractModel
         $db = new DBHelper();
         $data = $db
             ->select()
-            ->from('ads')
+            ->from(self::TABLE)
             ->where('is_active', 1)
             ->andWhere('title', '%' . $search . '%', 'LIKE')
             ->Orwhere('is_active', 1)
@@ -431,7 +435,7 @@ class Catalog extends AbstractModel
     {
         $db = new DBHelper();
         $data = $db->select('id')
-            ->from('ads')
+            ->from(self::TABLE)
             ->where('is_active', 1)
             ->order('views', 'DESC')
             ->limit($limit)
@@ -449,7 +453,7 @@ class Catalog extends AbstractModel
     {
         $db = new DBHelper();
         $data = $db->select('id')
-            ->from('ads')
+            ->from(self::TABLE)
             ->where('is_active', 1)
             ->order('created_at', 'DESC')
             ->limit($limit)
@@ -463,15 +467,18 @@ class Catalog extends AbstractModel
         return $ads;
     }
 
-    public static function getRelatedAds($id, $model, $title)
+    public static function getRelatedAds($id)
     {
+        $ad = new Catalog();
+        $ad->load($id);
+
         $db = new DBHelper();
         $data = $db
             ->select('id, created_at')
-            ->from('ads')
-            ->where('model_id', $model)
+            ->from(self::TABLE)
+            ->where('model_id', $ad->getModelId())
             ->andWhere('id', $id, ' != ')
-            ->orWhere('title', '%' . $title . '%', ' LIKE ')
+            ->orWhere('title', '%' . $ad->getTitle() . '%', ' LIKE ')
             ->andWhere('id', $id, ' != ')
             ->limit(5)
             ->get();
@@ -489,29 +496,13 @@ class Catalog extends AbstractModel
         $total = new DBHelper();
         $rez = $total
             ->select('COUNT(id) AS total')
-            ->from('ads')
+            ->from(self::TABLE)
             ->where('is_active', 1)
             ->andWhere('title', '%' . $search . '%', 'LIKE')
             ->Orwhere('is_active', 1)
             ->andWhere('description', '%' . $search . '%', 'LIKE')->get();
 
         return $rez[0][0];
-    }
-
-    public function disable($id)
-    {
-        $data = ['is_active' => 0];
-
-        $disable = new DBHelper();
-        $disable->update('ads', $data)->where('id', $id)->exec();
-    }
-
-    public function enable($id)
-    {
-        $data = ['is_active' => 1];
-
-        $disable = new DBHelper();
-        $disable->update('ads', $data)->where('id', $id)->exec();
     }
 
 }

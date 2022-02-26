@@ -190,12 +190,12 @@ class User extends AbstractController
             $user->setPassword(md5($_POST['password']));
             $user->setEmail($_POST['email']);
             $user->setCityId($_POST['city_id']);
-            $user->setIsActive(1);
+            $user->setActive(1);
             $user->setRoleId(0);
             $user->save();
             Url::redirect('user/login');
         } else {
-            echo 'Invalid data';
+            Url::redirect('user/register');
         }
     }
 
@@ -218,7 +218,6 @@ class User extends AbstractController
                 $user->setEmail(md5($_POST['email']));
             }
         }
-
         $user->save();
         Url::redirect('user/edit');
     }

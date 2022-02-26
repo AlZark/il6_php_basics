@@ -4,7 +4,6 @@ namespace Model;
 
 use Core\AbstractModel;
 use Helper\DBHelper;
-use Helper\FormHelper;
 
 class Boat extends AbstractModel
 {
@@ -93,7 +92,7 @@ class Boat extends AbstractModel
 
     public function assignData()
     {
-        $this->data=[
+        $this->data = [
             'id' => $this->id,
             'name' => $this->name,
             'model_id' => $this->model_id,
@@ -116,4 +115,18 @@ class Boat extends AbstractModel
         $this->depth = $data['depth'];
         $this->user_id = $data['user_id'];
     }
+
+    public static function getAllMyBoats($id)
+    {
+        $db = new DBHelper();
+        $rez = $db->select('id')->from('boat')->where('user_id', $id)->get();
+        $boats = [];
+        foreach ($rez as $element){
+            $boat = new Boat();
+            $boat->load($element['id']);
+            $boats[] = $boat;
+        }
+        return $boats;
+    }
+
 }

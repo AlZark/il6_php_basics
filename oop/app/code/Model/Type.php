@@ -43,9 +43,13 @@ class Type extends AbstractModel
         $this->name = $name;
     }
 
-    public function __construct()
+    protected const TABLE = 'type';
+
+    public function __construct($id = null)
     {
-        $this->table = 'type'; //database table name
+        if($id !== null){
+            $this->load($id);
+        }
     }
 
     protected function assignData()
@@ -58,7 +62,7 @@ class Type extends AbstractModel
     public function load($id)
     {
         $db = new DBHelper();
-        $model = $db->select()->from('type')->where('id', $id)->getOne();
+        $model = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         $this->id = $model['id'];
         $this->name = $model['name'];
         return $this;
@@ -67,7 +71,7 @@ class Type extends AbstractModel
     public static function getTypes()
     {
         $db = new DBHelper();
-        $data = $db->select()->from('type')->get();
+        $data = $db->select()->from(self::TABLE)->get();
         $types = [];
         foreach ($data as $element){
             $type = new Type();

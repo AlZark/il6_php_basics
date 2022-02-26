@@ -4,18 +4,24 @@ namespace Controller;
 
 use Core\AbstractController;
 use Helper\Url;
-use Model\Catalog as CatalogModel;
+use Model\Catalog;
+use Model\User;
 use Model\Manufacturer;
 use Model\Type;
-use Model\User;
 use Helper\FormHelper;
 use Model\City;
-use Model\Catalog;
 use Helper\Validator;
 use Model\Model;
 
 class Admin extends AbstractController
 {
+
+    public const ACTIVE = 1;
+
+    public const NOT_ACTIVE = 0;
+
+    public const DELETE = 2;
+
     public function __construct()
     {
         parent::__construct();
@@ -26,7 +32,7 @@ class Admin extends AbstractController
 
     public function index()
     {
-        $this->render('index');
+        $this->render('admin/index');
     }
 
     public function users()
@@ -37,8 +43,8 @@ class Admin extends AbstractController
 
     public function catalogs()
     {
-        $this->data['catalogs'] = Catalog::getAllAds();
-        $this->renderAdmin('catalogs/list');
+        $this->data['ads'] = Catalog::getAllAds();
+        $this->renderAdmin('ads/list');
     }
 
     public function userEdit($id)
@@ -99,7 +105,7 @@ class Admin extends AbstractController
         $form->select([
             'name' => 'is_active',
             'options' => [0 => 'Not active', 1 => 'Active'],
-            'selected' => $user->getIsActive()
+            'selected' => $user->GetActive()
         ]);
 
         $form->select([
@@ -148,39 +154,46 @@ class Admin extends AbstractController
             }
         }
         $user->setRoleId($_POST['role_id']);
-        $user->setIsActive($_POST['is_active']);
+        $user->setActive($_POST['is_active']);
 
         $user->save();
         Url::redirect('admin/users');
     }
 
-    public function catalogEdit($id)
+    public function userDelete($id)
     {
-        $catalog = new CatalogModel();
-        $catalog->load($id);
+        $user = new User($id);
+        $user->delete();
+        Url::redirect('admin/users');
+    }
 
-        $form = new FormHelper('admin/catalogUpdate', 'POST');
+    public function adEdit($id)
+    {
+        $ad = new Catalog();
+        $ad->load($id);
+
+        $form = new FormHelper('admin/adUpdate', 'POST');
 
         $form->input([
             'name' => 'id',
             'type' => 'hidden',
-            'value' => $catalog->getId()
+            'value' => $ad->getId()
         ]);
 
         $form->input([
             'name' => 'title',
             'type' => 'text',
             'placeholder' => 'Title',
-            'value' => $catalog->getTitle()
+            'value' => $ad->getTitle()
         ]);
 
-        $form->textArea('description', $catalog->getDescription());
+        $form->textArea('description', $ad->getDescription());
         $form->input([
             'name' => 'price',
             'type' => 'number',
             'placeholder' => '20.00EUR',
             'step' => 'any',
-            'value' => $catalog->getPrice()
+            'value' => $ad->getPrice()
         ]);
 
         $years = [];
@@ -190,7 +203,7 @@ class Admin extends AbstractController
         $form->select([
             'name' => 'year',
             'options' => $years,
-            'selected' => $catalog->getYear()
+            'selected' => $ad->getYear()
         ]);
 
         $manufacturers = Manufacturer::getManufacturers();
@@ -203,7 +216,7 @@ class Admin extends AbstractController
         $form->select([
             'name' => 'manufacturer_id',
             'options' => $options,
-            'selected' => $catalog->getManufacturerId()
+            'selected' => $ad->getManufacturerId()
         ]);
 
         $models = Model::getModels();
@@ -216,7 +229,7 @@ class Admin extends AbstractController
         $form->select([
             'name' => 'model_id',
             'options' => $options,
-            'selected' => $catalog->getModelId()
+            'selected' => $ad->getModelId()
         ]);
 
         $types = Type::getTypes();
@@ -229,21 +242,21 @@ class Admin extends AbstractController
         $form->select([
             'name' => 'type_id',
             'options' => $options,
-            'selected' => $catalog->getTypeId()
+            'selected' => $ad->getTypeId()
         ]);
 
         $form->input([
             'name' => 'img',
             'type' => 'text',
             'placeholder' => 'Image',
-            'value' => $catalog->getImg()
+            'value' => $ad->getImg()
         ]);
 
         $form->input([
             'name' => 'mileage',
             'type' => 'number',
             'placeholder' => 'Mileage',
-            'value' => $catalog->getMileage()
+            'value' => $ad->getMileage()
         ]);
 
         $form->input([
@@ -251,7 +264,7 @@ class Admin extends AbstractController
             'type' => 'text',
             'maxlength' => '14',
             'placeholder' => 'Color',
-            'value' => $catalog->getColor()
+            'value' => $ad->getColor()
         ]);
 
         $form->input([
@@ -259,13 +272,13 @@ class Admin extends AbstractController
             'type' => 'text',
             'maxlength' => '17',
             'placeholder' => 'VIN Code',
-            'value' => $catalog->getVin()
+            'value' => $ad->getVin()
         ]);
 
         $form->select([
             'name' => 'is_active',
             'options' => [0 => 'Not active', 1 => 'Active'],
-            'selected' => $catalog->getIsActive()
+            'selected' => $ad->getActive()
         ]);
 
         $form->input([
@@ -276,50 +289,75 @@ class Admin extends AbstractController
         ]);
 
         $this->data['form'] = $form->getForm();
-        $this->renderAdmin('catalogs/edit');
+        $this->renderAdmin('ads/edit');
     }
 
-    public function catalogUpdate()
+    public function adUpdate()
     {
-        $catalogId = $_POST['id'];
-        $catalog = new CatalogModel();
-        $catalog->load($catalogId);
-        $catalog->setTitle($_POST['title']);
-        $catalog->setDescription($_POST['description']);
-        $catalog->setManufacturerId($_POST['manufacturer_id']);
-        $catalog->setModelId($_POST['model_id']);
-        $catalog->setPrice($_POST['price']);
-        $catalog->setYear($_POST['year']);
-        $catalog->setImg($_POST['img']);
-        $catalog->setTypeId($_POST['type_id']);
-        $catalog->setVin($_POST['vin']);
-        $catalog->setColor($_POST['color']);
-        $catalog->setMileage($_POST['mileage']);
-        $catalog->setIsActive($_POST['is_active']);
-        $catalog->save();
+        $adId = $_POST['id'];
+        $ad = new Catalog();
+        $ad->load($adId);
+        $ad->setTitle($_POST['title']);
+        $ad->setDescription($_POST['description']);
+        $ad->setManufacturerId($_POST['manufacturer_id']);
+        $ad->setModelId($_POST['model_id']);
+        $ad->setPrice($_POST['price']);
+        $ad->setYear($_POST['year']);
+        $ad->setImg($_POST['img']);
+        $ad->setTypeId($_POST['type_id']);
+        $ad->setVin($_POST['vin']);
+        $ad->setColor($_POST['color']);
+        $ad->setMileage($_POST['mileage']);
+        $ad->setActive($_POST['is_active']);
+        $ad->save();
 
         Url::redirect('admin/catalogs');
     }
 
-    public function catalogAction()
+    public function adDelete($id)
     {
-        if ($_POST["action"] == "Disable") {
-            foreach ($_POST as $key => $element) {
-                if ($key != "action" && $key != "submit") {
-                    $catalog = new CatalogModel();
-                    $catalog->disable($key);
-                }
+        $ad = new Catalog($id);
+        $ad->delete();
+        Url::redirect('admin/catalogs');
+    }
+
+    public function massAdActions()
+    {
+        $action = $_POST['action'];
+        $ids = $_POST['ad_id'];
+        if ($action == self::ACTIVE || $action == self::NOT_ACTIVE) {
+            foreach ($ids as $id){
+                $ad = new Catalog($id);
+                $ad->setActive($action);
+                $ad->save();
             }
-        } else {
-            foreach ($_POST as $key => $element) {
-                if ($key != "action" && $key != "submit") {
-                    $catalog = new CatalogModel();
-                    $catalog->enable($key);
-                }
+
+        }elseif ($action == self::DELETE){
+            foreach ($ids as $id){
+                $ad = new Catalog($id);
+                $ad->delete($action);
             }
         }
         Url::redirect('admin/catalogs');
-
     }
 
+    public function massUserActions()
+    {
+        $action = $_POST['action'];
+        $ids = $_POST['user_id'];
+        if ($action == self::ACTIVE || $action == self::NOT_ACTIVE) {
+            foreach ($ids as $id){
+                $ad = new User($id);
+                $ad->setActive($action);
+                $ad->save();
+            }
+
+        }elseif ($action == self::DELETE){
+            foreach ($ids as $id){
+                $ad = new User($id);
+                $ad->delete();
+            }
+        }
+        Url::redirect('admin/users');
+    }
 }
