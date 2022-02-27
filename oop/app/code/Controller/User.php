@@ -204,7 +204,6 @@ class User extends AbstractController
         $userId = $_SESSION['user_id'];
         $user = new UserModel();
         $user->load($userId);
-
         $user->setName($_POST['name']);
         $user->setLastName($_POST['last_name']);
         $user->setPhone($_POST['phone']);
@@ -214,8 +213,8 @@ class User extends AbstractController
         }
 
         if ($user->getEmail() != $_POST['email']) {
-            if (Validator::checkEmail($_POST['email']) && UserModel::isValueUnique('email', $_POST['email'], 'user')) {
-                $user->setEmail(md5($_POST['email']));
+            if (Validator::checkEmail($_POST['email']) && UserModel::isValueUnique('email', $_POST['email'])) {
+                $user->setEmail($_POST['email']);
             }
         }
         $user->save();
@@ -234,7 +233,6 @@ class User extends AbstractController
             $_SESSION['logged'] = true;
             $_SESSION['user_id'] = $userId;
             $_SESSION['user'] = $user;
-            //$user->getCity()->getName();
             Url::redirect('');
         } else {
             UserModel::logLoginFail($email);

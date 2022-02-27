@@ -25,7 +25,7 @@ class User extends AbstractModel
 
     private $login_fails;
 
-    private $is_active;
+    private $active;
 
     private $role_id;
 
@@ -48,7 +48,7 @@ class User extends AbstractModel
             'phone' => $this->phone,
             'city_id' => $this->cityId,
             'role_id' => $this->role_id,
-            'is_active' => $this->is_active,
+            'active' => $this->active,
         ];
     }
 
@@ -134,12 +134,12 @@ class User extends AbstractModel
 
     public function getActive()
     {
-        return $this->is_active;
+        return $this->active;
     }
 
-    public function setActive($is_active)
+    public function setActive($active)
     {
-        $this->is_active = $is_active;
+        $this->active = $active;
     }
 
     public function getRoleId()
@@ -170,7 +170,7 @@ class User extends AbstractModel
         $this->email = $data['email'];
         $this->password = $data['password'];
         $this->cityId = $data['city_id'];
-        $this->is_active = $data['is_active'];
+        $this->active = $data['active'];
         $this->role_id = $data['role_id'];
 
         $city = new City();
@@ -187,7 +187,7 @@ class User extends AbstractModel
             ->from(self::TABLE)
             ->where('email', $email)
             ->andWhere('password', $pass)
-            ->andWhere('is_active', 1)
+            ->andWhere('active', 1)
             ->getOne();
 
         if (isset($rez['id'])) {
@@ -207,17 +207,17 @@ class User extends AbstractModel
             ->where('email', $email)
             ->getOne();
 
-        $total_failed = $rez['login_fails'];
+        $total = $rez['login_fails'];
 
-        if ($total_failed >= 4) {
+        if ($total >= 4) {
             $data = [
                 'login_fails' => 5,
-                'is_active' => 0
+                'active' => 0
             ];
         } else {
-            $total_failed++;
+            $total++;
             $data = [
-                'login_fails' => $total_failed
+                'login_fails' => $total
             ];
         }
         $db = new DBHelper();
@@ -239,7 +239,7 @@ class User extends AbstractModel
 
     public function disable($id)
     {
-        $data = ['is_active' => 0];
+        $data = ['active' => 0];
 
         $disable = new DBHelper();
         $disable->update(self::TABLE, $data)->where('id', $id)->exec();
@@ -247,7 +247,7 @@ class User extends AbstractModel
 
     public function enable($id)
     {
-        $data = ['is_active' => 1];
+        $data = ['active' => 1];
 
         $disable = new DBHelper();
         $disable->update(self::TABLE, $data)->where('id', $id)->exec();

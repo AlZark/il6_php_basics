@@ -27,7 +27,7 @@ class Catalog extends AbstractModel
 
     private $img;
 
-    private $is_active;
+    private $active;
 
     private $slug;
 
@@ -61,7 +61,7 @@ class Catalog extends AbstractModel
             'year' => $this->year,
             'type_id' => $this->type_id,
             'user_id' => $this->user_id,
-            'is_active' => $this->is_active,
+            'active' => $this->active,
             'img' => $this->img,
             'slug' => $this->slug,
             'created_at' => $this->created_at,
@@ -110,14 +110,6 @@ class Catalog extends AbstractModel
     public function getManufacturerId()
     {
         return $this->manufacturer_id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUser()
-    {
-        return $this->user;
     }
 
     /**
@@ -229,15 +221,15 @@ class Catalog extends AbstractModel
      */
     public function getActive()
     {
-        return $this->is_active;
+        return $this->active;
     }
 
     /**
-     * @param mixed $is_active
+     * @param mixed $active
      */
-    public function setActive($is_active)
+    public function setActive($active)
     {
-        $this->is_active = $is_active;
+        $this->active = $active;
     }
 
     /**
@@ -349,7 +341,7 @@ class Catalog extends AbstractModel
             $this->price = $data['price'];
             $this->year = $data['year'];
             $this->type_id = $data['type_id'];
-            $this->is_active = $data['is_active'];
+            $this->active = $data['active'];
             $this->user_id = $data['user_id'];
             $this->img = $data['img'];
             $this->slug = $data['slug'];
@@ -413,9 +405,9 @@ class Catalog extends AbstractModel
         $data = $db
             ->select()
             ->from(self::TABLE)
-            ->where('is_active', 1)
+            ->where('active', 1)
             ->andWhere('title', '%' . $search . '%', 'LIKE')
-            ->Orwhere('is_active', 1)
+            ->Orwhere('active', 1)
             ->andWhere('description', '%' . $search . '%', 'LIKE')
             ->order($orderBy, $direction)
             ->limit($limit)
@@ -436,7 +428,7 @@ class Catalog extends AbstractModel
         $db = new DBHelper();
         $data = $db->select('id')
             ->from(self::TABLE)
-            ->where('is_active', 1)
+            ->where('active', 1)
             ->order('views', 'DESC')
             ->limit($limit)
             ->get();
@@ -454,7 +446,7 @@ class Catalog extends AbstractModel
         $db = new DBHelper();
         $data = $db->select('id')
             ->from(self::TABLE)
-            ->where('is_active', 1)
+            ->where('active', 1)
             ->order('created_at', 'DESC')
             ->limit($limit)
             ->get();
@@ -495,11 +487,11 @@ class Catalog extends AbstractModel
     {
         $total = new DBHelper();
         $rez = $total
-            ->select('COUNT(id) AS total')
+            ->select('COUNT(id)')
             ->from(self::TABLE)
-            ->where('is_active', 1)
+            ->where('active', 1)
             ->andWhere('title', '%' . $search . '%', 'LIKE')
-            ->Orwhere('is_active', 1)
+            ->Orwhere('active', 1)
             ->andWhere('description', '%' . $search . '%', 'LIKE')->get();
 
         return $rez[0][0];
