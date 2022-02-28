@@ -67,7 +67,11 @@ use Model\User;
         foreach ($comments as $comment):?>
             <div class="author">
                 <?php $user_db = new User($comment['user_id']); ?>
-                <p><strong><?= $user_db->getFullName(); ?> </strong> <?= $comment['ip']; ?> </p>
+                <p><strong><?= $user_db->getFullName(); ?> </strong> <?= $comment['ip']; ?>
+                    <a href="<?= $this->url('catalog/commentDelete', $comment['id'])?>">
+                        <i class="fa-solid fa-trash-can fa-lg"></i></a>
+                </p>
+
             </div>
             <div class="comment">
                 <?= $comment['content']; ?>
