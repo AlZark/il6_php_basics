@@ -398,7 +398,27 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function commentDelete($id)
     {
-        $comment = new Comments($id);
+        if(!$this->isUserLoggedIn()){
+            Url::redirect("user/login");
+        }
+
+        $comment = new Comments();
+        $comment->load($id);
+        $commenter = $comment->getUserId();
+        $adId = $comment->getAdId();
+
+        $ad = new CatalogModel();
+        $ad->load($adId);
+        $adOwner = $ad->getUserId();
+
+        if ($_SESSION['user_id'] == $commenter || $_SESSION['user_id'] == $adOwner) {
+            $comment->delete();
+        } else {
+            Url::redirect(""); //TODO redirect back to article
+        }
+
+
+
         $comment->delete();
         Url::redirect(''); //TODO later will redirect back to the article
     }
