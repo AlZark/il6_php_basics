@@ -398,7 +398,6 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function commentDelete($id)
     {
-        //TODO add checker if youre the owner of the comment
         $comment = new Comments($id);
         $comment->delete();
         Url::redirect(''); //TODO later will redirect back to the article

@@ -68,8 +68,10 @@ use Model\User;
             <div class="author">
                 <?php $user_db = new User($comment['user_id']); ?>
                 <p><strong><?= $user_db->getFullName(); ?> </strong> <?= $comment['ip']; ?>
+                    <?php if($comment['user_id'] == $_SESSION['user_id'] || $this->data['ads']->getUserId() == $_SESSION['user_id']){ ?>
                     <a href="<?= $this->url('catalog/commentDelete', $comment['id'])?>">
                         <i class="fa-solid fa-trash-can fa-lg"></i></a>
+                    <?php } ?>
                 </p>
 
             </div>
