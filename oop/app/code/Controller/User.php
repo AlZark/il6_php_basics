@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Core\Interfaces\ControllerInterface;
 use Helper\FormHelper;
 use Helper\Validator;
 use Helper\Url;
@@ -9,7 +10,7 @@ use Model\User as UserModel;
 use Model\City;
 use Core\AbstractController;
 
-class User extends AbstractController
+class User extends AbstractController implements ControllerInterface
 {
 
     public function index()

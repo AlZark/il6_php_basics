@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Core\AbstractController;
+use Core\Interfaces\ControllerInterface;
 use Helper\Url;
 use Model\Catalog;
 use Model\User;
@@ -13,7 +14,7 @@ use Model\City;
 use Helper\Validator;
 use Model\Model;
 
-class Admin extends AbstractController
+class Admin extends AbstractController implements ControllerInterface
 {
 
     public const ACTIVE = 1;
