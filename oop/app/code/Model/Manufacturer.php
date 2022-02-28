@@ -3,9 +3,10 @@
 namespace Model;
 
 use Core\AbstractModel;
+use Core\Interfaces\ModelInterfaces;
 use Helper\DBHelper;
 
-class Manufacturer extends AbstractModel
+class Manufacturer extends AbstractModel implements ModelInterfaces
 {
     protected $id;
 
@@ -50,6 +51,12 @@ class Manufacturer extends AbstractModel
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    public function assignData()
+    {
+        $this->data = [
+        ];
     }
 
     public function load($id)

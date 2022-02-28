@@ -3,9 +3,10 @@
 namespace Model;
 
 use Core\AbstractModel;
+use Core\Interfaces\ModelInterfaces;
 use Helper\DBHelper;
 
-class Comments extends AbstractModel
+class Comments extends AbstractModel implements ModelInterfaces
 {
     protected const TABLE = 'comment';
 
@@ -90,7 +91,7 @@ class Comments extends AbstractModel
         }
     }
 
-    protected function assignData()
+    public function assignData()
     {
         $this->data = [
             'content' => $this->content,

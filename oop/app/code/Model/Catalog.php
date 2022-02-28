@@ -3,9 +3,10 @@
 namespace Model;
 
 use Core\AbstractModel;
+use Core\Interfaces\ModelInterfaces;
 use Helper\DBHelper;
 
-class Catalog extends AbstractModel
+class Catalog extends AbstractModel implements ModelInterfaces
 {
     private $title;
 
@@ -50,7 +51,7 @@ class Catalog extends AbstractModel
         }
     }
 
-    protected function assignData()
+    public function assignData()
     {
         $this->data = [
             'title' => $this->title,

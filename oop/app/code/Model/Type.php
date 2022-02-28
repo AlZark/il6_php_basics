@@ -3,9 +3,10 @@
 namespace Model;
 
 use Core\AbstractModel;
+use Core\Interfaces\ModelInterfaces;
 use Helper\DBHelper;
 
-class Type extends AbstractModel
+class Type extends AbstractModel implements ModelInterfaces
 {
     protected $id;
 
@@ -52,7 +53,7 @@ class Type extends AbstractModel
         }
     }
 
-    protected function assignData()
+    public function assignData()
     {
         $this->data = [
             'title' => $this->name,

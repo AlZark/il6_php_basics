@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Core\Interfaces\ControllerInterface;
 use Helper\FormHelper;
 use Helper\Url;
 use Model\Catalog as CatalogModel;
@@ -11,7 +12,7 @@ use Model\Type;
 use Core\AbstractController;
 use Model\Comments;
 
-class Catalog extends AbstractController
+class Catalog extends AbstractController implements ControllerInterface
 {
 
     public function index()
