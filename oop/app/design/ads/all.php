@@ -17,7 +17,7 @@ use Model\Comments;
 
         <?php for ($page = 1; $page <= $this->data['allPages']; $page++) { ?>
 
-            <a href="<?php echo $this->Url('ads?p=' . $page); ?>">
+            <a href="<?php echo $this->Url('catalog?p=' . $page); ?>">
                 <div class="page"><?php echo $page ?></div>
             </a> <?php } ?>
 
@@ -58,7 +58,7 @@ use Model\Comments;
 
         <?php for ($page = 1; $page <= $this->data['allPages']; $page++) { ?>
 
-            <a href="<?php echo $this->Url('ads?p=' . $page); ?>">
+            <a href="<?php echo $this->Url('catalog?p=' . $page); ?>">
                 <div class="page"><?php echo $page ?></div>
             </a> <?php } ?>
 
