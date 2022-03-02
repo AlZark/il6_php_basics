@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Vilnius');
-include 'vendor/autoload.php';
-include 'config.php';
+include '../vendor/autoload.php';
+include '../config.php';
 session_start();
 
 if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/'){
