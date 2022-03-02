@@ -25,6 +25,11 @@ class FormHelper
         $this->form .= '<textarea name="' . $name . '">'. $value .'</textarea><br>';
     }
 
+    public function label($value = "")
+    {
+        $this->form .= '<label>'. $value .'</label><br>';
+    }
+
     public function select($data)
     {
         $this->form .= '<select name="' . $data['name'] . '">';
