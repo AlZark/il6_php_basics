@@ -13,7 +13,7 @@ use Model\User;
     <?php $img = $this->data['ads']->getImg();
     if ($img != NULL) { ?>
         <img src="<?= $img ?>" width="800"> <br> <?php } ?>
-    <p>About: <?= $this->data['ads']->getDescription(); ?> </p>
+    <p><strong>About: </strong><?= $this->data['ads']->getDescription(); ?> </p>
 
     <?php
     $db = new Manufacturer();
@@ -43,6 +43,9 @@ use Model\User;
     <p><strong>Price: </strong><?= $this->data['ads']->getPrice(); ?> Eur</p>
     <p><strong>Year: </strong><?= $this->data['ads']->getYear(); ?></p>
 
+    <?php if($this->data['ads']->getUserId() != $_SESSION['user_id']){ ?>
+        <a href="<?= $this->Url('inbox/conversation?user=' . $this->data['ads']->getUserId()); ?>">Private message</a>
+    <?php } ?>
 </div>
 
 <div class="container">

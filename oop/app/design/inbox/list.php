@@ -1,7 +1,7 @@
 <?php use Model\User; ?>
 
 <div class="container">
-    <a class="menu" href="<?= $this->Url('inbox/sendMessage') ?>">+Send new</a>
+    <a href="<?= $this->Url('inbox/sendMessage') ?>">+Send new</a>
     <h2>All chats</h2>
     <?php foreach ($this->data['users'] as $user): ?>
         <hr>
