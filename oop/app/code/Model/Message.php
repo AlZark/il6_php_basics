@@ -73,7 +73,7 @@ class Message extends AbstractModel implements ModelInterfaces
 
     public function __construct($id = null)
     {
-        if($id !== null){
+        if ($id !== null) {
             $this->load($id);
         }
     }
@@ -106,14 +106,50 @@ class Message extends AbstractModel implements ModelInterfaces
     public static function countNewMessages($user_id)
     {
         $db = new DBHelper();
-        $total = $db->select('COUNT(id)')->from(self::TABLE)->where('recipient', $user_id)->andWhere('is_read', 0)->get();
+        $total = $db->select('COUNT(id)')
+            ->from(self::TABLE)
+            ->where('recipient', $user_id)
+            ->andWhere('is_read', 0)
+            ->get();
         return $total[0][0];
     }
 
-    public static function getAllMessages($user_id)
+    public static function getAllChats()
+    {
+        $dbSenders = new DBHelper();
+        $uniqSenders = $dbSenders->select('DISTINCT(user_id)')
+            ->from(self::TABLE)
+            ->where('recipient', $_SESSION['user_id'])
+            ->get();
+
+        $dbReceivers = new DBHelper();
+        $uniqReceivers = $dbReceivers->select('DISTINCT(recipient)')
+            ->from(self::TABLE)
+            ->Where('user_id', $_SESSION['user_id'])
+            ->get();
+
+        for($i = 0; $i < sizeof($uniqSenders); $i++){
+            $senders[$i] = $uniqSenders[$i][0];
+        }
+
+        for($i = 0; $i < sizeof($uniqReceivers); $i++){
+            $receivers[$i] = $uniqReceivers[$i][0];
+        }
+
+        return array_unique(array_merge($senders, $receivers));
+    }
+
+    public function getAllMessagesByParticipants($user)
     {
         $db = new DBHelper();
-        $data = $db->select()->from(self::TABLE)->where('recipient', $user_id)->orWhere('user_id', $user_id)->order('created_at', 'DESC')->get();
+        $data = $db->select()
+            ->from(self::TABLE)
+            ->where('recipient', $user)
+            ->andWhere('user_id', $_SESSION['user_id'])
+            ->orwhere('recipient', $_SESSION['user_id'])
+            ->andWhere('user_id', $user)
+            ->order('created_at', 'DESC')
+            ->get();
         $messages = [];
         foreach ($data as $element) {
             $message = new Message();

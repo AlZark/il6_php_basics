@@ -2,31 +2,16 @@
 
 <div class="container">
     <a class="menu" href="<?= $this->Url('inbox/sendMessage') ?>">+Send new</a>
-    <h2>All messages</h2>
-    <?php foreach ($this->data['messages'] as $message): ?>
+    <h2>All chats</h2>
+    <?php foreach ($this->data['users'] as $user): ?>
         <hr>
         <div class="list-item">
             <div class="content">
-                <?php if ($message->getUserId() == $_SESSION['user_id']) {
-                    $user = new User($message->getRecipient()) ?>
-                    <h3>To: <?= $user->getFullName(); ?></h3>
-                <?php } else {
-                    $user = new User($message->getUserId()) ?>
-                    <h3>From: <?= $user->getFullName(); ?></h3>
-                <?php } ?>
+                <?php $contact = new User($user); ?>
+                <a href="<?= $this->Url('inbox/conversation?user=' . $user); ?>">
+                    <h3>Chat with: <?= $contact->getFullName(); ?></h3></a>
             </div>
-            <p><?= $message->getText(); ?></p>
-            <p><?= $message->getCreatedAt(); ?></p>
-            <a href="<?= $this->Url('inbox/sendMessage?to='.$user->getId()); ?>">
-                <i class="fa-solid fa-reply">Reply</i></a>
-
-            <?php if($message->getRecipient() == $_SESSION['user_id']){ ?>
-            <a href="<?= $this->Url('inbox/changeReadStatus?id='.$message->getId()); ?>">
-                <?php if($message->getRead() != 1){ ?>
-                    <i class="fa-solid fa-reply">Mark as read</i></a>
-                <?php }else{ ?>
-                    <i class="fa-solid fa-reply">Mark as unread</i></a>
-                <?php }} ?>
+            <?php ?>
         </div>
     <?php endforeach; ?>
 </div>

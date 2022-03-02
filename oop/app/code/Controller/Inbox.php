@@ -16,7 +16,8 @@ class Inbox extends AbstractController implements ControllerInterface
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
         }
-        $this->data['messages'] = Message::getAllMessages($_SESSION['user_id']);
+
+        $this->data['users'] = Message::getAllChats();
         $this->render('inbox/list');
     }
 
@@ -29,7 +30,7 @@ class Inbox extends AbstractController implements ControllerInterface
         $form = new FormHelper('inbox/create', 'POST');
         $form->textArea('content');
 
-        if($_GET['to'] == null) {
+        if ($_GET['to'] == null) {
             $users = User::getAllUsers();
             $options = [];
             foreach ($users as $user) {
@@ -75,19 +76,24 @@ class Inbox extends AbstractController implements ControllerInterface
         $message->setCreatedAt($date);
         $message->save();
 
-        Url::redirect('inbox');
+        Url::redirect('inbox/conversation?user=' . $_POST['recipient']);
     }
 
-    public function changeReadStatus()
+    public function changeReadStatus($id)
     {
         $message = new Message();
-        $message->load($_GET['id']);
-        if($message->getRead() == 0) {
-            $message->setRead(1);
-        } else {
-            $message->setRead(0);
-        }
+        $message->load($id);
+        $message->setRead(1);
         $message->save();
-        Url::redirect('inbox');
+    }
+
+    public function conversation()
+    {
+        $data = new Message();
+        $chat = $data->getAllMessagesByParticipants($_GET['user']);
+        $this->data['messages'] = $chat;
+        $this->data['recipient'] = $_GET['user'];
+
+        $this->render('inbox/chat');
     }
 }
