@@ -178,3 +178,22 @@ footer{
 .my-message{
 
 }
+
+.notification-container{
+    max-width: 1140px;
+    min-width: 1024px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fafafa;
+    padding: 3px;
+    margin-bottom: 15px;
+}
+
+.notification-container .error-notification{
+    color: red;
+}
+
+.notification-container .success-notification{
+    color: green;
+}
