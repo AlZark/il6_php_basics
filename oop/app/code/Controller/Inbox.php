@@ -8,9 +8,11 @@ use Helper\Url;
 use Model\Message;
 use Helper\FormHelper;
 use Model\User;
+use Helper\StringHelper;
 
 class Inbox extends AbstractController implements ControllerInterface
 {
+
     public function index()
     {
         if (!isset($_SESSION['user_id'])) {
@@ -69,7 +71,7 @@ class Inbox extends AbstractController implements ControllerInterface
     {
         $date = Date("Y-m-d H:i:s");
         $message = new Message();
-        $message->setText($_POST['content']);
+        $message->setText(StringHelper::censor($_POST['content']));
         $message->setUserId($_SESSION['user_id']);
         $message->setRecipient($_POST['recipient']);
         $message->setRead(0);
