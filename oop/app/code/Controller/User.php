@@ -194,8 +194,11 @@ class User extends AbstractController implements ControllerInterface
             $user->setActive(1);
             $user->setRoleId(0);
             $user->save();
+            $_SESSION['success'] = "Registered successfully";
             Url::redirect('user/login');
+
         } else {
+            $_SESSION['fail'] = "There were errors in the form, please try again";
             Url::redirect('user/register');
         }
     }
@@ -227,16 +230,17 @@ class User extends AbstractController implements ControllerInterface
         $email = $_POST['email'];
         $password = md5($_POST['password']);
         $userId = UserModel::checkLoginCredentials($email, $password);
-
         if ($userId) {
             $user = new UserModel();
             $user->load($userId);
             $_SESSION['logged'] = true;
             $_SESSION['user_id'] = $userId;
             $_SESSION['user'] = $user;
+            $_SESSION['success'] = "Login successful, welcome!";
             Url::redirect('');
         } else {
             UserModel::logLoginFail($email);
+            $_SESSION['fail'] = "User email or password incorrect";
             Url::redirect('user/login');
         }
     }

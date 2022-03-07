@@ -196,7 +196,6 @@ class User extends AbstractModel implements ModelInterfaces
         } else {
             return false;
         }
-        //return isset($rez['id']) ? $rez['id'] : false;
     }
 
     public static function logLoginFail($email)

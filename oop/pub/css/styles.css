@@ -209,12 +209,4 @@ footer{
     padding: 10px;
 }
 
-.message-wrapper .message-received .content{
-    justify-content: flex-end;
-    margin-left: 20px;
-}
-
-.message-wrapper .message-received .time{
-    margin-left: 20px;
-    font-size: 14px;
 }

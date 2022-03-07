@@ -1,4 +1,4 @@
-<?php use Model\Message;?>
+<?php use Model\Message; ?>
 
 <html>
 <head>
@@ -13,7 +13,8 @@
         <ul>
             <li>
                 <a href="<?= $this->Url('') ?>">
-                    <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/389/6851750389_56f29e86-7e83-47f7-ae62-5f379660b182.png", height="25">
+                    <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/389/6851750389_56f29e86-7e83-47f7-ae62-5f379660b182.png"
+                         , height="25">
                 </a>
             </li>
             <li>
@@ -46,4 +47,20 @@
             <?php endif; ?>
         </ul>
     </nav>
+
+    <?php if ($_SESSION['fail'] != "" || $_SESSION['success']): ?>
+        <div class="notification-container">
+            <div class="error-notification">
+                <h3><?= $_SESSION['fail']; ?></h3>
+            </div>
+            <div class="success-notification">
+                <h3><?= $_SESSION['success']; ?></h3>
+            </div>
+        </div>
+        <?php
+        $_SESSION['fail'] = "";
+        $_SESSION['success'] = "";
+    endif; ?>
+
+
 </header>

@@ -1,7 +1,6 @@
 <?php
 
 namespace Helper;
-use Helper\Logger;
 class DBHelper
 {
     private $conn;
