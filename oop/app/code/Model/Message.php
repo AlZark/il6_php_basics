@@ -103,12 +103,12 @@ class Message extends AbstractModel implements ModelInterfaces
         }
     }
 
-    public static function countNewMessages($user_id)
+    public static function countNewMessages()
     {
         $db = new DBHelper();
-        $total = $db->select('COUNT(id)')
+        $total = $db->select('COUNT(*)')
             ->from(self::TABLE)
-            ->where('recipient', $user_id)
+            ->where('recipient', $_SESSION['user_id'])
             ->andWhere('is_read', 0)
             ->get();
         return $total[0][0];
@@ -142,7 +142,7 @@ class Message extends AbstractModel implements ModelInterfaces
     public function getAllMessagesByParticipants($user)
     {
         $db = new DBHelper();
-        $data = $db->select()
+        $data = $db->select('id')
             ->from(self::TABLE)
             ->where('recipient', $user)
             ->andWhere('user_id', $_SESSION['user_id'])
@@ -159,4 +159,19 @@ class Message extends AbstractModel implements ModelInterfaces
         return $messages;
     }
 
+    public static function countNewMessagesPerChat($user)
+    {
+        $data = new Message();
+        $messages = $data->getAllMessagesByParticipants($user);
+        foreach ($messages as $message) {
+            $db = new DBHelper();
+            $total = $db->select('COUNT(*)')
+                ->from(self::TABLE)
+                ->where('recipient', $_SESSION['user_id'])
+                ->andWhere('id', $message->getId())
+                ->andWhere('is_read', 0)
+                ->get();
+            return $total[0][0];
+        }
+    }
 }

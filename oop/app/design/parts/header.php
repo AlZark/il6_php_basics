@@ -25,7 +25,7 @@
                     <a class="menu" href="<?= $this->Url('catalog/add') ?>">Add new ad</a>
                 </li>
                 <li>
-                    <?php $totalNew = Message::countNewMessages($_SESSION['user_id']); ?>
+                    <?php $totalNew = Message::countNewMessages(); ?>
                     <a class="menu" href="<?= $this->Url('inbox') ?>">Inbox(<?= $totalNew; ?>)</a>
                 </li>
                 <li>

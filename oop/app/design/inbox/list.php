@@ -1,4 +1,7 @@
-<?php use Model\User; ?>
+<?php
+use Model\User;
+use Model\Message;
+?>
 
 <div class="container">
     <a href="<?= $this->Url('inbox/sendMessage') ?>">+Send new</a>
@@ -9,7 +12,9 @@
             <div class="content">
                 <?php $contact = new User($user); ?>
                 <a href="<?= $this->Url('inbox/conversation?user=' . $user); ?>">
-                    <h3>Chat with: <?= $contact->getFullName(); ?></h3></a>
+                    <h3>Chat with: <?= $contact->getFullName() .'('. Message::countNewMessagesPerChat($user) .')'; ?>
+
+                    </h3></a>
             </div>
             <?php ?>
         </div>

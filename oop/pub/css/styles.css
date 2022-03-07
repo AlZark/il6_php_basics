@@ -175,25 +175,38 @@ footer{
     margin: 40px 0 0 0;
 }
 
-.my-message{
-
-}
-
-.notification-container{
+.message-wrapper{
     max-width: 1140px;
     min-width: 1024px;
     width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    background-color: #fafafa;
-    padding: 3px;
-    margin-bottom: 15px;
 }
 
-.notification-container .error-notification{
-    color: red;
+.message-wrapper .message-sent{
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 10px 0;
 }
 
-.notification-container .success-notification{
-    color: green;
+.message-wrapper .message-sent .content{
+    direction: ltr;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.message-wrapper .message-sent .time{
+    direction: ltr;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.message-wrapper .message-received{
+    border-color: #ccc;
+    background-color: #ddd;
+    padding: 10px;
+}
+
 }

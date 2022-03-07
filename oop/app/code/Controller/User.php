@@ -182,7 +182,7 @@ class User extends AbstractController implements ControllerInterface
     {
         $passMatch = Validator::checkPassword($_POST['password'], $_POST['password2']);
         $isEmailValid = Validator::checkEmail($_POST['email']);
-        $isEmailUnic = UserModel::isValueUnique('email', $_POST['email'], 'user');
+        $isEmailUnic = UserModel::isValueUnique('email', $_POST['email']);
         if ($passMatch && $isEmailValid && $isEmailUnic) {
             $user = new UserModel();
             $user->setName($_POST['name']);
