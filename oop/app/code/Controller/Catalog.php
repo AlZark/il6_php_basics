@@ -4,6 +4,7 @@ namespace Controller;
 
 use Core\Interfaces\ControllerInterface;
 use Helper\FormHelper;
+use Helper\StringHelper;
 use Helper\Url;
 use Model\Catalog as CatalogModel;
 use Model\Manufacturer;
@@ -333,8 +334,8 @@ class Catalog extends AbstractController implements ControllerInterface
             $slug .= rand(0, 99);
         }
         $catalog = new CatalogModel();
-        $catalog->setTitle($_POST['title']);
-        $catalog->setDescription($_POST['description']);
+        $catalog->setTitle(StringHelper::censor($_POST['title']));
+        $catalog->setDescription(StringHelper::censor($_POST['description']));
         $catalog->setManufacturerId($_POST['manufacturer_id']);
         $catalog->setModelId($_POST['model_id']);
         $catalog->setPrice($_POST['price']);
@@ -359,8 +360,8 @@ class Catalog extends AbstractController implements ControllerInterface
         $catalogId = $_POST['id'];
         $catalog = new CatalogModel();
         $catalog->load($catalogId);
-        $catalog->setTitle($_POST['title']);
-        $catalog->setDescription($_POST['description']);
+        $catalog->setTitle(StringHelper::censor($_POST['title']));
+        $catalog->setDescription(StringHelper::censor($_POST['description']));
         $catalog->setManufacturerId($_POST['manufacturer_id']);
         $catalog->setModelId($_POST['model_id']);
         $catalog->setPrice($_POST['price']);
