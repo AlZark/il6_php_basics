@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Controller;
 
 use Core\AbstractController;
@@ -13,7 +15,7 @@ use Helper\StringHelper;
 class Inbox extends AbstractController implements ControllerInterface
 {
 
-    public function index()
+    public function index():void
     {
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
@@ -23,7 +25,7 @@ class Inbox extends AbstractController implements ControllerInterface
         $this->render('inbox/list');
     }
 
-    public function sendMessage()
+    public function sendMessage():void
     {
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
@@ -67,21 +69,21 @@ class Inbox extends AbstractController implements ControllerInterface
         $this->render('inbox/new');
     }
 
-    public function create()
+    public function create():void
     {
         $date = Date("Y-m-d H:i:s");
         $message = new Message();
-        $message->setText(StringHelper::censor($_POST['content']));
-        $message->setUserId($_SESSION['user_id']);
-        $message->setRecipient($_POST['recipient']);
+        $message->setText(StringHelper::censor((string)$_POST['content']));
+        $message->setUserId((int)$_SESSION['user_id']);
+        $message->setRecipient((int)$_POST['recipient']);
         $message->setRead(0);
-        $message->setCreatedAt($date);
+        $message->setCreatedAt((string)$date);
         $message->save();
 
         Url::redirect('inbox/conversation?user=' . $_POST['recipient']);
     }
 
-    public function changeReadStatus($id)
+    public function changeReadStatus(int $id): void
     {
         $message = new Message();
         $message->load($id);
@@ -89,10 +91,10 @@ class Inbox extends AbstractController implements ControllerInterface
         $message->save();
     }
 
-    public function conversation()
+    public function conversation(): void
     {
         $data = new Message();
-        $chat = $data->getAllMessagesByParticipants($_GET['user']);
+        $chat = $data->getAllMessagesByParticipants((int)$_GET['user']);
         $this->data['messages'] = $chat;
         $this->data['recipient'] = $_GET['user'];
 

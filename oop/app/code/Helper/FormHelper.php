@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Helper;
 
 class FormHelper
 {
-    private $form;
+    private string $form;
 
-    public function __construct($action, $method)
+    public function __construct(string $action, string $method)
     {
         $this->form = '<form action="' . BASE_URL . $action . '" method="' . $method . '">';
     }
 
-    public function input($data)
+    public function input(array $data): void
     {
         $this->form .= '<input ';
         foreach ($data as $attribute => $value) {
@@ -20,17 +22,17 @@ class FormHelper
         $this->form .= '><br>';
     }
 
-    public function textArea($name, $value = "")
+    public function textArea(string $name, string $value = ""): void
     {
         $this->form .= '<textarea name="' . $name . '">'. $value .'</textarea><br>';
     }
 
-    public function label($value = "")
+    public function label(string $value = ""): void
     {
         $this->form .= '<label>'. $value .'</label><br>';
     }
 
-    public function select($data)
+    public function select(array $data): void
     {
         $this->form .= '<select name="' . $data['name'] . '">';
         foreach ($data['options'] as $key => $option) {
@@ -45,12 +47,12 @@ class FormHelper
         $this->form .= '</select><br>';
     }
 
-    public function submit($value, $name)
+    public function submit(string $value, string $name): void
     {
         $this->form .= '<input type="submit" value="' . $value . '" name="' . $name . '">';
     }
 
-    public function getForm()
+    public function getForm(): string
     {
         $this->form .= '</form>';
         return $this->form;
