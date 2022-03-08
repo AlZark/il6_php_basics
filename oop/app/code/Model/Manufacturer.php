@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Model;
 
 use Core\AbstractModel;
@@ -8,74 +10,49 @@ use Helper\DBHelper;
 
 class Manufacturer extends AbstractModel implements ModelInterfaces
 {
-    protected $id;
-
-    protected $name;
+    protected string $name;
 
     protected const TABLE = 'manufacturer';
 
-    public function __construct($id = null)
+    public function __construct(?int $id = null)
     {
         if($id !== null){
             $this->load($id);
         }
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    public function assignData()
+    public function assignData(): void
     {
-        $this->data = [
-        ];
+        $this->data = [];
     }
 
-    public function load($id)
+    public function load(int $id): object
     {
         $db = new DBHelper();
         $manufacturer = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
-        $this->id = $manufacturer['id'];
-        $this->name = $manufacturer['name'];
+        $this->id = (int)$manufacturer['id'];
+        $this->name = (string)$manufacturer['name'];
         return $this;
     }
 
-    public static function getManufacturers()
+    public static function getManufacturers(): array
     {
         $db = new DBHelper();
         $data = $db->select()->from(self::TABLE)->get();
         $manufacturers = [];
         foreach ($data as $element){
             $manufacturer = new Manufacturer();
-            $manufacturer->load($element['id']);
+            $manufacturer->load((int)$element['id']);
             $manufacturers[] = $manufacturer;
         }
         return $manufacturers;

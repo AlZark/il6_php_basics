@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Model;
 use Core\AbstractModel;
 use Core\Interfaces\ModelInterfaces;
@@ -8,16 +10,16 @@ use Helper\DBHelper;
 class City extends AbstractModel implements ModelInterfaces
 {
 
-    private $name;
+    private string $name;
 
     protected const TABLE = 'cities';
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -25,33 +27,31 @@ class City extends AbstractModel implements ModelInterfaces
     public function __construct($id = null)
     {
         if($id !== null){
-            $this->load($id);
+            $this->load((int)$id);
         }
     }
-    public function assignData()
+    public function assignData(): void
     {
-        $this->data = [
-        ];
+        $this->data = [];
     }
 
-
-    public function load($id)
+    public function load($id): object
     {
         $db = new DBHelper();
         $city = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
-        $this->id = $city['id'];
-        $this->name = $city['name'];
+        $this->id = (int)$city['id'];
+        $this->name = (string)$city['name'];
         return $this;
     }
 
-    public static function getCities()
+    public static function getCities(): array
     {
         $db = new DBHelper();
         $data = $db->select()->from('cities')->get();
         $cities = [];
         foreach ($data as $element){
-            $city = new City(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
-            $city->load($element['id']);
+            $city = new City();
+            $city->load((int)$element['id']);
             $cities[] = $city;
         }
         return $cities;

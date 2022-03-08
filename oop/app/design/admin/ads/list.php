@@ -5,7 +5,6 @@
  */
 
 use Model\Comments;
-
 ?>
 
 <table>

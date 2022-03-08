@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Controller;
 
 use Core\Interfaces\ControllerInterface;
@@ -16,10 +18,10 @@ use Model\Comments;
 class Catalog extends AbstractController implements ControllerInterface
 {
 
-    public function index()
+    public function index(): void
     {
         $db = new CatalogModel();
-        $adsCount = $db->totalAds($_GET['search_by']);
+        $adsCount = $db->totalAds((string)$_GET['search_by']);
 
         $limit = 5;
         if (!isset ($_GET['p'])) {
@@ -37,12 +39,12 @@ class Catalog extends AbstractController implements ControllerInterface
         if (!isset($_GET['order'])) {
             $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $offset);
         } else {
-            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $offset, $_GET['order'], $_GET['search_by']);
+            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $offset, (string)$_GET['order'], (string)$_GET['search_by']);
         }
         $this->render('ads/all');
     }
 
-    public function add()
+    public function add(): void
     {
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
@@ -143,10 +145,9 @@ class Catalog extends AbstractController implements ControllerInterface
 
         $this->data['form'] = $form->getForm();
         $this->render('ads/add');
-
     }
 
-    public function edit($id)
+    public function edit(int $id): void
     {
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
@@ -272,11 +273,11 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->render('ads/edit');
     }
 
-    public function show($slug)
+    public function show(string $slug):void
     {
         $ad = new CatalogModel();
         $ad->loadBySlug($slug);
-        $newViews = (int)$ad->getViews();
+        $newViews = $ad->getViews();
         $ad->setViews($newViews + 1);
         $ad->save();
         $this->data['ads'] = $ad;
@@ -291,7 +292,7 @@ class Catalog extends AbstractController implements ControllerInterface
         }
     }
 
-    public function filter()
+    public function filter(): void
     {
         $form = new FormHelper('catalog/index', 'GET');
 
@@ -326,7 +327,7 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['form'] = $form->getForm();
     }
 
-    public function create()
+    public function create(): void
     {
         $date = Date("Y-m-d H:i:s");
         $slug = Url::generateSlug($_POST['title']);
@@ -336,59 +337,59 @@ class Catalog extends AbstractController implements ControllerInterface
         $catalog = new CatalogModel();
         $catalog->setTitle(StringHelper::censor($_POST['title']));
         $catalog->setDescription(StringHelper::censor($_POST['description']));
-        $catalog->setManufacturerId($_POST['manufacturer_id']);
-        $catalog->setModelId($_POST['model_id']);
-        $catalog->setPrice($_POST['price']);
-        $catalog->setYear($_POST['year']);
-        $catalog->setTypeId($_POST['type_id']);
-        $catalog->setUserId($_SESSION['user_id']);
-        $catalog->setImg($_POST['img']);
+        $catalog->setManufacturerId((int)$_POST['manufacturer_id']);
+        $catalog->setModelId((int)$_POST['model_id']);
+        $catalog->setPrice((float)$_POST['price']);
+        $catalog->setYear((int)$_POST['year']);
+        $catalog->setTypeId((int)$_POST['type_id']);
+        $catalog->setUserId((int)$_SESSION['user_id']);
+        $catalog->setImg((string)$_POST['img']);
         $catalog->setActive(1);
         $catalog->setSlug($slug);
-        $catalog->setCreatedAt($date);
-        $catalog->setVin($_POST['vin']);
-        $catalog->setColor($_POST['color']);
-        $catalog->setMileage($_POST['mileage']);
+        $catalog->setCreatedAt((string)$date);
+        $catalog->setVin((string)$_POST['vin']);
+        $catalog->setColor((string)$_POST['color']);
+        $catalog->setMileage((int)$_POST['mileage']);
         $catalog->setViews(0);
         $catalog->save();
 
         Url::redirect('catalog');
     }
 
-    public function update()
+    public function update(): void
     {
         $catalogId = $_POST['id'];
         $catalog = new CatalogModel();
-        $catalog->load($catalogId);
-        $catalog->setTitle(StringHelper::censor($_POST['title']));
-        $catalog->setDescription(StringHelper::censor($_POST['description']));
-        $catalog->setManufacturerId($_POST['manufacturer_id']);
-        $catalog->setModelId($_POST['model_id']);
-        $catalog->setPrice($_POST['price']);
-        $catalog->setYear($_POST['year']);
-        $catalog->setImg($_POST['img']);
-        $catalog->setTypeId($_POST['type_id']);
-        $catalog->setVin($_POST['vin']);
-        $catalog->setColor($_POST['color']);
-        $catalog->setMileage($_POST['mileage']);
+        $catalog->load((int)$catalogId);
+        $catalog->setTitle(StringHelper::censor((string)$_POST['title']));
+        $catalog->setDescription(StringHelper::censor((string)$_POST['description']));
+        $catalog->setManufacturerId((int)$_POST['manufacturer_id']);
+        $catalog->setModelId((int)$_POST['model_id']);
+        $catalog->setPrice((float)$_POST['price']);
+        $catalog->setYear((int)$_POST['year']);
+        $catalog->setImg((string)$_POST['img']);
+        $catalog->setTypeId((int)$_POST['type_id']);
+        $catalog->setVin((string)$_POST['vin']);
+        $catalog->setColor((string)$_POST['color']);
+        $catalog->setMileage((int)$_POST['mileage']);
         $catalog->save();
 
         Url::redirect('catalog');
     }
 
-    public function comment()
+    public function comment(): void
     {
         if($this->isUserLoggedIn()) {
             if ($_POST['number1'] + $_POST['number2'] == $_POST['answer']) {
                 $date = new CatalogModel();
-                $catalog = $date->load($_POST['catalog_id']);
+                $catalog = $date->load((int)$_POST['catalog_id']);
                 $date = Date("Y-m-d H:i:s");
                 $comment = new Comments();
-                $comment->setContent($_POST['content']);
-                $comment->setUserId($_SESSION['user_id']);
-                $comment->setAdId($_POST['catalog_id']);
-                $comment->setCreatedAt($date);
-                $comment->setIp($_SERVER['REMOTE_ADDR']);
+                $comment->setContent((string)$_POST['content']);
+                $comment->setUserId((int)$_SESSION['user_id']);
+                $comment->setAdId((int)$_POST['catalog_id']);
+                $comment->setCreatedAt((string)$date);
+                $comment->setIp((string)$_SERVER['REMOTE_ADDR']);
                 $comment->save();
                 Url::redirect('catalog/show/' . $catalog->getSlug());
             } else {
@@ -397,7 +398,7 @@ class Catalog extends AbstractController implements ControllerInterface
         } Url::redirect('user/login');
     }
 
-    public function commentDelete($id)
+    public function commentDelete(int $id): void
     {
         if(!$this->isUserLoggedIn()){
             Url::redirect("user/login");
@@ -417,8 +418,6 @@ class Catalog extends AbstractController implements ControllerInterface
         } else {
             Url::redirect(""); //TODO redirect back to article
         }
-
-
 
         $comment->delete();
         Url::redirect(''); //TODO later will redirect back to the article

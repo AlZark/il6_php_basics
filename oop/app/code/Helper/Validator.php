@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Helper;
 
 class Validator
 {
-    public static function checkPassword($pass, $pass2)
+    public static function checkPassword(string $pass,string $pass2): bool
     {
         return $pass === $pass2;
     }
 
-    public static function checkEmail($email)
+    public static function checkEmail(string $email): bool
     {
-        return strpos($email, '@');
+        return strpos($email, '@') !== false;
     }
 }

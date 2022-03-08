@@ -31,29 +31,28 @@ class Admin extends AbstractController implements ControllerInterface
         }
     }
 
-    public function index()
+    public function index(): void
     {
         $this->render('admin/index');
     }
 
-    public function users()
+    public function users(): void
     {
         $this->data['users'] = User::getAllUsers();
         $this->renderAdmin('users/list');
     }
 
-    public function catalogs()
+    public function catalogs(): void
     {
         $this->data['ads'] = Catalog::getAllAds();
         $this->renderAdmin('ads/list');
     }
 
-    public function userEdit($id)
+    public function userEdit(int $id): void
     {
         if (!$this->isUserAdmin()) {
             Url::redirect('');
         }
-
         $user = new User();
         $user->load($id);
 
@@ -137,38 +136,40 @@ class Admin extends AbstractController implements ControllerInterface
         $this->renderAdmin('users/edit');
     }
 
-    public function userUpdate()
+    public function userUpdate(): void
     {
         $userId = $_POST['id'];
         $user = new User();
-        $user->load($userId);
-        $user->setName($_POST['name']);
-        $user->setLastName($_POST['last_name']);
-        $user->setPhone($_POST['phone']);
-        $user->setCityId($_POST['city_id']);
-        if ($_POST['password'] != '' & Validator::checkPassword($_POST['password'], $_POST['password2'])) {
-            $user->setPassword(md5($_POST['password']));
+        $user->load((int)$userId);
+        $user->setName((string)$_POST['name']);
+        $user->setLastName((string)$_POST['last_name']);
+        $user->setPhone((string)$_POST['phone']);
+        $user->setCityId((int)$_POST['city_id']);
+        if ((string)$_POST['password'] != '' &&
+            Validator::checkPassword((string)$_POST['password'], (string)$_POST['password2'])) {
+            $user->setPassword(md5((string)$_POST['password']));
         }
-        if ($user->getEmail() != $_POST['email']) {
-            if (Validator::checkEmail($_POST['email']) && User::isValueUnique('email', $_POST['email'], 'user')) {
-                $user->setEmail($_POST['email']);
+        if ($user->getEmail() != (string)$_POST['email']) {
+            if (Validator::checkEmail((string)$_POST['email']) &&
+                User::isValueUnique('email', (string)$_POST['email'])) {
+                $user->setEmail((string)$_POST['email']);
             }
         }
-        $user->setRoleId($_POST['role_id']);
-        $user->setActive($_POST['is_active']);
+        $user->setRoleId((int)$_POST['role_id']);
+        $user->setActive((int)$_POST['is_active']);
 
         $user->save();
         Url::redirect('admin/users');
     }
 
-    public function userDelete($id)
+    public function userDelete(int $id): void
     {
         $user = new User($id);
         $user->delete();
         Url::redirect('admin/users');
     }
 
-    public function adEdit($id)
+    public function adEdit(int $id): void
     {
         $ad = new Catalog();
         $ad->load($id);
@@ -293,69 +294,69 @@ class Admin extends AbstractController implements ControllerInterface
         $this->renderAdmin('ads/edit');
     }
 
-    public function adUpdate()
+    public function adUpdate(): void
     {
         $adId = $_POST['id'];
         $ad = new Catalog();
-        $ad->load($adId);
-        $ad->setTitle($_POST['title']);
-        $ad->setDescription($_POST['description']);
-        $ad->setManufacturerId($_POST['manufacturer_id']);
-        $ad->setModelId($_POST['model_id']);
-        $ad->setPrice($_POST['price']);
-        $ad->setYear($_POST['year']);
-        $ad->setImg($_POST['img']);
-        $ad->setTypeId($_POST['type_id']);
-        $ad->setVin($_POST['vin']);
-        $ad->setColor($_POST['color']);
-        $ad->setMileage($_POST['mileage']);
-        $ad->setActive($_POST['is_active']);
+        $ad->load((int)$adId);
+        $ad->setTitle((string)$_POST['title']);
+        $ad->setDescription((string)$_POST['description']);
+        $ad->setManufacturerId((int)$_POST['manufacturer_id']);
+        $ad->setModelId((int)$_POST['model_id']);
+        $ad->setPrice((float)$_POST['price']);
+        $ad->setYear((int)$_POST['year']);
+        $ad->setImg((string)$_POST['img']);
+        $ad->setTypeId((int)$_POST['type_id']);
+        $ad->setVin((string)$_POST['vin']);
+        $ad->setColor((string)$_POST['color']);
+        $ad->setMileage((int)$_POST['mileage']);
+        $ad->setActive((int)$_POST['is_active']);
         $ad->save();
 
         Url::redirect('admin/catalogs');
     }
 
-    public function adDelete($id)
+    public function adDelete(int $id): void
     {
         $ad = new Catalog($id);
         $ad->delete();
         Url::redirect('admin/catalogs');
     }
 
-    public function massAdActions()
+    public function massAdActions(): void
     {
         $action = $_POST['action'];
         $ids = $_POST['ad_id'];
         if ($action == self::ACTIVE || $action == self::NOT_ACTIVE) {
             foreach ($ids as $id){
-                $ad = new Catalog($id);
-                $ad->setActive($action);
+                $ad = new Catalog((int)$id);
+                $ad->setActive((int)$action);
                 $ad->save();
             }
 
         }elseif ($action == self::DELETE){
             foreach ($ids as $id){
-                $ad = new Catalog($id);
-                $ad->delete($action);
+                $ad = new Catalog((int)$id);
+                $ad->delete();
             }
         }
         Url::redirect('admin/catalogs');
     }
 
-    public function massUserActions()
+    public function massUserActions(): void
     {
         $action = $_POST['action'];
         $ids = $_POST['user_id'];
         if ($action == self::ACTIVE || $action == self::NOT_ACTIVE) {
             foreach ($ids as $id){
-                $ad = new User($id);
+                $ad = new User((int)$id);
                 $ad->setActive($action);
                 $ad->save();
             }
 
         }elseif ($action == self::DELETE){
             foreach ($ids as $id){
-                $ad = new User($id);
+                $ad = new User((int)$id);
                 $ad->delete();
             }
         }

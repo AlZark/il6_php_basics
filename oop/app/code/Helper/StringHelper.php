@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Helper;
 
 class StringHelper
@@ -8,7 +10,7 @@ class StringHelper
         "fuck", "fucking", "shit", "dick", "ass", "corn", "bitch", "cunt", "choad", "wanker", "twat", "pizda", "kurva"
     ];
 
-    public static function censor($string)
+    public static function censor(string $string): string
     {
         foreach (self::RESTRICTED_WORDS as $word){
             $length = strlen($word);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core;
 
 use Helper\Url;
@@ -7,7 +9,7 @@ use Model\User;
 
 class AbstractController
 {
-    protected $data;
+    protected array $data;
 
     public function __construct()
     {
@@ -16,30 +18,30 @@ class AbstractController
         $this->data['meta_description'] = 'CarsCarsCars.com';
     }
 
-    protected function render($template)
+    protected function render(string $template): void
     {
         include_once PROJECT_ROOT_DIR . '/app/design/parts/header.php';
         include_once PROJECT_ROOT_DIR . '/app/design/' . $template . '.php';
         include_once PROJECT_ROOT_DIR . '/app/design/parts/footer.php';
     }
 
-    protected function renderAdmin($template)
+    protected function renderAdmin(string $template): void
     {
         include_once PROJECT_ROOT_DIR . '/app/design/admin/parts/header.php';
         include_once PROJECT_ROOT_DIR . '/app/design/admin/' . $template . '.php';
         include_once PROJECT_ROOT_DIR . '/app/design/admin/parts/footer.php';
     }
 
-    protected function isUserLoggedIn()
+    protected function isUserLoggedIn(): ?string
     {
         return ($_SESSION['user_id']);
     }
 
-    protected function isUserAdmin()
+    protected function isUserAdmin(): bool
     {
         if($this->isUserLoggedIn()){
             $user = new User();
-            $user->load($_SESSION['user_id']);
+            $user->load((int)$_SESSION['user_id']);
             if($user->getRoleId() == 1){
                 return true;
             }
@@ -47,13 +49,9 @@ class AbstractController
         return false;
     }
 
-    public function url($path, $param = null)
+    public function url(string $path, ?string $param = null): string
     {
         return Url::link($path, $param);
     }
 
-    public static function checkIfHuman($number1, $number2, $answer)
-    {
-
-    }
 }
