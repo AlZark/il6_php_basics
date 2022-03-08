@@ -32,9 +32,9 @@ class AbstractController
         include_once PROJECT_ROOT_DIR . '/app/design/admin/parts/footer.php';
     }
 
-    protected function isUserLoggedIn(): ?string
+    protected function isUserLoggedIn(): ?int
     {
-        return ($_SESSION['user_id']);
+        return ((int)$_SESSION['user_id']);
     }
 
     protected function isUserAdmin(): bool

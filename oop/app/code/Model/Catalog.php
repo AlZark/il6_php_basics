@@ -386,7 +386,18 @@ class Catalog extends AbstractModel implements ModelInterfaces
         return $ads;
     }
 
-    public function totalAds(string $search = ""): int
+    public static function totalAds(): int
+    {
+        $total = new DBHelper();
+        $rez = $total
+            ->select('COUNT(id)')
+            ->from(self::TABLE)
+            ->get();
+
+        return (int)$rez[0][0];
+    }
+
+    public static function totalActiveAds(string $search = ""): int
     {
         $total = new DBHelper();
         $rez = $total
@@ -396,6 +407,22 @@ class Catalog extends AbstractModel implements ModelInterfaces
             ->andWhere('title', '%' . $search . '%', 'LIKE')
             ->orWhere('active', '1')
             ->andWhere('description', '%' . $search . '%', 'LIKE')
+            ->get();
+
+        return (int)$rez[0][0];
+    }
+
+    public static function totalNewAds(): int
+    {
+        $date = Date("Y-m-d H:i:s");
+        $date = strtotime($date);
+        $date = date("Y-m-d H:i:s", strtotime("-7 day", $date));
+
+        $total = new DBHelper();
+        $rez = $total
+            ->select('COUNT(id)')
+            ->from(self::TABLE)
+            ->where('created_at', $date, '>=')
             ->get();
 
         return (int)$rez[0][0];

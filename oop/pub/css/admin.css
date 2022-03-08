@@ -1,0 +1,119 @@
+body{
+    background-image: url("https://carpeoplemarketing.com/wp-content/uploads/2020/05/Cars-Background-PNG.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-color: #f2f2f2;
+    line-height: 1;
+}
+
+nav{
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 30px;
+}
+
+img.list-img {
+    width: 300px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav ul li{
+    margin-left: 20px;
+}
+
+nav ul li a.menu{
+    text-decoration: none;
+    font-size:25px;
+    color: #000000;
+    border-right: 1px solid #000;
+    padding-right: 20px;
+    top: 50%;
+}
+
+header{
+    max-width: 1140px;
+    min-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container {
+    max-width: 1140px;
+    min-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fafafa;
+    padding: 30px;
+}
+
+footer{
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ads-panel h2 a{
+    color: #008CBA;
+}
+
+.users-panel h2 a{
+    color: #008CBA;
+}
+
+#admin {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#admin a {
+    color: #008CBA;
+}
+
+#admin td, #ads th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#admin tr:nth-child(even){background-color: #f2f2f2;}
+
+#admin tr:hover {background-color: #ddd;}
+
+#admin th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+#admin .update {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#admin .update:hover {
+    background-color: #008CBA;
+    color: white;
+}

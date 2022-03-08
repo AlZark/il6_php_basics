@@ -4,7 +4,7 @@
 <head>
     <title><?= $this->data['title'] ?></title>
     <meta name="description" content="<?= $this->data['meta_description'] ?>">
-    <link rel="stylesheet" href="<?php echo $this->Url('css/styles.css'); ?>">
+    <link rel="stylesheet" href="<?= $this->Url('css/styles.css'); ?>">
     <script src="https://kit.fontawesome.com/8e3f90e04f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
             <li>
                 <a href="<?= $this->Url('') ?>">
                     <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/389/6851750389_56f29e86-7e83-47f7-ae62-5f379660b182.png"
-                         , height="25">
+                         height="25">
                 </a>
             </li>
             <li>

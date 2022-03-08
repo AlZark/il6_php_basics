@@ -6,6 +6,7 @@ namespace Controller;
 
 use Core\Interfaces\ControllerInterface;
 use Helper\FormHelper;
+use Helper\Pagination;
 use Helper\StringHelper;
 use Helper\Url;
 use Model\Catalog as CatalogModel;
@@ -20,26 +21,17 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function index(): void
     {
-        $db = new CatalogModel();
-        $adsCount = $db->totalAds((string)$_GET['search_by']);
-
+        $adsCount = CatalogModel::totalActiveAds((string)$_GET['search_by']);
         $limit = 5;
-        if (!isset ($_GET['p'])) {
-            $page = 1;
-        } else {
-            $page = (int)$_GET['p'];
-        }
-        $offset = ($page - 1) * $limit;
-        $totalPages = ceil($adsCount / $limit);
-
-        $this->data['p'] = $page;
-        $this->data['allPages'] = $totalPages;
+        $pagination = Pagination::pagination($adsCount, $limit, $_GET['p']);
+        $this->data['p'] = $pagination['page'];
+        $this->data['pagination'] = $pagination;
 
         $this->filter();
         if (!isset($_GET['order'])) {
-            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $offset);
+            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset']);
         } else {
-            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $offset, (string)$_GET['order'], (string)$_GET['search_by']);
+            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset'], (string)$_GET['order'], (string)$_GET['search_by']);
         }
         $this->render('ads/all');
     }

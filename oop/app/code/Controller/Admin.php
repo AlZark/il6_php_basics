@@ -33,7 +33,7 @@ class Admin extends AbstractController implements ControllerInterface
 
     public function index(): void
     {
-        $this->render('admin/index');
+        $this->renderAdmin('panel/dashboard');
     }
 
     public function users(): void
