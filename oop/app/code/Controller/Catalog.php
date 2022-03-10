@@ -429,7 +429,6 @@ class Catalog extends AbstractController implements ControllerInterface
         $rating->setAdId((int)$_POST['ad_id']);
         $rating->setUserId((int)$_SESSION['user_id']);
         $rating->save();
-
         $catalog = new CatalogModel();
         $ad = $catalog->load((int)$_POST['ad_id']);
         Url::redirect('catalog/show/' . $ad->getSlug());
