@@ -12,7 +12,6 @@ use Helper\Url;
 use Model\Catalog as CatalogModel;
 use Model\Manufacturer;
 use Model\Model;
-use Model\Rating;
 use Model\Type;
 use Core\AbstractController;
 use Model\Comments;
@@ -266,7 +265,7 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->render('ads/edit');
     }
 
-    public function show(string $slug): void
+    public function show(string $slug):void
     {
         $ad = new CatalogModel();
         $ad->loadBySlug($slug);
@@ -276,8 +275,6 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['ads'] = $ad;
         $this->data['title'] = $ad->getTitle();
         $this->data['meta_description'] = $ad->getDescription();
-        $this->data['rate'] = self::rating($ad->getId());
-        $this->data['rating'] = Rating::getAdRating($ad->getId());
 
         if ($this->data['ads']) {
             $this->data['related'] = $ad->getRelatedAds($this->data['ads']->getId());
@@ -287,7 +284,7 @@ class Catalog extends AbstractController implements ControllerInterface
         }
     }
 
-    public function filter(): string
+    public function filter(): void
     {
         $form = new FormHelper('catalog/index', 'GET');
 
@@ -319,7 +316,7 @@ class Catalog extends AbstractController implements ControllerInterface
             'value' => 'Apply'
         ]);
 
-        return $this->data['form'] = $form->getForm();
+        $this->data['form'] = $form->getForm();
     }
 
     public function create(): void
@@ -374,10 +371,10 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function comment(): void
     {
-        if ($this->isUserLoggedIn()) {
+        if($this->isUserLoggedIn()) {
             if ($_POST['number1'] + $_POST['number2'] == $_POST['answer']) {
                 $date = new CatalogModel();
-                $catalog = $date->load((int)$_POST['ad_id']);
+                $catalog = $date->load((int)$_POST['catalog_id']);
                 $date = Date("Y-m-d H:i:s");
                 $comment = new Comments();
                 $comment->setContent((string)$_POST['content']);
@@ -390,61 +387,12 @@ class Catalog extends AbstractController implements ControllerInterface
             } else {
                 Url::redirect('');
             }
-        }
-        Url::redirect('user/login');
-    }
-
-    public function rating(int $adId)
-    {
-        if (isset($_SESSION['user_id']) && Rating::checkIfAlreadyRated($adId)) {
-            $form = new FormHelper('catalog/rate', 'POST');
-            $form->label('Rate this ad: ');
-            for ($i = 1; $i <= 5; $i++) {
-                $form->label((string)$i);
-                $form->input([
-                    'name' => 'rating',
-                    'type' => 'radio',
-                    'value' => $i
-                ]);
-            }
-            $form->input([
-                'name' => 'ad_id',
-                'type' => 'hidden',
-                'value' => $adId
-            ]);
-            $form->input([
-                'class' => 'submit',
-                'name' => 'submit',
-                'type' => 'submit',
-                'value' => 'Rate'
-            ]);
-            return $this->data['form'] = $form->getForm();
-        }
-    }
-
-    public function rate(): void
-    {
-        if ($this->isUserLoggedIn()) {
-            if ($_POST['number1'] + $_POST['number2'] == $_POST['answer']) {
-                $rating = new Rating();
-                $rating->setScore((int)$_POST['rating']);
-                $rating->setAdId((int)$_POST['ad_id']);
-                $rating->setUserId((int)$_SESSION['user_id']);
-                $rating->save();
-
-                $catalog = new CatalogModel();
-                $ad = $catalog->load((int)$_POST['ad_id']);
-                Url::redirect('catalog/show/' . $ad->getSlug());
-            } else {
-                Url::redirect('');
-            }
-        }
-        Url::redirect('user/login');
+        } Url::redirect('user/login');
     }
 
     public function commentDelete(int $id): void
     {
-        if (!$this->isUserLoggedIn()) {
+        if(!$this->isUserLoggedIn()){
             Url::redirect("user/login");
         }
 
