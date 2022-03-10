@@ -29,7 +29,7 @@ class FormHelper
 
     public function label(string $value = ""): void
     {
-        $this->form .= '<label>'. $value .'</label>';
+        $this->form .= '<label>'. $value .'</label><br>';
     }
 
     public function select(array $data): void
