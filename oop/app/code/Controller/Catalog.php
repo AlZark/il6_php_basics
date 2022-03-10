@@ -387,7 +387,48 @@ class Catalog extends AbstractController implements ControllerInterface
             } else {
                 Url::redirect('');
             }
-        } Url::redirect('user/login');
+        }
+        Url::redirect('user/login');
+    }
+
+    public function rating(int $adId)
+    {
+        if (isset($_SESSION['user_id']) && Rating::checkIfAlreadyRated($adId)) {
+            $form = new FormHelper('catalog/rate', 'POST');
+            $form->label('Rate this ad: ');
+            for ($i = 1; $i <= 5; $i++) {
+                $form->label((string)$i);
+                $form->input([
+                    'name' => 'rating',
+                    'type' => 'radio',
+                    'value' => $i
+                ]);
+            }
+            $form->input([
+                'name' => 'ad_id',
+                'type' => 'hidden',
+                'value' => $adId
+            ]);
+            $form->input([
+                'class' => 'submit',
+                'name' => 'submit',
+                'type' => 'submit',
+                'value' => 'Rate'
+            ]);
+            return $this->data['form'] = $form->getForm();
+        }
+    }
+
+    public function rate(): void
+    {
+        $rating = new Rating();
+        $rating->setScore((int)$_POST['rating']);
+        $rating->setAdId((int)$_POST['ad_id']);
+        $rating->setUserId((int)$_SESSION['user_id']);
+        $rating->save();
+        $catalog = new CatalogModel();
+        $ad = $catalog->load((int)$_POST['ad_id']);
+        Url::redirect('catalog/show/' . $ad->getSlug());
     }
 
     public function commentDelete(int $id): void
