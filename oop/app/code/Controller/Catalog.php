@@ -424,22 +424,15 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function rate(): void
     {
-        if ($this->isUserLoggedIn()) {
-            if ($_POST['number1'] + $_POST['number2'] == $_POST['answer']) {
-                $rating = new Rating();
-                $rating->setScore((int)$_POST['rating']);
-                $rating->setAdId((int)$_POST['ad_id']);
-                $rating->setUserId((int)$_SESSION['user_id']);
-                $rating->save();
+        $rating = new Rating();
+        $rating->setScore((int)$_POST['rating']);
+        $rating->setAdId((int)$_POST['ad_id']);
+        $rating->setUserId((int)$_SESSION['user_id']);
+        $rating->save();
 
-                $catalog = new CatalogModel();
-                $ad = $catalog->load((int)$_POST['ad_id']);
-                Url::redirect('catalog/show/' . $ad->getSlug());
-            } else {
-                Url::redirect('');
-            }
-        }
-        Url::redirect('user/login');
+        $catalog = new CatalogModel();
+        $ad = $catalog->load((int)$_POST['ad_id']);
+        Url::redirect('catalog/show/' . $ad->getSlug());
     }
 
     public function commentDelete(int $id): void
