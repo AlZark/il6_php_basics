@@ -232,22 +232,6 @@ class User extends AbstractModel implements ModelInterfaces
         return $users;
     }
 
-    public function disable(int $id): void
-    {
-        $data = ['active' => 0];
-
-        $disable = new DBHelper();
-        $disable->update(self::TABLE, $data)->where('id', $id)->exec();
-    }
-
-    public function enable(int $id): void
-    {
-        $data = ['active' => 1];
-
-        $disable = new DBHelper();
-        $disable->update(self::TABLE, $data)->where('id', $id)->exec();
-    }
-
     public function getFullName(): string
     {
         $db = new DBHelper();

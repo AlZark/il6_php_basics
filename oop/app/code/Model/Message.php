@@ -13,9 +13,9 @@ class Message extends AbstractModel implements ModelInterfaces
 
     private string $text;
 
-    private int $user_id;
+    private int $sender_id;
 
-    private int $recipient;
+    private int $recipient_id;
 
     private int $read;
 
@@ -33,24 +33,24 @@ class Message extends AbstractModel implements ModelInterfaces
         $this->text = $text;
     }
 
-    public function getUserId(): int
+    public function getSenderId(): int
     {
-        return $this->user_id;
+        return $this->sender_id;
     }
 
-    public function setUserId(int $user_id): void
+    public function setSenderId(int $sender_id): void
     {
-        $this->user_id = $user_id;
+        $this->sender_id = $sender_id;
     }
 
-    public function getRecipient(): int
+    public function getRecipientId(): int
     {
-        return $this->recipient;
+        return $this->recipient_id;
     }
 
-    public function setRecipient(int $recipient): void
+    public function setRecipientId(int $recipient_id): void
     {
-        $this->recipient = $recipient;
+        $this->recipient_id = $recipient_id;
     }
 
     public function getRead(): int
@@ -84,8 +84,8 @@ class Message extends AbstractModel implements ModelInterfaces
     {
         $this->data = [
             'text' => $this->text,
-            'user_id' => $this->user_id,
-            'recipient' => $this->recipient,
+            'sender_id' => $this->sender_id,
+            'recipient_id' => $this->recipient_id,
             'is_read' => $this->read,
             'created_at' => $this->created_at,
         ];
@@ -98,8 +98,8 @@ class Message extends AbstractModel implements ModelInterfaces
         if (!empty($data)) {
             $this->id = (int)$data['id'];
             $this->text = (string)$data['text'];
-            $this->user_id = (int)$data['user_id'];
-            $this->recipient = (int)$data['recipient'];
+            $this->sender_id = (int)$data['sender_id'];
+            $this->recipient_id = (int)$data['recipient_id'];
             $this->read = (int)$data['is_read'];
             $this->created_at = (string)$data['created_at'];
         }
@@ -111,7 +111,7 @@ class Message extends AbstractModel implements ModelInterfaces
         $db = new DBHelper();
         $total = $db->select('COUNT(*)')
             ->from(self::TABLE)
-            ->where('recipient', $_SESSION['user_id'])
+            ->where('recipient_id', $_SESSION['user_id'])
             ->andWhere('is_read', 0)
             ->get();
         return (int)$total[0][0];
@@ -120,15 +120,15 @@ class Message extends AbstractModel implements ModelInterfaces
     public static function getAllChats(): array
     {
         $dbSenders = new DBHelper();
-        $uniqSenders = $dbSenders->select('DISTINCT(user_id)')
+        $uniqSenders = $dbSenders->select('DISTINCT(sender_id)')
             ->from(self::TABLE)
-            ->where('recipient', $_SESSION['user_id'])
+            ->where('recipient_id', $_SESSION['user_id'])
             ->get();
 
         $dbReceivers = new DBHelper();
-        $uniqReceivers = $dbReceivers->select('DISTINCT(recipient)')
+        $uniqReceivers = $dbReceivers->select('DISTINCT(recipient_id)')
             ->from(self::TABLE)
-            ->Where('user_id', $_SESSION['user_id'])
+            ->Where('sender_id', $_SESSION['user_id'])
             ->get();
 
         for($i = 0; $i < sizeof($uniqSenders); $i++){
@@ -147,10 +147,10 @@ class Message extends AbstractModel implements ModelInterfaces
         $db = new DBHelper();
         $data = $db->select('id')
             ->from(self::TABLE)
-            ->where('recipient', $user)
-            ->andWhere('user_id', (int)$_SESSION['user_id'])
-            ->orwhere('recipient', (int)$_SESSION['user_id'])
-            ->andWhere('user_id', $user)
+            ->where('recipient_id', $user)
+            ->andWhere('sender_id', (int)$_SESSION['user_id'])
+            ->orwhere('recipient_id', (int)$_SESSION['user_id'])
+            ->andWhere('sender_id', $user)
             ->order('created_at', 'DESC')
             ->get();
         $messages = [];
@@ -171,7 +171,7 @@ class Message extends AbstractModel implements ModelInterfaces
             $db = new DBHelper();
             $total = $db->select('COUNT(*)')
                 ->from(self::TABLE)
-                ->where('recipient', $_SESSION['user_id'])
+                ->where('recipient_id', $_SESSION['user_id'])
                 ->andWhere('id', $message->getId())
                 ->andWhere('is_read', 0)
                 ->get();

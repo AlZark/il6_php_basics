@@ -15,22 +15,22 @@ use Helper\StringHelper;
 class Inbox extends AbstractController implements ControllerInterface
 {
 
-    public function index():void
+    public function __construct()
     {
+        parent::__construct();
         if (!isset($_SESSION['user_id'])) {
             Url::redirect('user/login');
         }
+    }
 
+    public function index():void
+    {
         $this->data['users'] = Message::getAllChats();
         $this->render('inbox/list');
     }
 
     public function sendMessage():void
     {
-        if (!isset($_SESSION['user_id'])) {
-            Url::redirect('user/login');
-        }
-
         $form = new FormHelper('inbox/create', 'POST');
         $form->textArea('content');
 
@@ -44,7 +44,7 @@ class Inbox extends AbstractController implements ControllerInterface
                 }
             }
             $form->select([
-                'name' => 'recipient',
+                'name' => 'recipient_id',
                 'options' => $options
             ]);
         } else {
@@ -53,7 +53,7 @@ class Inbox extends AbstractController implements ControllerInterface
             $users->load($_GET['to']);
             $options[$_GET['to']] = $users->getFullName();
             $form->select([
-                'name' => 'recipient',
+                'name' => 'recipient_id',
                 'options' => $options
             ]);
         }
@@ -74,13 +74,13 @@ class Inbox extends AbstractController implements ControllerInterface
         $date = Date("Y-m-d H:i:s");
         $message = new Message();
         $message->setText(StringHelper::censor((string)$_POST['content']));
-        $message->setUserId((int)$_SESSION['user_id']);
-        $message->setRecipient((int)$_POST['recipient']);
+        $message->setSenderId((int)$_SESSION['user_id']);
+        $message->setRecipientId((int)$_POST['recipient_id']);
         $message->setRead(0);
         $message->setCreatedAt((string)$date);
         $message->save();
 
-        Url::redirect('inbox/conversation?user=' . $_POST['recipient']);
+        Url::redirect('inbox/conversation?user=' . $_POST['recipient_id']);
     }
 
     public function changeReadStatus(int $id): void
@@ -96,7 +96,7 @@ class Inbox extends AbstractController implements ControllerInterface
         $data = new Message();
         $chat = $data->getAllMessagesByParticipants((int)$_GET['user']);
         $this->data['messages'] = $chat;
-        $this->data['recipient'] = $_GET['user'];
+        $this->data['recipient_id'] = $_GET['user'];
 
         $this->render('inbox/chat');
     }

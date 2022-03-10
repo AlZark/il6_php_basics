@@ -14,13 +14,10 @@ use Model\Comments;
     </div>
 
     <div class="pagination">
-
         <?php for ($page = 1; $page <= $this->data['allPages']; $page++) { ?>
-
             <a href="<?= $this->Url('catalog?p=' . $page); ?>">
-                <div class="page"><?php echo $page ?></div>
+                <div class="page"><?= $page ?></div>
             </a> <?php } ?>
-
     </div>
 
     <?php foreach ($this->data['ads'] as $ad): ?>
@@ -55,9 +52,8 @@ use Model\Comments;
     <?php endforeach; ?>
     <div class="pagination">
         <?php for ($page = 1; $page <= $this->data['allPages']; $page++) { ?>
-            <a href="<?php echo $this->Url('catalog?p=' . $page); ?>">
-                <div class="page"><?php echo $page ?></div>
-            </a> <?php } ?>
-
+            <a href="<?= $this->Url('catalog?p=' . $page); ?>">
+                <div class="page"><?= $page ?></div>
+            </a> <?php }?>
     </div>
 </div>

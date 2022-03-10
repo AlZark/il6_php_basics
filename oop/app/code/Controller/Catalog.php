@@ -25,7 +25,7 @@ class Catalog extends AbstractController implements ControllerInterface
         $limit = 5;
         $pagination = Pagination::pagination($adsCount, $limit, $_GET['p']);
         $this->data['p'] = $pagination['page'];
-        $this->data['pagination'] = $pagination;
+        $this->data['allPages'] = $pagination['allPages'];
 
         $this->filter();
         if (!isset($_GET['order'])) {

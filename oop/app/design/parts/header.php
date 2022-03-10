@@ -1,5 +1,3 @@
-<?php use Model\Message; ?>
-
 <html>
 <head>
     <title><?= $this->data['title'] ?></title>
@@ -25,8 +23,7 @@
                     <a class="menu" href="<?= $this->Url('catalog/add') ?>">Add new ad</a>
                 </li>
                 <li>
-                    <?php $totalNew = Message::countNewMessages(); ?>
-                    <a class="menu" href="<?= $this->Url('inbox') ?>">Inbox(<?= $totalNew; ?>)</a>
+                    <a class="menu" href="<?= $this->Url('inbox') ?>">Inbox(<?= $this->data['new_messages'] ?>)</a>
                 </li>
                 <li>
                     <a class="menu" href="<?= $this->Url('user/logout') ?>">Logout</a>

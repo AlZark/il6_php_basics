@@ -12,8 +12,8 @@ class Home extends AbstractController implements ControllerInterface
 {
     public function index(): void
     {
-        $this->data['populars']= Catalog::getPopularAds(5);
-        $this->data['latest']= Catalog::getLatestAds(5);
+        $this->data['populars'] = Catalog::getPopularAds(5);
+        $this->data['latest'] = Catalog::getLatestAds(5);
         $this->render('parts/home');
     }
 }

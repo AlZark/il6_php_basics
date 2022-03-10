@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Core;
 
 use Helper\Url;
+use Model\Message;
 use Model\User;
 
 class AbstractController
@@ -16,6 +17,9 @@ class AbstractController
         $this->data = [];
         $this->data['title'] = 'CarsCarsCars.com';
         $this->data['meta_description'] = 'CarsCarsCars.com';
+        if(isset($_SESSION['user_id'])) {
+            $this->data['new_messages'] = Message::countNewMessages();
+        }
     }
 
     protected function render(string $template): void
