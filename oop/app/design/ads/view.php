@@ -9,6 +9,26 @@ use Model\User;
 ?>
 <div class="container">
     <h1><?= $this->data['ads']->getTitle(); ?></h1>
+    <div class="rating">
+        <div class="score">
+            <?php $rating = $this->data['rating']; ?>
+            <h2><?= 'Rating: ' . $rating . '/5';
+                for ($i = 1; $i <= 5; $i++) {
+                    if ($i > $rating && $i < $rating + 1) {
+                        echo '<i class="fa-regular fa-star-half-stroke"></i>';
+                    } elseif ($i <= $rating) {
+                        echo '<i class="fa-solid fa-star"></i>';
+                    } else {
+                        echo '<i class="fa-regular fa-star"></i>';
+                    }
+                } ?>
+            </h2>
+
+        </div>
+        <div class="rate">
+            <?= $this->data['rate']; ?>
+        </div>
+    </div>
 
     <?php $img = $this->data['ads']->getImg();
     if ($img != NULL) { ?>
@@ -43,7 +63,7 @@ use Model\User;
     <p><strong>Price: </strong><?= $this->data['ads']->getPrice(); ?> Eur</p>
     <p><strong>Year: </strong><?= $this->data['ads']->getYear(); ?></p>
 
-    <?php if($this->data['ads']->getUserId() != $_SESSION['user_id']){ ?>
+    <?php if ($this->data['ads']->getUserId() != $_SESSION['user_id']) { ?>
         <a href="<?= $this->Url('inbox/conversation?user=' . $this->data['ads']->getUserId()); ?>">Private message</a>
     <?php } ?>
 </div>
@@ -65,16 +85,18 @@ use Model\User;
     </div>
 
     <div>
-        <h2>Comments <?php echo ' ('.Comments::getTotalComments($this->data['ads']->getId()) .')'; ?></h2>
+        <h2>Comments <?php echo ' (' . Comments::getTotalComments($this->data['ads']->getId()) . ')'; ?></h2>
         <?php $comments = Comments::getAllCatalogComments($this->data['ads']->getId());
-        foreach ($comments as $comment):?>
+        foreach ($comments as $comment): ?>
             <div class="author">
                 <?php $user_db = new User($comment['user_id']); ?>
                 <p><strong><?= $user_db->getFullName(); ?> </strong> <?= $comment['ip']; ?>
-                    <?php //if($comment['user_id'] == $_SESSION['user_id'] || $this->data['ads']->getUserId() == $_SESSION['user_id']){ ?>
-                    <a href="<?= $this->url('catalog/commentDelete', $comment['id'])?>">
+                    <?php //if($comment['user_id'] == $_SESSION['user_id'] || $this->data['ads']->getUserId() == $_SESSION['user_id']){
+                    ?>
+                    <a href="<?= $this->url('catalog/commentDelete', $comment['id']) ?>">
                         <i class="fa-solid fa-trash-can fa-lg"></i></a>
-                    <?php //} ?>
+                    <?php //}
+                    ?>
                 </p>
 
             </div>

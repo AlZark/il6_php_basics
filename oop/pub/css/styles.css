@@ -237,3 +237,24 @@ footer{
     margin-left: 20px;
     font-size: 14px;
 }
+
+.fa-star {
+    color: #FFAE00;
+}
+
+.fa-star-half-stroke{
+    color: #FFAE00;
+}
+
+.rate label{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rate br{
+    display: none;
+}
+
+.rate .submit {
+    display: block;
+}
