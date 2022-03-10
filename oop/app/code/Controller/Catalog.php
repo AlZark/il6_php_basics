@@ -12,7 +12,6 @@ use Helper\Url;
 use Model\Catalog as CatalogModel;
 use Model\Manufacturer;
 use Model\Model;
-use Model\Rating;
 use Model\Type;
 use Core\AbstractController;
 use Model\Comments;
@@ -266,7 +265,7 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->render('ads/edit');
     }
 
-    public function show(string $slug): void
+    public function show(string $slug):void
     {
         $ad = new CatalogModel();
         $ad->loadBySlug($slug);
@@ -276,8 +275,6 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['ads'] = $ad;
         $this->data['title'] = $ad->getTitle();
         $this->data['meta_description'] = $ad->getDescription();
-        $this->data['rate'] = self::rating($ad->getId());
-        $this->data['rating'] = Rating::getAdRating($ad->getId());
 
         if ($this->data['ads']) {
             $this->data['related'] = $ad->getRelatedAds($this->data['ads']->getId());
@@ -287,7 +284,7 @@ class Catalog extends AbstractController implements ControllerInterface
         }
     }
 
-    public function filter(): string
+    public function filter(): void
     {
         $form = new FormHelper('catalog/index', 'GET');
 
@@ -319,7 +316,7 @@ class Catalog extends AbstractController implements ControllerInterface
             'value' => 'Apply'
         ]);
 
-        return $this->data['form'] = $form->getForm();
+        $this->data['form'] = $form->getForm();
     }
 
     public function create(): void
@@ -374,10 +371,10 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function comment(): void
     {
-        if ($this->isUserLoggedIn()) {
+        if($this->isUserLoggedIn()) {
             if ($_POST['number1'] + $_POST['number2'] == $_POST['answer']) {
                 $date = new CatalogModel();
-                $catalog = $date->load((int)$_POST['ad_id']);
+                $catalog = $date->load((int)$_POST['catalog_id']);
                 $date = Date("Y-m-d H:i:s");
                 $comment = new Comments();
                 $comment->setContent((string)$_POST['content']);
@@ -436,7 +433,7 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function commentDelete(int $id): void
     {
-        if (!$this->isUserLoggedIn()) {
+        if(!$this->isUserLoggedIn()){
             Url::redirect("user/login");
         }
 
