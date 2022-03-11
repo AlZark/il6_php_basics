@@ -79,7 +79,7 @@ class Inbox extends AbstractController implements ControllerInterface
         $message->setRead(0);
         $message->setCreatedAt((string)$date);
         $message->save();
-
+        $_SESSION['success'] = "Message sent";
         Url::redirect('inbox/conversation?user=' . $_POST['recipient_id']);
     }
 

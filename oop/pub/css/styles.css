@@ -35,6 +35,18 @@ nav ul li a.menu{
     top: 50%;
 }
 
+h1{
+    color: #008CBA;
+}
+
+h2{
+    color: #008CBA;
+}
+
+strong{
+    color: #008CBA;
+}
+
 header{
     max-width: 1140px;
     min-width: 1024px;
@@ -222,10 +234,12 @@ footer{
 
 .notification-container .error-notification{
     color: red;
+    padding-left: 20px;
 }
 
 .notification-container .success-notification {
     color: green;
+    padding-left: 20px;
 
 }
 .message-wrapper .message-received .content{
@@ -257,4 +271,25 @@ footer{
 
 .rate .submit {
     display: block;
+}
+
+.ad-content{
+    padding-bottom: 20px;
+}
+
+.private-message {
+    padding-bottom: 20px;
+}
+
+.private-message .fa-message{
+    color: #008CBA;
+}
+
+.private-message a{
+    color: #008CBA;
+    font-size: 20px;
+}
+
+.fa-trash-can{
+    color: #008CBA;
 }

@@ -168,6 +168,7 @@ class Catalog extends AbstractController implements ControllerInterface
         ]);
 
         $form->textArea('description', $catalog->getDescription());
+
         $form->input([
             'name' => 'price',
             'type' => 'number',
@@ -277,6 +278,7 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['title'] = $ad->getTitle();
         $this->data['meta_description'] = $ad->getDescription();
         $this->data['rate'] = self::rating($ad->getId());
+        $this->data['comment'] = self::comment($ad->getId());
         $this->data['rating'] = Rating::getAdRating($ad->getId());
 
         if ($this->data['ads']) {
@@ -372,25 +374,74 @@ class Catalog extends AbstractController implements ControllerInterface
         Url::redirect('catalog');
     }
 
-    public function comment(): void
+    public function comment(int $adId)
     {
         if ($this->isUserLoggedIn()) {
+            $form = new FormHelper('catalog/leaveComment', 'POST');
+
+            $form->label('Comment: ');
+
+            $form->input([
+                'name' => 'ad_id',
+                'type' => 'hidden',
+                'value' => $adId
+            ]);
+
+            $form->textArea('content');
+
+            $form->label("Verify that you're not a toaster before posting");
+
+            $form->input([
+                'name' => 'number1',
+                'type' => 'hidden',
+                'value' => $number1 = rand(0, 20)
+            ]);
+
+            $form->input([
+                'name' => 'number2',
+                'type' => 'hidden',
+                'value' => $number2 = rand(0, 20)
+            ]);
+
+            $form->label($number1 . ' + ' . $number2 . ' = ');
+
+            $form->input([
+                'name' => 'answer',
+                'type' => 'number',
+                'placeholder' => 'Your answer'
+            ]);
+
+            $form->input([
+                'name' => 'submit',
+                'type' => 'submit',
+                'value' => 'Submit'
+            ]);
+            return $this->data['form'] = $form->getForm();
+        }
+    }
+
+    public function leaveComment(): void
+    {
+        if ($this->isUserLoggedIn()) {
+            $data = new CatalogModel();
+            $catalog = $data->load((int)$_POST['ad_id']);
             if ($_POST['number1'] + $_POST['number2'] == $_POST['answer']) {
-                $date = new CatalogModel();
-                $catalog = $date->load((int)$_POST['ad_id']);
                 $date = Date("Y-m-d H:i:s");
                 $comment = new Comments();
                 $comment->setContent((string)$_POST['content']);
                 $comment->setUserId((int)$_SESSION['user_id']);
-                $comment->setAdId((int)$_POST['catalog_id']);
+                $comment->setAdId((int)$_POST['ad_id']);
                 $comment->setCreatedAt((string)$date);
                 $comment->setIp((string)$_SERVER['REMOTE_ADDR']);
                 $comment->save();
+                $_SESSION['success'] = "Commented successfully";
                 Url::redirect('catalog/show/' . $catalog->getSlug());
             } else {
-                Url::redirect('');
+                $_SESSION['fail'] = "Verification failed";
+                Url::redirect('catalog/show/' . $catalog->getSlug());
             }
         }
+        $_SESSION['fail'] = "Please log in to comment";
         Url::redirect('user/login');
     }
 
@@ -400,18 +451,22 @@ class Catalog extends AbstractController implements ControllerInterface
             $form = new FormHelper('catalog/rate', 'POST');
             $form->label('Rate this ad: ');
             for ($i = 1; $i <= 5; $i++) {
+
                 $form->label((string)$i);
+
                 $form->input([
                     'name' => 'rating',
                     'type' => 'radio',
                     'value' => $i
                 ]);
             }
+
             $form->input([
                 'name' => 'ad_id',
                 'type' => 'hidden',
                 'value' => $adId
             ]);
+
             $form->input([
                 'class' => 'submit',
                 'name' => 'submit',
@@ -432,6 +487,7 @@ class Catalog extends AbstractController implements ControllerInterface
 
         $catalog = new CatalogModel();
         $ad = $catalog->load((int)$_POST['ad_id']);
+        $_SESSION['success'] = "Thank you for rating!";
         Url::redirect('catalog/show/' . $ad->getSlug());
     }
 
