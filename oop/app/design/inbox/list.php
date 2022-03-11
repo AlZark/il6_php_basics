@@ -1,0 +1,22 @@
+<?php
+use Model\User;
+use Model\Message;
+?>
+
+<div class="container">
+    <a href="<?= $this->Url('inbox/sendMessage') ?>">+Send new</a>
+    <h2>All chats</h2>
+    <?php foreach ($this->data['users'] as $user): ?>
+        <hr>
+        <div class="list-item">
+            <div class="content">
+                <?php $contact = new User($user); ?>
+                <a href="<?= $this->Url('inbox/conversation?user=' . $user); ?>">
+                    <h3>Chat with: <?= $contact->getFullName() .'('. Message::countNewMessagesPerChat($user) .')'; ?>
+
+                    </h3></a>
+            </div>
+            <?php ?>
+        </div>
+    <?php endforeach; ?>
+</div>

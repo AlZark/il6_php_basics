@@ -1,0 +1,260 @@
+body{
+    background-image: url("https://carpeoplemarketing.com/wp-content/uploads/2020/05/Cars-Background-PNG.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-color: #f2f2f2;
+    line-height: 1;
+}
+
+nav{
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 30px;
+}
+
+img.list-img {
+    width: 300px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav ul li{
+    margin-left: 20px;
+}
+
+nav ul li a.menu{
+    text-decoration: none;
+    font-size:25px;
+    color: #000000;
+    border-right: 1px solid #000;
+    padding-right: 20px;
+    top: 50%;
+}
+
+header{
+    max-width: 1140px;
+    min-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1140px;
+    min-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fafafa;
+    padding: 30px;
+}
+
+.list-item {
+    position: relative;
+}
+
+.list-item .right{
+    overflow: hidden;
+    position: relative;
+}
+
+.list-item .image {
+    float: left;
+    margin: 0 15px 0 0;
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+.list-item .description {
+    overflow: hidden;
+    margin: 0 0 0;
+}
+
+.list-item .description .item-title h2 a{
+    color: #008CBA;
+}
+
+.list-item .description .item-title{
+    color: #008CBA;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline;
+}
+
+.list-item .description h4{
+    margin: 8px 0 0;
+}
+
+.list-item .description h3{
+    margin: 8px 0 16px;
+}
+
+.list-item .description .item-price {
+    margin: 12px 0 0;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    float: left;
+}
+
+.list-item .description a{
+    color: #008CBA;
+    padding-right: 20px;
+}
+
+.pagination{
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+}
+
+.pagination a{
+    color: #008CBA;
+}
+
+.page{
+    float: left;
+    min-width: 32px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    border: 2px solid #e2e2e2;
+    padding: 0 7px;
+    box-sizing: border-box;
+    margin: 0 10px 0 0;
+}
+
+.submit {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+input {
+    margin: 4px 2px;
+    font-size: 14px;
+}
+
+select {
+    margin: 4px 2px;
+    font-size: 14px;
+}
+
+textarea {
+    margin: 4px 2px;
+    font-size: 14px;
+}
+
+footer{
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+
+.message-wrapper{
+    max-width: 1140px;
+    min-width: 1024px;
+    width: 100%;
+}
+
+.message-wrapper .message-sent{
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.message-wrapper .message-sent .content{
+    direction: ltr;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.message-wrapper .message-sent .time{
+    direction: ltr;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.message-wrapper .message-received{
+    border-color: #ccc;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.notification-container{
+    max-width: 1140px;
+    min-width: 1024px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fafafa;
+    padding: 3px;
+    margin-bottom: 15px;
+}
+
+.notification-container .error-notification{
+    color: red;
+}
+
+.notification-container .success-notification {
+    color: green;
+
+}
+.message-wrapper .message-received .content{
+    justify-content: flex-end;
+    margin-left: 20px;
+}
+
+.message-wrapper .message-received .time {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.fa-star {
+    color: #FFAE00;
+}
+
+.fa-star-half-stroke{
+    color: #FFAE00;
+}
+
+.rate label{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rate br{
+    display: none;
+}
+
+.rate .submit {
+    display: block;
+}
