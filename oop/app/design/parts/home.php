@@ -1,3 +1,4 @@
+<?php use Model\Rating; ?>
 <div class="container">
     <h1>Cars Cars Cars!!!</h1>
     <h2>Popular car ads</h2>
@@ -9,16 +10,17 @@
             <div class="image">
                 <?php $img = $popAd->getImg();
                     if ($img != NULL) { ?>
-                        <img class="list-img" src="<?php echo $popAd->getImg(); ?>"> <?php } ?>
+                        <img class="list-img" src="<?= $popAd->getImg(); ?>"> <?php } ?>
             </div>
             <div class="description">
                 <div class="item-title">
-                    <h2><a href="<?php echo $this->Url('catalog/show', $popAd->getSlug()); ?>">
-                            <?php echo $popAd->getTitle() ?></a></h2>
+                    <h2><a href="<?= $this->Url('catalog/show', $popAd->getSlug()); ?>">
+                            <?= $popAd->getTitle() ?></a></h2>
                 </div>
-                <h4><?php echo 'Year: ' . $popAd->getYear(); ?></h4>
-                <h4><?php echo 'Mileage: ' . $popAd->getMileage() . ' km.'; ?></h4>
-                <h3><?php echo 'Price: ' . $popAd->getPrice() . ' Eur.'; ?></h3>
+                <h4><?= Rating::getAdRating($popAd->getId()); ?><i class="fa-solid fa-star"></i></h4>
+                <h4><?= 'Year: ' . $popAd->getYear(); ?></h4>
+                <h4><?= 'Mileage: ' . $popAd->getMileage() . ' km.'; ?></h4>
+                <h3><?= 'Price: ' . $popAd->getPrice() . ' Eur.'; ?></h3>
             </div>
         </div>
     </div>
@@ -34,16 +36,17 @@
             <div class="image">
                 <?php $img = $latestAd->getImg();
                 if ($img != NULL) { ?>
-                    <img class="list-img" src="<?php echo $latestAd->getImg(); ?>"> <?php } ?>
+                    <img class="list-img" src="<?= $latestAd->getImg(); ?>"> <?php } ?>
             </div>
             <div class="description">
                 <div class="item-title">
-                    <h2><a href="<?php echo $this->Url('catalog/show', $latestAd->getSlug()); ?>">
-                            <?php echo $latestAd->getTitle() ?></a></h2>
+                    <h2><a href="<?= $this->Url('catalog/show', $latestAd->getSlug()); ?>">
+                            <?= $latestAd->getTitle() ?></a></h2>
                 </div>
-                <h4><?php echo 'Year: ' . $latestAd->getYear(); ?></h4>
-                <h4><?php echo 'Mileage: ' . $latestAd->getMileage() . ' km.'; ?></h4>
-                <h3><?php echo 'Price: ' . $latestAd->getPrice() . ' Eur.'; ?></h3>
+                <h4><?= Rating::getAdRating($latestAd->getId()); ?><i class="fa-solid fa-star"></i></h4>
+                <h4><?= 'Year: ' . $latestAd->getYear(); ?></h4>
+                <h4><?= 'Mileage: ' . $latestAd->getMileage() . ' km.'; ?></h4>
+                <h3><?= 'Price: ' . $latestAd->getPrice() . ' Eur.'; ?></h3>
             </div>
         </div>
     </div>

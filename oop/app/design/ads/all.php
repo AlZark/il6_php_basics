@@ -3,6 +3,7 @@
  * @var \Model\Catalog $ad ;
  */
 use Model\Comments;
+use Model\Rating;
 ?>
 
 <div class="container">
@@ -28,23 +29,22 @@ use Model\Comments;
                 <div class="image">
                     <?php $img = $ad->getImg();
                     if ($img != NULL) { ?>
-                        <img class="list-img" src="<?php echo $ad->getImg(); ?>"> <br> <?php } ?>
+                        <img class="list-img" src="<?= $ad->getImg(); ?>"> <br> <?php } ?>
                 </div>
                 <div class="description">
 
                     <div class="item-title">
-                        <h2><a href="<?php echo $this->Url('catalog/show', $ad->getSlug()); ?>">
-                                <?php
-                                    echo $ad->getTitle();
-                                    echo ' ('.Comments::getTotalComments($ad->getId()) .')';
-                                ?></a></h2>
+                        <h2><a href="<?= $this->Url('catalog/show', $ad->getSlug()); ?>">
+                                <?= $ad->getTitle();?>
+                                <?= ' ('.Comments::getTotalComments($ad->getId()) .')'; ?>
+                                </a></h2>
                     </div>
+                    <h4><?= Rating::getAdRating($ad->getId()); ?><i class="fa-solid fa-star"></i></h4>
+                    <h4><?= 'Year: ' . $ad->getYear(); ?></h4>
+                    <h4><?= 'Mileage: ' . $ad->getMileage() . ' km.'; ?></h4>
+                    <h3><?= 'Price: ' . $ad->getPrice() . ' Eur.'; ?></h3>
 
-                    <h4><?php echo 'Year: ' . $ad->getYear(); ?></h4>
-                    <h4><?php echo 'Mileage: ' . $ad->getMileage() . ' km.'; ?></h4>
-                    <h3><?php echo 'Price: ' . $ad->getPrice() . ' Eur.'; ?></h3>
-
-                    <a href="<?php echo $this->Url('catalog/edit', $ad->getId()); ?>">
+                    <a href="<?= $this->Url('catalog/edit', $ad->getId()); ?>">
                         <i class="fa-solid fa-pen-to-square fa-lg"></i></a>
                 </div>
             </div>

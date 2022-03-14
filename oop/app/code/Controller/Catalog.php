@@ -28,6 +28,7 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['p'] = $pagination['page'];
         $this->data['allPages'] = $pagination['allPages'];
 
+
         $this->filter();
         if (!isset($_GET['order'])) {
             $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset']);
