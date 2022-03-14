@@ -286,7 +286,7 @@ class Catalog extends AbstractModel implements ModelInterfaces
         return $ads;
     }
 
-    public function loadBySlug(string $slug)
+    public function loadBySlug(string $slug): ?catalog
     {
         $db = new DBHelper();
         $rez = $db->select('id')->from(self::TABLE)->where('slug', $slug)->getOne();
@@ -294,7 +294,7 @@ class Catalog extends AbstractModel implements ModelInterfaces
             $this->load((int)$rez['id']);
             return $this;
         } else {
-            return false;
+            return null;
         }
     }
 

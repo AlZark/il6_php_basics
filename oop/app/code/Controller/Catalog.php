@@ -271,7 +271,10 @@ class Catalog extends AbstractController implements ControllerInterface
     public function show(string $slug): void
     {
         $ad = new CatalogModel();
-        $ad->loadBySlug($slug);
+        if ($ad->loadBySlug($slug) === null){
+            $this->render('parts/errors/error404');
+            return;
+        }
         $newViews = $ad->getViews();
         $ad->setViews($newViews + 1);
         $ad->save();
@@ -448,7 +451,7 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function rating(int $adId)
     {
-        if (isset($_SESSION['user_id']) && Rating::checkIfAlreadyRated($adId)) {
+        if (isset($_SESSION['user_id']) && !Rating::checkIfAlreadyRated($adId)) {
             $form = new FormHelper('catalog/rate', 'POST');
             $form->label('Rate this ad: ');
             for ($i = 1; $i <= 5; $i++) {

@@ -10,9 +10,9 @@ class Rating extends AbstractModel implements ModelInterfaces
 {
     private int $score;
 
-    private int $ad_id;
+    private int $adId;
 
-    private int $user_id;
+    private int $userId;
 
     protected const TABLE = 'rating';
 
@@ -37,15 +37,15 @@ class Rating extends AbstractModel implements ModelInterfaces
      */
     public function getAdId(): int
     {
-        return $this->ad_id;
+        return $this->adId;
     }
 
     /**
-     * @param int $ad_id
+     * @param int $adId
      */
-    public function setAdId(int $ad_id): void
+    public function setAdId(int $adId): void
     {
-        $this->ad_id = $ad_id;
+        $this->adId = $adId;
     }
 
     /**
@@ -53,15 +53,29 @@ class Rating extends AbstractModel implements ModelInterfaces
      */
     public function getUserId(): int
     {
-        return $this->user_id;
+        return $this->userId;
     }
 
     /**
-     * @param int $user_id
+     * @param int $userId
      */
-    public function setUserId(int $user_id): void
+    public function setUserId(int $userId): void
     {
-        $this->user_id = $user_id;
+        $this->userId = $userId;
+    }
+
+    public function getUser(): object
+    {
+        $user = new User();
+        $user->load($this->userId);
+        return $user;
+    }
+
+    public function getAd(): object
+    {
+        $ad = new Catalog();
+        $ad->load($this->adId);
+        return $ad;
     }
 
     public function __construct(?int $id = null)
@@ -75,8 +89,8 @@ class Rating extends AbstractModel implements ModelInterfaces
     {
         $this->data = [
             'score' => $this->score,
-            'ad_id' => $this->ad_id,
-            'user_id' => $this->user_id
+            'ad_id' => $this->adId,
+            'user_id' => $this->userId
         ];
     }
 
@@ -87,8 +101,8 @@ class Rating extends AbstractModel implements ModelInterfaces
         if (!empty($data)) {
             $this->id = (int)$data['id'];
             $this->score = (int)$data['score'];
-            $this->ad_id = (int)$data['ad_id'];
-            $this->user_id = (int)$data['user_id'];
+            $this->adId = (int)$data['ad_id'];
+            $this->userId = (int)$data['user_id'];
         }
         return $this;
     }
@@ -100,6 +114,28 @@ class Rating extends AbstractModel implements ModelInterfaces
         return round($rating[0][0],1);
     }
 
+//    public static function getAdRating(int $adId): array
+//    {
+//        $db = new DBHelper();
+//        return $db->select()->from(self::TABLE)->where('ad_id', $adId)->get();
+//    }
+
+    //USE THIS LATER
+    public function loadByUserAndAd($userId, $adId)
+    {
+        $db = new DBHelper();
+        $rez = $db->select()
+            ->from(self::TABLE)
+            ->where('user_id', $userId)
+            ->andWhere('ad_id', $adId)
+            ->getOne();
+        if(!empty($rez)){
+            $this->load($rez['id']);
+            return $this;
+        }
+        return $this;
+    }
+
     public static function checkIfAlreadyRated(int $id): bool
     {
         $db = new DBHelper();
@@ -108,6 +144,6 @@ class Rating extends AbstractModel implements ModelInterfaces
             ->where('ad_id', $id)
             ->andWhere('user_id', $_SESSION['user_id'])
             ->getOne();
-        return empty($rez);
+        return !empty($rez);
     }
 }
