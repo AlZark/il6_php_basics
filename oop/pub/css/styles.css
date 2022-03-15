@@ -293,3 +293,15 @@ footer{
 .fa-trash-can{
     color: #008CBA;
 }
+
+.heart{
+    opacity: 100%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+}
+
+.fa-heart{
+    color: red;
+}

@@ -23,6 +23,9 @@
                     <a class="menu" href="<?= $this->Url('catalog/add') ?>">Add new ad</a>
                 </li>
                 <li>
+                    <a class="menu" href="<?= $this->Url('catalog/favoriteList') ?>">Favorites</a>
+                </li>
+                <li>
                     <a class="menu" href="<?= $this->Url('inbox') ?>">Inbox(<?= $this->data['new_messages'] ?>)</a>
                 </li>
                 <li>

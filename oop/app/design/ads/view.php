@@ -16,6 +16,7 @@ $userId = $_SESSION['user_id'];
         <div class="score">
             <?php $rating = $this->data['rating']; ?>
             <h2><?= 'Rating: ' . $rating . '/5';
+                //TODO rewrite to match example that we did in class
                 for ($i = 1; $i <= 5; $i++) {
                     if ($i > $rating && $i < $rating + 1) {
                         echo '<i class="fa-regular fa-star-half-stroke"></i>';
@@ -30,6 +31,20 @@ $userId = $_SESSION['user_id'];
         <div class="rate">
             <?= $this->data['rate']; ?>
         </div>
+        <?php if ($this->isUserLoggedIn()): ?>
+        <div class="favorite">
+            <form action="<?= $this->url('catalog/favorite') ?>" method="POST">
+                <input type="hidden" name="ad_id" value="<?= $this->data['ads']->getId() ?>">
+                <button class="heart" type="submit" name="submit">
+                    <?php if ($this->data['favorited']): ?>
+                        <i class="fa-solid fa-heart fa-lg"></i>
+                    <?php else: ?>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    <?php endif; ?>
+                </button>
+            </form>
+        </div>
+        <?php endif; ?>
     </div>
 
     <?php

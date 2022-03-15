@@ -16,6 +16,7 @@ use Model\Rating;
 use Model\Type;
 use Core\AbstractController;
 use Model\Comments;
+use Model\Favorite;
 
 class Catalog extends AbstractController implements ControllerInterface
 {
@@ -28,7 +29,6 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['p'] = $pagination['page'];
         $this->data['allPages'] = $pagination['allPages'];
 
-
         $this->filter();
         if (!isset($_GET['order'])) {
             $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset']);
@@ -36,6 +36,19 @@ class Catalog extends AbstractController implements ControllerInterface
             $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset'], (string)$_GET['order'], (string)$_GET['search_by']);
         }
         $this->render('ads/all');
+    }
+
+    public function favoriteList(): void
+    {
+        $adsCount = Favorite::totalFavoriteAds();
+        $limit = 5;
+        $pagination = Pagination::pagination($adsCount, $limit, $_GET['p']);
+        $this->data['p'] = $pagination['page'];
+        $this->data['allPages'] = $pagination['allPages'];
+
+
+        $this->data['ads'] = CatalogModel::getAllFavoriteAds((int)$_SESSION['user_id'], $limit, $pagination['offset']);
+        $this->render('ads/favorites');
     }
 
     public function add(): void
@@ -284,6 +297,12 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['rate'] = self::rating($ad->getId());
         $this->data['comment'] = self::comment($ad->getId());
         $this->data['rating'] = Rating::getAdRating($ad->getId());
+        $this->data['favorited'] = false;
+        $favorite = new Favorite();
+        $isFavorited = $favorite->loadByUserAndAd($_SESSION['user_id'], $ad->getId());
+        if($isFavorited !== null){
+            $this->data['favorited'] = true;
+        }
 
         if ($this->data['ads']) {
             $this->data['related'] = $ad->getRelatedAds($this->data['ads']->getId());
@@ -378,6 +397,26 @@ class Catalog extends AbstractController implements ControllerInterface
         Url::redirect('catalog');
     }
 
+    public function favorite(): void
+    {
+        $favorite = new Favorite();
+        $isSetAsFavorite = $favorite->loadByUserAndAd((int)$_SESSION['user_id'], (int)$_POST['ad_id']);
+
+        if($isSetAsFavorite == null) {
+            $favorite->setUserId((int)$_SESSION['user_id']);
+            $favorite->setAdId((int)$_POST['ad_id']);
+            $favorite->save();
+            $_SESSION['success'] = "Added to favorites";
+        } else {
+            $favorite->delete();
+            $_SESSION['fail'] = "Removed from favorites";
+        }
+
+        $catalog = new CatalogModel();
+        $ad = $catalog->load((int)$_POST['ad_id']);
+        Url::redirect('catalog/show/' . $ad->getSlug());
+    }
+
     public function comment(int $adId)
     {
         if ($this->isUserLoggedIn()) {
@@ -451,6 +490,7 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function rating(int $adId)
     {
+        //TODO Dont need to render this with form helper. Do it in html file
         if (isset($_SESSION['user_id']) && !Rating::checkIfAlreadyRated($adId)) {
             $form = new FormHelper('catalog/rate', 'POST');
             $form->label('Rate this ad: ');

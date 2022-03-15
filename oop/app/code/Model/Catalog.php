@@ -51,28 +51,6 @@ class Catalog extends AbstractModel implements ModelInterfaces
         }
     }
 
-    public function assignData(): void
-    {
-        $this->data = [
-            'title' => $this->title,
-            'description' => $this->description,
-            'manufacturer_id' => $this->manufacturer_id,
-            'model_id' => $this->model_id,
-            'price' => $this->price,
-            'year' => $this->year,
-            'type_id' => $this->type_id,
-            'user_id' => $this->user_id,
-            'active' => $this->active,
-            'img' => $this->img,
-            'slug' => $this->slug,
-            'created_at' => $this->created_at,
-            'vin' => $this->vin,
-            'views' => $this->views,
-            'mileage' => $this->mileage,
-            'color' => $this->color,
-        ];
-    }
-
     public function getTitle(): string
     {
         return $this->title;
@@ -233,6 +211,28 @@ class Catalog extends AbstractModel implements ModelInterfaces
         $this->color = $color;
     }
 
+    public function assignData(): void
+    {
+        $this->data = [
+            'title' => $this->title,
+            'description' => $this->description,
+            'manufacturer_id' => $this->manufacturer_id,
+            'model_id' => $this->model_id,
+            'price' => $this->price,
+            'year' => $this->year,
+            'type_id' => $this->type_id,
+            'user_id' => $this->user_id,
+            'active' => $this->active,
+            'img' => $this->img,
+            'slug' => $this->slug,
+            'created_at' => $this->created_at,
+            'vin' => $this->vin,
+            'views' => $this->views,
+            'mileage' => $this->mileage,
+            'color' => $this->color,
+        ];
+    }
+
     public function load(int $id): object
     {
         $db = new DBHelper();
@@ -323,6 +323,26 @@ class Catalog extends AbstractModel implements ModelInterfaces
             $ad->load((int)$element['id']);
             $ads[] = $ad;
         }
+        return $ads;
+    }
+
+    public static function getAllFavoriteAds(int $userId, int $limit, int $offset): array
+    {
+        $favoriteAds = new DBHelper();
+        $favorites = $favoriteAds
+            ->select()
+            ->from('favorite_ads')
+            ->where('user_id', $userId)
+            ->limit($limit)
+            ->offset($offset)
+            ->get();
+
+        foreach ($favorites as $favorite) {
+            $ad = new Catalog();
+            $ad->load((int)$favorite['ad_id']);
+            $ads[] = $ad;
+        }
+
         return $ads;
     }
 
