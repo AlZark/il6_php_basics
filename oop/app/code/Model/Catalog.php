@@ -326,13 +326,15 @@ class Catalog extends AbstractModel implements ModelInterfaces
         return $ads;
     }
 
-    public static function getAllFavoriteAds(int $userId, int $limit, int $offset): array
+    public static function getMyFavoriteAds(int $userId, int $limit, int $offset): array
     {
         $favoriteAds = new DBHelper();
         $favorites = $favoriteAds
             ->select()
             ->from('favorite_ads')
-            ->where('user_id', $userId)
+            ->join('favorite_ads', self::TABLE, 'ad_id', 'id')
+            ->where('favorite_ads.user_id', $userId)
+            ->andWhere(self::TABLE.'.active', 1)
             ->limit($limit)
             ->offset($offset)
             ->get();
@@ -446,6 +448,20 @@ class Catalog extends AbstractModel implements ModelInterfaces
             ->get();
 
         return (int)$rez[0][0];
+    }
+
+    public static function getAllUserAds($userId)
+    {
+        $db = new DBHelper();
+        $rez = $db->select('id')->from(self::TABLE)->where('user_id', $userId)->get();
+
+        $ads=[];
+        foreach ($rez as $element){
+            $ad = new Catalog();
+            $ad->load((int)$element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
     }
 
 }

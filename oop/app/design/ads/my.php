@@ -7,17 +7,12 @@ use Model\Rating;
 ?>
 
 <div class="container">
-    <h1>Favorites</h1>
-    <div class="pagination">
-        <?php for ($page = 1; $page <= $this->data['allPages']; $page++) { ?>
-            <a href="<?= $this->Url('catalog/favoriteList?p=' . $page); ?>">
-                <div class="page"><?= $page ?></div>
-            </a> <?php } ?>
-    </div>
+    <h1>My ads</h1>
     <?php foreach ($this->data['ads'] as $ad):?>
         <br>
         <hr>
-        <div class="list-item">
+    <?php $ad->getActive() ? $adStatus = 'active' : $adStatus = 'inactive'; ?>
+        <div class="list-item <?= $adStatus ?>">
             <div class="right">
                 <div class="image">
                     <?php $img = $ad->getImg();
@@ -42,10 +37,4 @@ use Model\Rating;
             </div>
         </div>
     <?php endforeach; ?>
-    <div class="pagination">
-        <?php for ($page = 1; $page <= $this->data['allPages']; $page++) { ?>
-            <a href="<?= $this->Url('catalog/favoriteList?p=' . $page); ?>">
-                <div class="page"><?= $page ?></div>
-            </a> <?php }?>
-    </div>
 </div>

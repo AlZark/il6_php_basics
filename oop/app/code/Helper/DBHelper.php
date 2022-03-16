@@ -65,7 +65,7 @@ class DBHelper
 
     public function exec(): ?\PDOStatement
     {
-        if(DEBUG_MODE){
+        if (DEBUG_MODE) {
             Logger::log($this->sql);
         }
         return $this->conn->query($this->sql);
@@ -119,5 +119,10 @@ class DBHelper
         return $this;
     }
 
-    //TODO ADD JOINS
+    public function join(string $mainTable, string $joinTable, string $mainField, string $joinField): DBHelper
+    {
+        $this->sql .= ' JOIN ' . $joinTable . ' ON ' . $joinTable . '.' . $joinField .
+            '=' . $mainTable . '.' . $mainField;
+        return $this;
+    }
 }

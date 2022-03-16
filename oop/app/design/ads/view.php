@@ -16,7 +16,6 @@ $userId = $_SESSION['user_id'];
         <div class="score">
             <?php $rating = $this->data['rating']; ?>
             <h2><?= 'Rating: ' . $rating . '/5';
-                //TODO rewrite to match example that we did in class
                 for ($i = 1; $i <= 5; $i++) {
                     if ($i > $rating && $i < $rating + 1) {
                         echo '<i class="fa-regular fa-star-half-stroke"></i>';

@@ -114,13 +114,6 @@ class Rating extends AbstractModel implements ModelInterfaces
         return round($rating[0][0],1);
     }
 
-//    public static function getAdRating(int $adId): array
-//    {
-//        $db = new DBHelper();
-//        return $db->select()->from(self::TABLE)->where('ad_id', $adId)->get();
-//    }
-
-    //USE THIS LATER
     public function loadByUserAndAd($userId, $adId)
     {
         $db = new DBHelper();

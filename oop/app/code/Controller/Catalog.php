@@ -46,9 +46,14 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['p'] = $pagination['page'];
         $this->data['allPages'] = $pagination['allPages'];
 
-
-        $this->data['ads'] = CatalogModel::getAllFavoriteAds((int)$_SESSION['user_id'], $limit, $pagination['offset']);
+        $this->data['ads'] = CatalogModel::getMyFavoriteAds((int)$_SESSION['user_id'], $limit, $pagination['offset']);
         $this->render('ads/favorites');
+    }
+
+    public function my(): void
+    {
+        $this->data['ads'] = CatalogModel::getAllUserAds((int)$_SESSION['user_id']);
+        $this->render('ads/my');
     }
 
     public function add(): void
@@ -552,11 +557,14 @@ class Catalog extends AbstractController implements ControllerInterface
 
         if ($_SESSION['user_id'] == $commenter || $_SESSION['user_id'] == $adOwner) {
             $comment->delete();
+            $_SESSION['success'] = "Comment deleted successfully!";
         } else {
-            Url::redirect(""); //TODO redirect back to article
+            $_SESSION['fail'] = "There was a problem deleting this comment";
         }
 
-        $comment->delete();
-        Url::redirect(''); //TODO later will redirect back to the article
+        $catalog = new CatalogModel();
+        $ad = $catalog->load($adId);
+        Url::redirect('catalog/show/' . $ad->getSlug());
+
     }
 }

@@ -87,7 +87,7 @@ class Favorite extends AbstractModel implements ModelInterfaces
         return $this;
     }
 
-    public function loadByUserAndAd(int $userId, int $adId): ?Favorite
+    public function loadByUserAndAd($userId, int $adId): ?Favorite
     {
         $db = new DBHelper();
         $rez = $db->select()
@@ -106,9 +106,11 @@ class Favorite extends AbstractModel implements ModelInterfaces
     {
         $total = new DBHelper();
         $rez = $total
-            ->select('COUNT(id)')
+            ->select('COUNT('.self::TABLE.'.id)')
             ->from(self::TABLE)
-            ->where('user_id', $_SESSION['user_id'])
+            ->join(self::TABLE, 'ads', 'ad_id', 'id')
+            ->where(self::TABLE.'.user_id', $_SESSION['user_id'])
+            ->andWhere('ads.user_id', 1)
             ->get();
 
         return (int)$rez[0][0];
