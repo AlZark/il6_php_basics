@@ -16,11 +16,17 @@
                 </a>
             </li>
             <li>
-                <a class="menu" href="<?= $this->Url('catalog') ?>">View all ads</a>
+                <a class="menu" href="<?= $this->Url('catalog') ?>">View all</a>
             </li>
             <?php if ($this->isUserLoggedIn()): ?>
                 <li>
-                    <a class="menu" href="<?= $this->Url('catalog/add') ?>">Add new ad</a>
+                    <a class="menu" href="<?= $this->Url('catalog/add') ?>">New ad</a>
+                </li>
+                <li>
+                    <a class="menu" href="<?= $this->Url('catalog/my') ?>">My ads</a>
+                </li>
+                <li>
+                    <a class="menu" href="<?= $this->Url('catalog/favoriteList') ?>">Favorites</a>
                 </li>
                 <li>
                     <a class="menu" href="<?= $this->Url('inbox') ?>">Inbox(<?= $this->data['new_messages'] ?>)</a>

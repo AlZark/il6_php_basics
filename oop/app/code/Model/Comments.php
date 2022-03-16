@@ -146,10 +146,4 @@ class Comments extends AbstractModel implements ModelInterfaces
         return (int)$data[0][0];
     }
 
-    //TODO
-    public function getAllUserComments(): void
-    {
-
-    }
-
 }

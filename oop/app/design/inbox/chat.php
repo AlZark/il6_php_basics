@@ -1,5 +1,4 @@
 <?php
-
 use Model\User;
 use Controller\Inbox;
 $user = new User($_GET['user']);
@@ -13,7 +12,7 @@ $user = new User($_GET['user']);
             <textarea name="content" cols="40" rows="5"></textarea>
             <input type="hidden" name="recipient_id" value="<?= $user->getId() ?>"> <br>
             <input type="submit" name="send" value="Send">
-        </form>gi
+        </form>
     </div>
 
     <div class="chat-wrapper">

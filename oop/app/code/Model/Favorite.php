@@ -6,31 +6,13 @@ use Core\AbstractModel;
 use Core\Interfaces\ModelInterfaces;
 use Helper\DBHelper;
 
-class Rating extends AbstractModel implements ModelInterfaces
+class Favorite extends AbstractModel implements ModelInterfaces
 {
-    private int $score;
-
     private int $adId;
 
     private int $userId;
 
-    protected const TABLE = 'rating';
-
-    /**
-     * @return int
-     */
-    public function getScore(): int
-    {
-        return $this->score;
-    }
-
-    /**
-     * @param int $score
-     */
-    public function setScore(int $score): void
-    {
-        $this->score = $score;
-    }
+    protected const TABLE = 'favorite_ads';
 
     /**
      * @return int
@@ -88,7 +70,6 @@ class Rating extends AbstractModel implements ModelInterfaces
     public function assignData(): void
     {
         $this->data = [
-            'score' => $this->score,
             'ad_id' => $this->adId,
             'user_id' => $this->userId
         ];
@@ -100,21 +81,13 @@ class Rating extends AbstractModel implements ModelInterfaces
         $data = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         if (!empty($data)) {
             $this->id = (int)$data['id'];
-            $this->score = (int)$data['score'];
             $this->adId = (int)$data['ad_id'];
             $this->userId = (int)$data['user_id'];
         }
         return $this;
     }
 
-    public static function getAdRating(int $id): float
-    {
-        $db = new DBHelper();
-        $rating = $db->select('AVG(score)')->from(self::TABLE)->where('ad_id', $id)->get();
-        return round($rating[0][0],1);
-    }
-
-    public function loadByUserAndAd($userId, $adId)
+    public function loadByUserAndAd($userId, int $adId): ?Favorite
     {
         $db = new DBHelper();
         $rez = $db->select()
@@ -126,18 +99,21 @@ class Rating extends AbstractModel implements ModelInterfaces
             $this->load($rez['id']);
             return $this;
         }
-        return $this;
+        return null;
     }
 
-    public static function checkIfAlreadyRated(int $id): bool
+    public static function totalFavoriteAds(): int
     {
-        $db = new DBHelper();
-        $rez = $db->select()
+        $total = new DBHelper();
+        $rez = $total
+            ->select('COUNT('.self::TABLE.'.id)')
             ->from(self::TABLE)
-            ->where('ad_id', $id)
-            ->andWhere('user_id', $_SESSION['user_id'])
-            ->getOne();
-        return !empty($rez);
+            ->join(self::TABLE, 'ads', 'ad_id', 'id')
+            ->where(self::TABLE.'.user_id', $_SESSION['user_id'])
+            ->andWhere('ads.user_id', 1)
+            ->get();
+
+        return (int)$rez[0][0];
     }
 
 }

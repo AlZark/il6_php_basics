@@ -28,7 +28,7 @@ nav ul li{
 
 nav ul li a.menu{
     text-decoration: none;
-    font-size:25px;
+    font-size:20px;
     color: #000000;
     border-right: 1px solid #000;
     padding-right: 20px;
@@ -73,6 +73,10 @@ a {
 
 .list-item {
     position: relative;
+}
+
+.inactive{
+    background-color: rgba(192,192,192,.5);
 }
 
 .list-item .right{
@@ -292,4 +296,16 @@ footer{
 
 .fa-trash-can{
     color: #008CBA;
+}
+
+.heart{
+    opacity: 100%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+}
+
+.fa-heart{
+    color: red;
 }
