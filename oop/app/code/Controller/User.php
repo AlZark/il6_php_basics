@@ -72,8 +72,8 @@ class User extends AbstractController implements ControllerInterface
             'value' => 'Register'
         ]);
 
-        $this->data['form'] = $form->getForm(); //naujas array i kuri sukeliam Formos $form info kuria apsiraseme virsuje. Data originaliai sukurta AbstractController klaseje
-        $this->render('user/register'); //dabar ta array paduodam render mothode kuris aprasytas AbstractController klaseje
+        $this->data['form'] = $form->getForm();
+        $this->render('user/register');
     }
 
     public function login(): void
@@ -102,7 +102,7 @@ class User extends AbstractController implements ControllerInterface
 
     public function edit(): void
     {
-        if (!isset($_SESSION['user_id'])) {
+        if ($this->isUserLoggedIn()) {
             Url::redirect('user/login');
         }
 

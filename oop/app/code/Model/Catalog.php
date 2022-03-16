@@ -266,7 +266,7 @@ class Catalog extends AbstractModel implements ModelInterfaces
         $data = $db->select()->from(self::TABLE)->where('id', $id)->get();
         $ads = [];
         foreach ($data as $element) {
-            $ad = new Catalog(); // Kreipaimaes v4l nes loadas uzkrauna objekta kiekvienam miestui ir galim naudoti objekto funkcijas
+            $ad = new Catalog();
             $ad->load((int)$element['id']);
             $ads[] = $ad;
         }
@@ -298,7 +298,7 @@ class Catalog extends AbstractModel implements ModelInterfaces
         }
     }
 
-    //add ability to null out limit and offset
+    //TODO add ability to null out limit and offset
     public static function getAllActiveAds(int    $limit, int $offset,
                                            string $order = 'created_at DESC', string $search = ''): array
     {

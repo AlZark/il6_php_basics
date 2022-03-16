@@ -1,15 +1,11 @@
 <?php
-
 /**
  * @var \Model\User $user ;
  */
-
 ?>
 
 <div class="container">
-
     <table id="admin">
-
         <tr>
             <th>#</th>
             <th>Id</th>
@@ -20,7 +16,6 @@
             <th>Role</th>
             <th>Action</th>
         </tr>
-
         <form action="<?= $this->url('admin/massUserActions') ?>" method="POST">
             <?php foreach ($this->data['users'] as $user): ?>
                 <tr>
@@ -47,8 +42,6 @@
                 <option value="2">Delete</option>
             </select>
             <input type="submit" name="submit" value="Update">
-
         </form>
     </table>
-
 </div>

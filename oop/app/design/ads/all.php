@@ -43,7 +43,6 @@ use Model\Rating;
                     <h4><?= 'Year: ' . $ad->getYear(); ?></h4>
                     <h4><?= 'Mileage: ' . $ad->getMileage() . ' km.'; ?></h4>
                     <h3><?= 'Price: ' . $ad->getPrice() . ' Eur.'; ?></h3>
-
                     <a href="<?= $this->Url('catalog/edit', $ad->getId()); ?>">
                         <i class="fa-solid fa-pen-to-square fa-lg"></i></a>
                 </div>

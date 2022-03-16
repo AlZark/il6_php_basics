@@ -1,5 +1,4 @@
 <?php
-
 use Model\User;
 use Controller\Inbox;
 $user = new User($_GET['user']);

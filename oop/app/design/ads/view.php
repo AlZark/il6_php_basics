@@ -49,15 +49,15 @@ $userId = $_SESSION['user_id'];
     <?php
         $db = new Manufacturer();
         $manufacturer = $db->load($this->data['ads']->getManufacturerId());
-        $name = $manufacturer->getName();
+        $manufacturer = $manufacturer->getName();
 
         $db = new Model();
         $model = $db->load($this->data['ads']->getModelId());
-        $name = $model->getName();
+        $model = $model->getName();
 
         $db = new Type();
         $type = $db->load($this->data['ads']->getTypeId());
-        $name = $type->getName();
+        $type = $type->getName();
     ?>
 
     <div class="ad-content">
@@ -67,9 +67,9 @@ $userId = $_SESSION['user_id'];
         <?php } ?>
         <h2>About</h2>
         <p><strong>Description: </strong><?= $this->data['ads']->getDescription(); ?> </p>
-        <p><strong>Manufacturer: </strong><?= $name ?></p>
-        <p><strong>Model: </strong><?= $name ?> </p>
-        <p><strong>Type: </strong><?= $name ?> </p>
+        <p><strong>Manufacturer: </strong><?= $manufacturer ?></p>
+        <p><strong>Model: </strong><?= $model ?> </p>
+        <p><strong>Type: </strong><?= $type ?> </p>
         <p><strong>Mileage: </strong><?= $this->data['ads']->getMileage(); ?> km.</p>
         <p><strong>Color: </strong><?= $this->data['ads']->getColor(); ?> </p>
         <p><strong>Price: </strong><?= $this->data['ads']->getPrice(); ?> Eur</p>
@@ -84,20 +84,29 @@ $userId = $_SESSION['user_id'];
     </div>
 
     <div class="container-comments">
-        <div>
-
-            <?= $this->data['comment']; ?>
-
+        <?php if($this->isUserLoggedIn()): ?>
+        <div class="comment">
+            <form action="<?= $this->url('catalog/leaveComment') ?>" method="POST">
+                <h2>Comment:</h2>
+                <input type="hidden" name="ad_id" value="<?= $this->data['ads']->getId() ?>">
+                <textarea name="content" cols="60" rows="5"></textarea><br>
+                <label>Verify that you're not a toaster before posting</label><br>
+                <input type="hidden" name="number1" value="<?= $number1 = rand(0, 20) ?>">
+                <input type="hidden" name="number2" value="<?= $number2 = rand(0, 20) ?>">
+                <label><?= $number1 . ' + ' . $number2 . ' = ' ?></label>
+                <input type="number" name="answer" placeholder="Your answer"><br>
+                <input type="submit" name="submit" value="Comment">
+            </form>
         </div>
-
-        <div>
+        <?php endif; ?>
+        <div class="display-comments">
             <h2>Comments <?= ' (' . Comments::getTotalComments($this->data['ads']->getId()) . ')'; ?></h2>
             <?php $comments = Comments::getAllCatalogComments($this->data['ads']->getId());
             foreach ($comments as $comment): ?>
                 <div class="author">
                     <?php $user_db = new User($comment['user_id']); ?>
                     <p><strong><?= $user_db->getFullName(); ?> </strong> <?= $comment['ip']; ?>
-                        <?php if($comment['user_id'] == $userId || $adOwner == $userId): ?>
+                        <?php if($comment['user_id'] == $userId): ?>
                         <a href="<?= $this->url('catalog/commentDelete', $comment['id']) ?>">
                             <i class="fa-solid fa-trash-can fa-lg"></i></a>
                         <?php endif; ?>
@@ -114,7 +123,6 @@ $userId = $_SESSION['user_id'];
 
     <div class="container">
         <h2>Related ads</h2>
-
         <ul>
             <?php foreach ($this->data['related'] as $ad): ?>
                 <div class="box">

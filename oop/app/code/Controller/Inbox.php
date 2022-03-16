@@ -18,7 +18,7 @@ class Inbox extends AbstractController implements ControllerInterface
     public function __construct()
     {
         parent::__construct();
-        if (!isset($_SESSION['user_id'])) {
+        if (!$this->isUserLoggedIn()) {
             Url::redirect('user/login');
         }
     }

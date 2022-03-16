@@ -40,6 +40,9 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function favoriteList(): void
     {
+        if (!$this->isUserLoggedIn()) {
+            Url::redirect('user/login');
+        }
         $adsCount = Favorite::totalFavoriteAds();
         $limit = 5;
         $pagination = Pagination::pagination($adsCount, $limit, $_GET['p']);
@@ -52,13 +55,16 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function my(): void
     {
+        if (!$this->isUserLoggedIn()) {
+            Url::redirect('user/login');
+        }
         $this->data['ads'] = CatalogModel::getAllUserAds((int)$_SESSION['user_id']);
         $this->render('ads/my');
     }
 
     public function add(): void
     {
-        if (!isset($_SESSION['user_id'])) {
+        if (!$this->isUserLoggedIn()) {
             Url::redirect('user/login');
         }
 
@@ -161,7 +167,7 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function edit(int $id): void
     {
-        if (!isset($_SESSION['user_id'])) {
+        if (!$this->isUserLoggedIn()) {
             Url::redirect('user/login');
         }
 
@@ -300,7 +306,6 @@ class Catalog extends AbstractController implements ControllerInterface
         $this->data['title'] = $ad->getTitle();
         $this->data['meta_description'] = $ad->getDescription();
         $this->data['rate'] = self::rating($ad->getId());
-        $this->data['comment'] = self::comment($ad->getId());
         $this->data['rating'] = Rating::getAdRating($ad->getId());
         $this->data['favorited'] = false;
         $favorite = new Favorite();
@@ -422,52 +427,6 @@ class Catalog extends AbstractController implements ControllerInterface
         Url::redirect('catalog/show/' . $ad->getSlug());
     }
 
-    public function comment(int $adId)
-    {
-        if ($this->isUserLoggedIn()) {
-            $form = new FormHelper('catalog/leaveComment', 'POST');
-
-            $form->label('Comment: ');
-
-            $form->input([
-                'name' => 'ad_id',
-                'type' => 'hidden',
-                'value' => $adId
-            ]);
-
-            $form->textArea('content');
-
-            $form->label("Verify that you're not a toaster before posting");
-
-            $form->input([
-                'name' => 'number1',
-                'type' => 'hidden',
-                'value' => $number1 = rand(0, 20)
-            ]);
-
-            $form->input([
-                'name' => 'number2',
-                'type' => 'hidden',
-                'value' => $number2 = rand(0, 20)
-            ]);
-
-            $form->label($number1 . ' + ' . $number2 . ' = ');
-
-            $form->input([
-                'name' => 'answer',
-                'type' => 'number',
-                'placeholder' => 'Your answer'
-            ]);
-
-            $form->input([
-                'name' => 'submit',
-                'type' => 'submit',
-                'value' => 'Submit'
-            ]);
-            return $this->data['form'] = $form->getForm();
-        }
-    }
-
     public function leaveComment(): void
     {
         if ($this->isUserLoggedIn()) {
@@ -496,7 +455,7 @@ class Catalog extends AbstractController implements ControllerInterface
     public function rating(int $adId)
     {
         //TODO Dont need to render this with form helper. Do it in html file
-        if (isset($_SESSION['user_id']) && !Rating::checkIfAlreadyRated($adId)) {
+        if ($this->isUserLoggedIn() && !Rating::checkIfAlreadyRated($adId)) {
             $form = new FormHelper('catalog/rate', 'POST');
             $form->label('Rate this ad: ');
             for ($i = 1; $i <= 5; $i++) {
@@ -565,6 +524,5 @@ class Catalog extends AbstractController implements ControllerInterface
         $catalog = new CatalogModel();
         $ad = $catalog->load($adId);
         Url::redirect('catalog/show/' . $ad->getSlug());
-
     }
 }
