@@ -33,7 +33,8 @@ class Catalog extends AbstractController implements ControllerInterface
         if (!isset($_GET['order'])) {
             $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset']);
         } else {
-            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset'], (string)$_GET['order'], (string)$_GET['search_by']);
+            $this->data['ads'] = CatalogModel::getAllActiveAds($limit, $pagination['offset'],
+                (string)$_GET['order'], (string)$_GET['search_by']);
         }
         $this->render('ads/all');
     }
@@ -454,7 +455,6 @@ class Catalog extends AbstractController implements ControllerInterface
 
     public function rating(int $adId)
     {
-        //TODO Dont need to render this with form helper. Do it in html file
         if ($this->isUserLoggedIn() && !Rating::checkIfAlreadyRated($adId)) {
             $form = new FormHelper('catalog/rate', 'POST');
             $form->label('Rate this ad: ');

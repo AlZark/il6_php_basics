@@ -142,15 +142,15 @@ class Message extends AbstractModel implements ModelInterfaces
         return array_unique(array_merge($senders, $receivers));
     }
 
-    public function getAllMessagesByParticipants(int $user): array
+    public function getAllMessagesByParticipants(int $userId): array
     {
         $db = new DBHelper();
         $data = $db->select('id')
             ->from(self::TABLE)
-            ->where('recipient_id', $user)
+            ->where('recipient_id', $userId)
             ->andWhere('sender_id', (int)$_SESSION['user_id'])
             ->orwhere('recipient_id', (int)$_SESSION['user_id'])
-            ->andWhere('sender_id', $user)
+            ->andWhere('sender_id', $userId)
             ->order('created_at', 'DESC')
             ->get();
         $messages = [];
@@ -162,10 +162,10 @@ class Message extends AbstractModel implements ModelInterfaces
         return $messages;
     }
 
-    public static function countNewMessagesPerChat(int $user): int
+    public static function countNewMessagesPerChat(int $userId): int
     {
         $data = new Message();
-        $messages = $data->getAllMessagesByParticipants($user);
+        $messages = $data->getAllMessagesByParticipants($userId);
         $total = [];
         foreach ($messages as $message) {
             $db = new DBHelper();
@@ -177,6 +177,20 @@ class Message extends AbstractModel implements ModelInterfaces
                 ->get();
             return (int)$total[0][0];
         }
+        return (int)$total[0][0];
+    }
+
+    public static function getAllChatMessages(int $userId): int
+    {
+        $db = new DBHelper();
+        $total = $db->select('COUNT(*)')
+            ->from(self::TABLE)
+            ->where('recipient_id', $userId)
+            ->andWhere('sender_id', (int)$_SESSION['user_id'])
+            ->orwhere('recipient_id', (int)$_SESSION['user_id'])
+            ->andWhere('sender_id', $userId)
+            ->get();
+
         return (int)$total[0][0];
     }
 }
