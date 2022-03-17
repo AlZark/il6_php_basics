@@ -22,8 +22,6 @@ class Comments extends AbstractModel implements ModelInterfaces
 
     private $catalog;
 
-    private $user;
-
     private string $ip;
 
     public function getContent(): string
@@ -71,11 +69,6 @@ class Comments extends AbstractModel implements ModelInterfaces
         return $this->catalog;
     }
 
-    public function getUser(): object
-    {
-        return $this->user;
-    }
-
     public function getIp(): string
     {
         return $this->ip;
@@ -114,9 +107,6 @@ class Comments extends AbstractModel implements ModelInterfaces
         $this->ad_id = (int)$data['ad_id'];
         $this->created_at = (string)$data['created_at'];
         $this->ip = (string)$data['ip'];
-
-        $user = new User();
-        $this->user = $user->load($this->user_id);
 
         $catalog = new Catalog();
         $this->catalog = $catalog->load($this->ad_id);

@@ -81,6 +81,11 @@ class Catalog extends AbstractModel implements ModelInterfaces
         $this->manufacturer_id = $manufacturer_id;
     }
 
+    public function getManufacturer(): object
+    {
+        return $this->manufacturer;
+    }
+
     public function getModelId(): int
     {
         return $this->model_id;
@@ -89,6 +94,11 @@ class Catalog extends AbstractModel implements ModelInterfaces
     public function setModelId(int $model_id): void
     {
         $this->model_id = $model_id;
+    }
+
+    public function getModel(): object
+    {
+        return $this->model;
     }
 
     public function getPrice(): float
@@ -121,6 +131,11 @@ class Catalog extends AbstractModel implements ModelInterfaces
         $this->type_id = $type_id;
     }
 
+    public function getType(): object
+    {
+        return $this->type;
+    }
+
     public function getUserId(): int
     {
         return $this->user_id;
@@ -129,6 +144,11 @@ class Catalog extends AbstractModel implements ModelInterfaces
     public function setUserId(int $user_id): void
     {
         $this->user_id = $user_id;
+    }
+
+    public function getUser(): object
+    {
+        return $this->user;
     }
 
     public function getImg(): string
@@ -254,6 +274,15 @@ class Catalog extends AbstractModel implements ModelInterfaces
         $this->color = (string)$data['color'];
         $this->mileage = (int)$data['mileage'];
         $this->views = (int)$data['views'];
+
+        $manufacturer = new Manufacturer();
+        $this->manufacturer = $manufacturer->load($this->manufacturer_id);
+
+        $model = new Model();
+        $this->model = $model->load($this->model_id);
+
+        $type = new Type();
+        $this->type = $type->load($this->type_id);
 
         $user = new User();
         $this->user = $user->load($this->user_id);

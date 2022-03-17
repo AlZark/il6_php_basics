@@ -1,7 +1,4 @@
 <?php
-use Model\Manufacturer;
-use Model\Model;
-use Model\Type;
 use Model\Comments;
 use Model\User;
 
@@ -46,20 +43,6 @@ $userId = $_SESSION['user_id'];
         <?php endif; ?>
     </div>
 
-    <?php
-        $db = new Manufacturer();
-        $manufacturer = $db->load($this->data['ads']->getManufacturerId());
-        $manufacturer = $manufacturer->getName();
-
-        $db = new Model();
-        $model = $db->load($this->data['ads']->getModelId());
-        $model = $model->getName();
-
-        $db = new Type();
-        $type = $db->load($this->data['ads']->getTypeId());
-        $type = $type->getName();
-    ?>
-
     <div class="ad-content">
         <?php $img = $this->data['ads']->getImg();
         if ($img != NULL) { ?>
@@ -67,9 +50,9 @@ $userId = $_SESSION['user_id'];
         <?php } ?>
         <h2>About</h2>
         <p><strong>Description: </strong><?= $this->data['ads']->getDescription(); ?> </p>
-        <p><strong>Manufacturer: </strong><?= $manufacturer ?></p>
-        <p><strong>Model: </strong><?= $model ?> </p>
-        <p><strong>Type: </strong><?= $type ?> </p>
+        <p><strong>Manufacturer: </strong><?= $this->data['ads']->getManufacturer()->getName(); ?></p>
+        <p><strong>Model: </strong><?= $this->data['ads']->getModel()->getName(); ?></p>
+        <p><strong>Type: </strong><?= $this->data['ads']->getType()->getName(); ?> </p>
         <p><strong>Mileage: </strong><?= $this->data['ads']->getMileage(); ?> km.</p>
         <p><strong>Color: </strong><?= $this->data['ads']->getColor(); ?> </p>
         <p><strong>Price: </strong><?= $this->data['ads']->getPrice(); ?> Eur</p>
@@ -138,4 +121,5 @@ $userId = $_SESSION['user_id'];
             <?php endforeach; ?>
         </ul>
     </div>
+
 </div>
