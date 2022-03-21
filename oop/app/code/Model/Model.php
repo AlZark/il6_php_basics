@@ -13,6 +13,8 @@ class Model extends AbstractModel implements ModelInterfaces
 
     protected string $name;
 
+    protected int $manufacturerId;
+
     protected const TABLE = 'model';
 
     public function __construct(?int $id = null)
@@ -32,9 +34,22 @@ class Model extends AbstractModel implements ModelInterfaces
         $this->name = $name;
     }
 
+    public function getManufacturerId(): int
+    {
+        return $this->manufacturerId;
+    }
+
+    function setManufacturerId(int $manufacturerId): void
+    {
+        $this->manufacturerId = $manufacturerId;
+    }
+
     public function assignData(): void
     {
-        $this->data = [];
+        $this->data = [
+            'name' => $this->name,
+            'manufacturer_id' => $this->manufacturerId
+        ];
     }
 
     public function load(int $id): object
@@ -43,6 +58,7 @@ class Model extends AbstractModel implements ModelInterfaces
         $model = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         $this->id = (int)$model['id'];
         $this->name = (string)$model['name'];
+        $this->manufacturerId = (int)$model['manufacturer_id'];
         return $this;
     }
 
@@ -57,5 +73,23 @@ class Model extends AbstractModel implements ModelInterfaces
             $models[] = $model;
         }
         return $models;
+    }
+
+    public static function getModelIdByName(string $name, int $manufacturerId)
+    {
+        $db = new DBHelper();
+        $rez = $db->select('id')->from(self::TABLE)->where('name', $name)->getOne();
+
+        if($rez == null){
+            $data = new Model();
+            $data->setName($name);
+            $data->setManufacturerId((int)$manufacturerId);
+            $data->save();
+
+            $db = new DBHelper();
+            return $db->select('id')->from(self::TABLE)->where('name', $name)->getOne();
+        } else {
+            return $rez;
+        }
     }
 }

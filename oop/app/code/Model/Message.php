@@ -128,7 +128,7 @@ class Message extends AbstractModel implements ModelInterfaces
         $dbReceivers = new DBHelper();
         $uniqReceivers = $dbReceivers->select('DISTINCT(recipient_id)')
             ->from(self::TABLE)
-            ->Where('sender_id', $_SESSION['user_id'])
+            ->where('sender_id', $_SESSION['user_id'])
             ->get();
 
         for($i = 0; $i < sizeof($uniqSenders); $i++){
@@ -149,7 +149,7 @@ class Message extends AbstractModel implements ModelInterfaces
             ->from(self::TABLE)
             ->where('recipient_id', $userId)
             ->andWhere('sender_id', (int)$_SESSION['user_id'])
-            ->orwhere('recipient_id', (int)$_SESSION['user_id'])
+            ->orWhere('recipient_id', (int)$_SESSION['user_id'])
             ->andWhere('sender_id', $userId)
             ->order('created_at', 'DESC')
             ->get();
@@ -187,7 +187,7 @@ class Message extends AbstractModel implements ModelInterfaces
             ->from(self::TABLE)
             ->where('recipient_id', $userId)
             ->andWhere('sender_id', (int)$_SESSION['user_id'])
-            ->orwhere('recipient_id', (int)$_SESSION['user_id'])
+            ->orWhere('recipient_id', (int)$_SESSION['user_id'])
             ->andWhere('sender_id', $userId)
             ->get();
 

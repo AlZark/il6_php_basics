@@ -33,7 +33,9 @@ class Manufacturer extends AbstractModel implements ModelInterfaces
 
     public function assignData(): void
     {
-        $this->data = [];
+        $this->data = [
+            'name' => $this->name,
+        ];
     }
 
     public function load(int $id): object
@@ -56,6 +58,23 @@ class Manufacturer extends AbstractModel implements ModelInterfaces
             $manufacturers[] = $manufacturer;
         }
         return $manufacturers;
+    }
+
+    public static function getManufacturerIdByName(string $name)
+    {
+        $db = new DBHelper();
+        $rez = $db->select('id')->from(self::TABLE)->where('name', $name)->getOne();
+
+        if($rez == null){
+            $data = new Manufacturer();
+            $data->setName($name);
+            $data->save();
+
+            $db = new DBHelper();
+            return $db->select('id')->from(self::TABLE)->where('name', $name)->getOne();
+        } else {
+            return $rez;
+        }
     }
 
 }

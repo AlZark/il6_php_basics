@@ -314,7 +314,6 @@ class Catalog extends AbstractController implements ControllerInterface
         if($isFavorited !== null){
             $this->data['favorited'] = true;
         }
-
         if ($this->data['ads']) {
             $this->data['related'] = $ad->getRelatedAds($this->data['ads']->getId());
             $this->render('ads/view');

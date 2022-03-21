@@ -24,7 +24,7 @@ class Url
     public static function generateSlug(string $string): string
     {
         $string = strtolower($string);
-        $string = str_replace(' ', '-', $string);
+        $string = str_replace(array('., ', ', ', '. ', ' ', '.', ','), '-', $string);
         return $string;
     }
 }
