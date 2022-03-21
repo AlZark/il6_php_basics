@@ -36,7 +36,7 @@ class Import extends AbstractController
 
     public function read()
     {
-        if (($open = fopen("../app/code/import/import.csv", "r", true)) !== FALSE) {
+        if (($open = fopen("../app/code/Import/import.csv", "r", true)) !== FALSE) {
             while (($data = fgetcsv($open, 1000, ",")) !== FALSE) {
                 $array[] = $data;
             }
