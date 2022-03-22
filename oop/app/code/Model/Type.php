@@ -41,7 +41,7 @@ class Type extends AbstractModel implements ModelInterfaces
     public function assignData(): void
     {
         $this->data = [
-            'title' => $this->name,
+            'name' => $this->name,
         ];
     }
 
@@ -65,5 +65,22 @@ class Type extends AbstractModel implements ModelInterfaces
             $types[] = $type;
         }
         return $types;
+    }
+
+    public static function getTypeIdByName(string $name)
+    {
+        $db = new DBHelper();
+        $rez = $db->select('id')->from(self::TABLE)->where('name', $name)->getOne();
+
+        if($rez == null){
+            $data = new Type();
+            $data->setName($name);
+            $data->save();
+
+            $db = new DBHelper();
+            return $db->select('id')->from(self::TABLE)->where('name', $name)->getOne();
+        } else {
+            return $rez;
+        }
     }
 }
