@@ -21,6 +21,8 @@ class Message extends AbstractModel implements ModelInterfaces
 
     private string $created_at;
 
+    private string $adSlug;
+
     protected const TABLE = 'message';
 
     public function getText(): string
@@ -73,6 +75,22 @@ class Message extends AbstractModel implements ModelInterfaces
         $this->created_at = $created_at;
     }
 
+    /**
+     * @return string
+     */
+    public function getAdSlug(): string
+    {
+        return $this->adSlug;
+    }
+
+    /**
+     * @param string $adSlug
+     */
+    public function setAdSlug(string $adSlug): void
+    {
+        $this->adSlug = $adSlug;
+    }
+
     public function __construct(?int $id = null)
     {
         if ($id !== null) {
@@ -88,6 +106,7 @@ class Message extends AbstractModel implements ModelInterfaces
             'recipient_id' => $this->recipient_id,
             'is_read' => $this->read,
             'created_at' => $this->created_at,
+            'ad_slug' => $this->adSlug,
         ];
     }
 
@@ -102,6 +121,7 @@ class Message extends AbstractModel implements ModelInterfaces
             $this->recipient_id = (int)$data['recipient_id'];
             $this->read = (int)$data['is_read'];
             $this->created_at = (string)$data['created_at'];
+            $this->adSlug = (string)$data['ad_slug'];
         }
         return $this;
     }

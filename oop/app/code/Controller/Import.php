@@ -8,90 +8,57 @@ use Model\Model;
 use Model\Type;
 use Core\AbstractController;
 use Helper\Url;
+use Helper\CsvParser;
 
 class Import extends AbstractController
 {
-
-    public const TITLE = 0;
-
-    public const DESCRIPTION = 1;
-
-    public const MANUFACTURER = 2;
-
-    public const MODEL = 3;
-
-    public const PRICE = 4;
-
-    public const YEAR = 5;
-
-    public const TYPE = 6;
-
-    public const IMG = 7;
-
-    public const VIN = 8;
-
-    public const MILEAGE = 9;
-
-    public const COLOR = 10;
-
-    public function read()
+    public function __construct()
     {
-        if (($open = fopen("../app/code/Import/import.csv", "r", true)) !== FALSE) {
-            while (($data = fgetcsv($open, 1000, ",")) !== FALSE) {
-                $array[] = $data;
-            }
-            fclose($open);
+        parent::__construct();
+        if (!$this->isUserLoggedIn()) {
+            Url::redirect('user/login');
         }
-        return $array;
     }
 
     public function execute(): void
     {
-        if ($this->isUserLoggedIn()) {
-            $date = Date("Y-m-d H:i:s");
-            $import = new Import();
-            $data = $import->read();
-            if ($data[0][0] != NULL) {
-                foreach ($data as $element) {
-                    $catalog = new Catalog();
-                    $catalog->setTitle($element[self::TITLE]);
-                    $catalog->setDescription($element[self::DESCRIPTION]);
-
-                    $manufacturer = Manufacturer::getManufacturerIdByName($element[self::MANUFACTURER]);
-                    $catalog->setManufacturerId((int)$manufacturer);
-
-                    $model = Model::getModelIdByName($element[self::MODEL], (int)$manufacturer);
-                    $catalog->setModelId((int)$model);
-
-                    $catalog->setPrice($element[self::PRICE]);
-                    $catalog->setYear($element[self::YEAR]);
-
-                    $type = Type::getTypeIdByName($element[self::TYPE]);
-                    $catalog->setTypeId((int)$type);
-
-                    $catalog->setImg($element[self::IMG]);
-                    $catalog->setVin($element[self::VIN]);
-                    $catalog->setMileage((int)$element[self::MILEAGE]);
-                    $catalog->setColor($element[self::COLOR]);
-                    $catalog->setUserId((int)$_SESSION['user_id']);
-                    $catalog->setActive(1);
-
-                    $slug = Url::generateSlug($element[self::TITLE]);
-                    while (!Catalog::isValueUnique('slug', $slug)) {
-                        $slug .= rand(0, 99);
-                    }
-                    $catalog->setSlug($slug);
-                    $catalog->setCreatedAt((string)$date);
-                    $catalog->setViews(0);
-                    $catalog->save();
+        $csvPath = PROJECT_ROOT_DIR . "/var/Import/import.csv";
+        $adsArray = CsvParser::parseCsv($csvPath);
+        if ($adsArray !== FALSE) {
+            foreach ($adsArray as $element) {
+                $catalog = new Catalog();
+                $manufacturer = Manufacturer::getManufacturerIdByName($element['manufacturer']);
+                $model = Model::getModelIdByName($element['model'], (int)$manufacturer);
+                $type = Type::getTypeIdByName($element['type']);
+                $slug = Url::generateSlug($element['title']);
+                while (!Catalog::isValueUnique('slug', $slug)) {
+                    $slug .= rand(0, 99);
                 }
-                $_SESSION['success'] = "Ads imported successfully";
-            } else {
-                $_SESSION['fail'] = "Import file is empty";
+                $date = Date("Y-m-d H:i:s");
+
+                $catalog->setTitle($element['title']);
+                $catalog->setDescription($element['description']);
+                $catalog->setManufacturerId((int)$manufacturer);
+                $catalog->setModelId((int)$model);
+                $catalog->setPrice($element['price']);
+                $catalog->setYear($element['year']);
+                $catalog->setTypeId((int)$type);
+                $catalog->setImg($element['img']);
+                $catalog->setVin($element['vin']);
+                $catalog->setMileage((int)$element['mileage']);
+                $catalog->setColor($element['color']);
+                $catalog->setUserId((int)$_SESSION['user_id']);
+                $catalog->setActive(1);
+                $catalog->setSlug($slug);
+                $catalog->setCreatedAt((string)$date);
+                $catalog->setViews(0);
+                $catalog->save();
             }
-            Url::redirect('catalog/my');
+            $_SESSION['success'] = "Ads imported successfully";
         } else {
-            Url::redirect('user/login');
+            $_SESSION['fail'] = "Import file is empty";
         }
+        unlink('../app/code/Import/import.csv');
+        Url::redirect('catalog/my');
     }
 }

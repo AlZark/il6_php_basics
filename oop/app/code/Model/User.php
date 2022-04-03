@@ -50,6 +50,7 @@ class User extends AbstractModel implements ModelInterfaces
             'city_id' => $this->cityId,
             'role_id' => $this->role_id,
             'active' => $this->active,
+            'login_fails' => $this->loginFails,
         ];
     }
 
@@ -120,12 +121,12 @@ class User extends AbstractModel implements ModelInterfaces
 
     public function getLoginFails(): int
     {
-        return $this->login_fails;
+        return $this->loginFails;
     }
 
-    public function setLoginFails(int $login_fails): void
+    public function setLoginFails(int $loginFails): void
     {
-        $this->login_fails = $login_fails;
+        $this->loginFails = $loginFails;
     }
 
     public function getActive(): int
@@ -159,19 +160,21 @@ class User extends AbstractModel implements ModelInterfaces
     {
         $db = new DBHelper();
         $data = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
-        $this->id = (int)$data['id'];
-        $this->name = (string)$data['name'];
-        $this->lastName = (string)$data['last_name'];
-        $this->phone = (string)$data['phone'];
-        $this->email = (string)$data['email'];
-        $this->password = (string)$data['password'];
-        $this->cityId = (int)$data['city_id'];
-        $this->active = (int)$data['active'];
-        $this->role_id = (int)$data['role_id'];
+        if (!empty($data)) {
+            $this->id = (int)$data['id'];
+            $this->name = (string)$data['name'];
+            $this->lastName = (string)$data['last_name'];
+            $this->phone = (string)$data['phone'];
+            $this->email = (string)$data['email'];
+            $this->password = (string)$data['password'];
+            $this->cityId = (int)$data['city_id'];
+            $this->active = (int)$data['active'];
+            $this->role_id = (int)$data['role_id'];
+            $this->loginFails = (int)$data['login_fails'];
 
-        $city = new City();
-        $this->city = $city->load($this->cityId);
-
+            $city = new City();
+            $this->city = $city->load($this->cityId);
+        }
         return $this;
     }
 

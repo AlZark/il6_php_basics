@@ -187,6 +187,7 @@ class User extends AbstractController implements ControllerInterface
             $user->setCityId((int)$_POST['city_id']);
             $user->setActive(1);
             $user->setRoleId(0);
+            $user->setLoginFails(0);
             $user->save();
             $_SESSION['success'] = "Registered successfully";
             Url::redirect('user/login');

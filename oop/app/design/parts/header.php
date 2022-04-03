@@ -64,6 +64,4 @@
         $_SESSION['fail'] = "";
         $_SESSION['success'] = "";
     endif; ?>
-
-
 </header>

@@ -96,10 +96,21 @@ class Favorite extends AbstractModel implements ModelInterfaces
             ->andWhere('ad_id', $adId)
             ->getOne();
         if(!empty($rez)){
-            $this->load($rez['id']);
+            $this->load((int)$rez['id']);
             return $this;
         }
         return null;
+    }
+
+    public static function getUsersIdsByAd(int $adId): array
+    {
+        $db = new DBHelper();
+        $rez = $db->select()->from(self::TABLE)->where('ad_id', $adId)->get();
+        $usersIds = [];
+        foreach ($rez as $value){
+            $usersIds[] = $value['user_id'];
+        }
+        return $usersIds;
     }
 
     public static function totalFavoriteAds(): int

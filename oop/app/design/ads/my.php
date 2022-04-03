@@ -8,6 +8,8 @@ use Model\Rating;
 
 <div class="container">
     <h1>My ads</h1>
+    <button><a class="menu" href="<?= $this->Url('export/execute') ?>">Export</a></button>
+    <button><a class="menu" href="<?= $this->Url('import/execute') ?>">Import</a></button>
     <?php foreach ($this->data['ads'] as $ad):?>
         <br>
         <hr>

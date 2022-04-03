@@ -1,6 +1,7 @@
 <?php
 use Model\User;
 use Controller\Inbox;
+use Model\Catalog;
 $user = new User($_GET['user']);
 ?>
 
@@ -28,14 +29,18 @@ $user = new User($_GET['user']);
         <?php } else { $user = new User($message->getSenderId()) ?>
             <div class="message-wrapper">
                 <div class="message-received">
-                    <p class="content"><?= $message->getText(); ?></p>
+                    <p class="content"><?= $message->getText(); ?>
+                        <?php if($message->getAdSlug()) : ?>
+                            <a href="<?= $this->url('catalog/show/' . $message->getAdSlug()) ?>"> See here</a>
+                        <?php endif; ?>
+                    </p>
                     <p class="time"><?= $message->getCreatedAt(); ?></p>
                 </div>
             </div>
         <?php } ?>
 
         <?php
-        if ($message->getRecipientId() == $_SESSION['user_id'] && $message->getRead == 0) {
+        if ($message->getRecipientId() == $_SESSION['user_id'] && $message->getRead() == 0) {
             $db = new Inbox();
             $db->changeReadStatus($message->getId());
         }

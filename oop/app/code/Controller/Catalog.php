@@ -17,6 +17,8 @@ use Model\Type;
 use Core\AbstractController;
 use Model\Comments;
 use Model\Favorite;
+use Model\Message;
+use Service\PriceChangeInformer\Messenger;
 
 class Catalog extends AbstractController implements ControllerInterface
 {
@@ -389,9 +391,17 @@ class Catalog extends AbstractController implements ControllerInterface
     public function update(): void
     {
         $catalogId = $_POST['id'];
+        $title = StringHelper::censor((string)$_POST['title']);
+
         $catalog = new CatalogModel();
         $catalog->load((int)$catalogId);
-        $catalog->setTitle(StringHelper::censor((string)$_POST['title']));
+
+        if($_POST['price'] != $catalog->getPrice()){
+            $messenger = new Messenger();
+            $messenger->setMessages((int)$catalogId);
+        }
+
+        $catalog->setTitle($title);
         $catalog->setDescription(StringHelper::censor((string)$_POST['description']));
         $catalog->setManufacturerId((int)$_POST['manufacturer_id']);
         $catalog->setModelId((int)$_POST['model_id']);
@@ -403,7 +413,6 @@ class Catalog extends AbstractController implements ControllerInterface
         $catalog->setColor((string)$_POST['color']);
         $catalog->setMileage((int)$_POST['mileage']);
         $catalog->save();
-
         Url::redirect('catalog');
     }
 
